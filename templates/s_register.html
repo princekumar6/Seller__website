@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Seventh Square Seller</title>
+    <style>
+        /* navbar code starts from here */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            height: 4rem;
+        }
+
+        .head_container {
+            overflow: hidden;
+        }
+
+        .logo {
+            display: none;
+        }
+
+        .menu {
+
+            text-align: center;
+        }
+
+        .menu ul {
+            text-align: center;
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            margin-right: -10px;
+        }
+
+        .menu li {
+            margin-left: -130px;
+            margin-top: 25px;
+            display: inline-block;
+        }
+
+        .menu li a {
+            margin-top: 10px;
+            margin-bottom: -10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #c7c7c7;
+            padding: 10px;
+            padding-left: 15px;
+            margin-top: -45px;
+            padding-right: 15px;
+        }
+
+        .menu a:hover {
+            color: #b96d08;
+            transition: 0.2s;
+            transform: scale(1.01);
+
+        }
+
+        .icon {
+            display: none;
+        }
+
+        .li__img {
+            margin-top: 10px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        @media screen and (max-width: 925px) {
+            .logo {
+                display: block;
+            }
+
+            .logo img {
+                width: 130px;
+
+            }
+
+            ul>li:first-of-type {
+                display: none;
+            }
+
+            .menu {
+                margin: 0;
+            }
+        }
+
+
+        @media screen and (max-width: 920px) {
+            .header {
+                height: 3.5rem;
+            }
+
+            .menu li,
+            .li__img {
+                display: none;
+            }
+
+            .icon {
+                padding: 0;
+                margin: 0;
+                margin-left: 650px;
+                margin-top: -25px;
+                display: flex;
+            }
+
+            .logo img {
+                padding: 8px;
+                margin-bottom: -10px;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            header {
+                height: 3.5rem;
+            }
+
+            .icon {
+                padding: 0;
+                margin: 0;
+                margin-left: 570px;
+                margin-top: -25px;
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            header {
+                height: 3rem;
+            }
+
+            .icon {
+                padding: 0;
+                margin: 0;
+                margin-left: 450px;
+                margin-top: -25px;
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width:420px) {
+            header {
+                height: 3rem;
+            }
+
+            .icon {
+                padding: 0;
+                margin: 0;
+                margin-left: 270px;
+                margin-top: -25px;
+                display: flex;
+            }
+        }
+
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: rgb(0, 0, 0);
+            overflow-x: hidden;
+            transition: 0.6s;
+            padding-top: 87px;
+            box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.24);
+        }
+
+        .sidenav a {
+            border-bottom: 2px solid #b96d08;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 40px;
+            color: #c5c5c5;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #bb8e3a;
+            border-bottom: 2px solid #c0c0c0;
+        }
+
+        .offcanvas a:focus {
+            color: #bb8e3a;
+            border-bottom: 2px solid #c0c0c0;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
+
+        /* login styling css is starting from here */
+        .sec-small {
+            height: 90vh;
+            padding: 2.5%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .film-small {
+            background-color: rgb(255, 255, 255, 0.7);
+            height: 90%;
+            max-width: 70%;
+            margin: auto;
+        }
+
+        #login-pic {
+            margin: auto;
+        }
+
+        #form-style {
+            padding: 0px 30px 0px 0px;
+        }
+
+        @media (max-width:992px) {
+            #login-pic {
+                display: none;
+            }
+        }
+
+        @media (max-width:767px) {
+            #form-style {
+                padding: 0;
+            }
+        }
+
+        /* registaration css is starting from here  */
+        .SingleSec {
+            height: 100vh;
+            padding: 2.5%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .box-singlesec {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            font-family: 'PT Serif', serif;
+            margin: auto auto;
+            height: 100%;
+            background-color: rgb(255, 255, 255, 0.7);
+        }
+
+        .film {
+            background-color: rgb(255, 255, 255, 0.7);
+            height: 100%;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .box-singlesec {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width:767px) {
+            .SingleSec {
+                height: 150vh;
+            }
+
+            #content-col {
+                padding: 0rem 2rem;
+            }
+
+            #form-col {
+                padding: 0;
+            }
+
+            #form-col-det {
+                padding: 0;
+            }
+        }
+
+        @media (max-width:370px) {
+            .SingleSec {
+                height: 200vh;
+            }
+
+            #content-head {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media only screen and (max-width:567px) {
+            .SingleSec {
+                height: 170vh;
+            }
+        }
+
+        /* body css code starts from  here */
+        @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .background {
+            background: rgba(0, 0, 0, 0.7) url('../img/Background.png');
+            background-size: cover;
+        }
+
+        .firstSection {
+            height: 72vh;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'PT Serif', serif;
+            max-width: 50%;
+            margin-right: auto;
+            height: 90%;
+        }
+
+        /* .sqsingle{
+    width: 50%;
+    padding: 10px 20px;
+    margin: auto 10% auto 10%;
+} */
+        .firstHalf {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .text-big {
+            padding: 2% 1%;
+            font-size: 5.75vh;
+            font-weight: 600;
+        }
+
+        .box {
+            padding: 20px;
+        }
+
+        .bton:link,
+        .bton:visited {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3vh;
+            color: #fff;
+            font-weight: 400;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 2vh 8vh;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all .5s;
+        }
+
+        .bton-black {
+            background: #000;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .bton:hover {
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .bton:active {
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .bton-bottom-animation-1 {
+            animation: comeFromBottom 1s ease-out .8s;
+        }
+
+        .bton::after {
+            content: "";
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            color: #fff;
+            font-weight: 400;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50px;
+            display: inline-block;
+            z-index: -1;
+            transition: all .5s;
+        }
+
+        .bton-black::after {
+            background: #000;
+            opacity: 0.7;
+        }
+
+        .bton-animation-1:hover::after {
+            transform: scaleX(1.2) scaleY(1.1);
+            opacity: 0;
+        }
+
+        @keyframes comeFromBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .box-bottom {
+            font-family: 'PT Serif', serif;
+            font-size: 2vh;
+            text-align: right;
+            padding: 0vh 3vh;
+            font-weight: 700;
+        }
+
+        .heading {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 6vh;
+            font-weight: 500;
+            padding: 20px 0px;
+            margin: auto;
+            width: 90%;
+            text-align: center;
+        }
+
+        .inline {
+            display: flex;
+            width: 95%;
+            margin: auto;
+        }
+
+        .square {
+            width: 30%;
+            padding: 10px 20px;
+            margin: 0 auto;
+        }
+
+        .text-head {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 6vh;
+            font-weight: 400;
+        }
+
+        .text-para {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 28px;
+            font-weight: 300;
+            padding: 10px 0px;
+        }
+
+        .text-para-big {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 31px;
+            font-weight: 400;
+            justify-content: center;
+        }
+
+        .text-para-small {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .custom {
+            margin: 15px 0px 10px 0px;
+            width: 15%;
+            height: 2px;
+            background-color: rgb(62, 145, 113);
+            border: 1px solid rgb(62, 145, 113);
+            border-radius: 5px;
+            opacity: 1;
+        }
+
+        .custom-black-bold {
+            margin: auto;
+            width: 100%;
+            height: 2px;
+            background-color: #262626;
+            border: 1px solid #757575;
+            border-radius: 5px;
+            opacity: 1;
+        }
+
+        .text-num {
+            font-family: 'Oranienbaum', serif;
+            font-size: 13vh;
+            font-weight: 500;
+            padding: 0% 8%;
+        }
+
+        .thirdSection .square {
+            width: 40%;
+            padding: 10px 20px;
+            margin: auto;
+            padding: 30px 0px
+        }
+
+        .fourthSection {
+            padding-bottom: 1.5rem;
+        }
+
+        .burger {
+            display: none;
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 15px;
+        }
+
+        .line {
+            width: 33px;
+            background-color: white;
+            height: 4px;
+            margin: 5px;
+        }
+
+        .tick {
+            font-family: 'Oranienbaum', serif;
+            font-size: 200%;
+            color: rgb(62, 145, 113);
+        }
+
+        .accordion {
+            color: #6e707e;
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .fourthSection .inline .square .text-para {
+            margin: 0;
+            padding: 0;
+        }
+
+        .register .form-control {
+            background: #efeff1;
+            border: none;
+            border-radius: 5px;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+            text-indent: 6px;
+            height: 40px;
+            font-size: 1.15rem;
+        }
+
+        #Mob-div {
+            display: flex;
+        }
+
+        #star-content {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        #OTP-button {
+            width: 25%;
+            margin-left: 2%;
+            background-color: #efeff1;
+            color: black;
+            border: none;
+            box-shadow: none;
+            text-decoration: none;
+        }
+
+        #num {
+            width: 73%;
+        }
+
+        #disp {
+            display: none;
+        }
+
+        #form-col {
+            padding: 8rem 0;
+            width: 70%;
+            margin: auto;
+        }
+
+        #form-col-det {
+            padding: 6rem 0;
+            width: 70%;
+            margin: auto;
+        }
+
+        #content-col {
+            padding: 2.2rem 0;
+        }
+
+        #content-head {
+            font-weight: 600;
+            padding: 0;
+            margin-bottom: 5px;
+        }
+
+        #form-head {
+            letter-spacing: 1px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+
+        /* responsive design is starting from here */
+        @media only screen and (max-width: 1024px) {
+            /* .navbar{
+        height: 220px;
+        flex-direction: column;
+        transition: all 0.3s ease-out;
+    }
+    .logo{
+        margin:0;
+    }
+    #disp{
+        display: flex;
+    }
+    #disp-opp{
+        display: none;
+    }
+    /* .burger{
+        display: block;
+    } */
+
+            /* .h-nav-resp{
+        height: 72px;
+    }
+    .v-class-resp{
+      opacity: 0;  
+      width: 10%;
+    }  */
+            .box-main {
+                max-width: 100%;
+            }
+
+            .inline {
+                flex-direction: column;
+            }
+
+            /* .sqsingle{
+        width:80%
+    } */
+            .square {
+                width: 80%;
+            }
+
+            .thirdSection .square {
+                width: 80%;
+            }
+
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .list-group-item {
+                color: white;
+            }
+
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: none;
+                overflow: hidden;
+            }
+
+            .foter-1 {
+                display: block !important;
+            }
+
+            .foter-2 {
+                display: none !important;
+            }
+
+            .imgage-1 {
+                padding-right: 5rem !important;
+                padding-left: 5rem !important;
+            }
+
+            .canv {
+                width: 100% !important;
+                padding: 0% 5% !important;
+            }
+
+            .dashborder {
+                border-right-style: none !important;
+            }
+
+            .happyclient {
+                width: 70% !important;
+            }
+
+            .heading {
+                font-size: 5vh;
+            }
+
+            .text-head {
+                font-size: 5vh;
+            }
+
+            .thirdSection .square {
+                padding: 0;
+            }
+
+            .text-num {
+                font-size: 8vh;
+            }
+
+            .text-para-big {
+                font-size: 3vh;
+            }
+
+            #reg-form {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width:480px) {
+            #star-content {
+                margin-top: 0;
+            }
+        }
+
+        @media only screen and (max-width:567px) {
+            #Mob-div {
+                flex-direction: column;
+            }
+
+            #num {
+                width: 100%;
+            }
+
+            #OTP-button {
+                padding: .375rem .75rem;
+                width: 100%;
+                height: 40px;
+                margin: 1rem 0rem 0rem 0rem;
+            }
+
+        }
+
+        /* all css files ends here */
+    </style>
+</head>
+
+<body>
+    {% csrf_token %}
+    <header>
+        <div class="head_container">
+            <div class="logo">
+                <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" width="200px" alt="Logo Image">
+            </div>
+            <div class="menu" id="myTopnav">
+                <ul>
+                    <a href="javascript:void(0);" style="font-size:25px; float: right;" class="icon"
+                        onclick="openNav()">&#9776;</a>
+                    <li><a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a></li>
+                    <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" class="li__img"
+                        width="150px" alt="Logo Image">
+                    <li><a class="v-class-resp options" href="#Callback">Request A Callback</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
+        <a class="v-class-resp options" href="#Callback">Request A Callback</a>
+
+    </div>
+
+
+
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Reach out to the $600 billion+ industry from your office</p>
+                <div class="box">
+                    <a href="#Register" class="bton bton-black bton-animation-1">Become a Seller</a>
+                </div>
+            </div>
+        </div>
+        <div class="box-bottom">
+            <p id="star-content">Figure as per Industry Estimates for Home Interiors & Construction Industry</p>
+        </div>
+        </div>
+    </section>
+    <section class="secondSection">
+        <div class="heading">
+            <p>Why sell with Seventh Square?</p>
+        </div>
+        <div class="inline">
+            <div class="square">
+                <p class="text-head" style="text-align: left;">Bigger & Better Clientele</p>
+                <p class="text-para-small">Reach Clients all over India. Sell to Builders
+                    & Developers, Contractors & Construction
+                    Firms, Architects, Institutions and
+                    Individual Home Buyers from a single
+                    dashboard.</p>
+                <hr class="custom">
+            </div>
+            <div class="square">
+                <p class="text-head" style="text-align: right;">Customer Services</p>
+                <p class="text-para-small" style="text-align: right;">Superior Services to clients such as One-stop shop
+                    for Building Materials & Home Interiors, Automatic
+                    Invoicing & Tax Management, Delivery & Order
+                    scheduling for bigger projects, third-party financing
+                    etc. for free</p>
+                <hr class="custom" style=" float: right;">
+            </div>
+        </div>
+        <div class="inline">
+            <div class="square">
+                <p class="text-head" style="text-align: left;">Seventh Square Specialty</p>
+                <p class="text-para-small">Receive orders & quote updates on text,
+                    whatsapp, email & call. Track payments in
+                    your dashboard. Dedicated Relationship
+                    Manager for all your doubts & queries;
+                    and much more...</p>
+                <hr class="custom">
+            </div>
+            <div class="square">
+                <p class="text-head" style="text-align: right;">Lowest Fees</p>
+                <p class="text-para-small" style="text-align: right;">5% Commission across all categories. No
+                    added charges, so you can give customers
+                    the best prices without lowering margins.</p>
+                <hr class="custom" style=" float: right;">
+            </div>
+        </div>
+        <div class="inline"></div>
+    </section>
+    <section class="thirdSection">
+        <div class="heading">
+            <p>How it works?</p>
+        </div>
+        <div class="inline">
+            <div class="square" style="display: flex;">
+                <div class="text-num">1</div>
+                <p class="text-para-big">Register with us and
+                    complete your profile</p>
+            </div>
+            <div class="square" style="display: flex;">
+                <div class="text-num">2</div>
+                <p class="text-para-big">Upload your product
+                    portfolio</p>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="square" style="display: flex;">
+                <div class="text-num">3</div>
+                <p class="text-para-big">Start receiving orders.
+                    Check status in Dashboard</p>
+            </div>
+            <div class="square" style="display: flex;">
+                <div class="text-num">4</div>
+                <p class="text-para-big">Receive your payments
+                    directly in bank</p>
+            </div>
+        </div>
+    </section>
+    <section class="fourthSection" id="Register">
+        <div class="heading">
+            <p>Register as a Seller with Seventh Square</p>
+        </div>
+        <div class="inline thirdSection">
+            <div class="square">
+                <p class="text-para-small">Become a seller with us by filling this form.
+                    To sell with Seventh Square, you need:</p>
+                <p class="text-para-small"><span class="tick">&#128504</span> Identification Number (GSTIN)</p>
+                <p class="text-para-small"><span class="tick">&#128504</span>Bank Account</p>
+                <p class="text-para-small"><span class="tick">&#128504</span>PAN</p>
+                <p class="text-para-small">Our team will contact you after you've
+                    filled the form. For any queries, check our
+                    FAQ page or arrange a callback.</p>
+            </div>
+            <div class="square register" id="reg-form">
+                <form class="text-center" method="POST" action="GSTIN.html">
+                    <div class="form-group" id="Mob-div">
+                        <input class="form-control " id="num" type="number" name="mobile" required
+                            placeholder="Mobile Number" maxlength="10" pattern="(6|7|8|9)\d{9}">
+                        <button type="button" id="OTP-button" onclick="myFunction_two()" class="btn btn-secondary">Send
+                            OTP</button>
+                    </div>
+                    <div class="form-group"><input class="form-control" type="number" name="OTP" required
+                            style="display: none;" id="myDIV" placeholder="Enter OTP" maxlength="10"
+                            pattern="(6|7|8|9)\d{6}"></div>
+                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"
+                            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+                    <div class="form-group"><input id="password-field" class="form-control icon-wrapper input"
+                            type="password" name="pass" required placeholder="Password"><span toggle="#password-field"
+                            onclick="myFunction()" class="ion ion-eye field-icon toggle-password"
+                            style="font-size: 22px;"></span></div>
+
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                            style="background: #000;border-color: #4f4f4f;    margin-top: 10px;">Continue</button></div>
+                    Already have an
+                    account? <u>
+                        <a class="text-capitalize already" href="/s_login.html" style="color:#4f4f4f">Login
+                            here</a></u>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-------------------------------------------- Footer Starts here -------------------------------------------------->
+    {% include "footer.html" %}
+    <script>
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            //document.getElementById("header").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            //document.getElementById("header").style.marginLeft= "0";
+        };
+        function myFunction() {
+            var x = document.getElementById("password-field");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function myFunction_two() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+
+        }
+        function myFunction_three() {
+            var x = document.getElementById("menu");
+            x.style.display = "block";
+
+        }
+
+
+    </script>
+
+    <script src="js/resp.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller Profile</title>
+
+  {% include "styles.html" %}
+  {% include "navlogin.html" %}
+
+  <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+    {{msg}}</div>
+  <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+    <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+  <div class="row" style="margin: 0px;">
+    <div class="col d-none d-lg-block"
+      style="max-width: 19%;padding-left: 5px;border-right: 1px solid rgb(221, 221, 221);">
+      <div class="list-group" style="margin-top: 10px;">
+
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/"><i
+            class="fa fa-home" style="margin-right: 10px;"></i>Home</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+            class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming/"><i
+            class="fas fa-shopping-cart" style="margin-left: 20px;margin-right: 10px;"></i>Current
+          Orders</a>
+
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming/"><i
+            class="fas fa-shopping-cart" style="margin-left: 20px;margin-right: 10px;"></i>Past Orders</a>
+
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i class="fas fa-box"
+            style="margin-right: 10px;"></i>Products</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/newproduct/"><i
+            class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Add New
+          Product</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/viewproducts/"><i
+            class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Active
+          Products</a>
+
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming/"><i
+            class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+          History</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming/"><i
+            class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+          Performance</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming/"><i
+            class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer Reviews</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/contact/"><i
+            class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a>
+        <hr style="margin: 1em;">
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/commercial-terms/"><i
+            class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+          Terms</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/docverify/"><i
+            class="fas fa-clipboard-check" style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/faqs/general/"><i
+            class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+          FAQ's</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/policy/"><i
+            class="fas fa-vote-yea" style="margin-right: 9px;"></i>Policies</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/marketplace/"><i
+            class="fas fa-clipboard-list" style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/guidelines/"><i
+            class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller
+          Guidelines</a>
+
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/terms/"><i
+            class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a>
+        <hr style="margin: 1em;">
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+          href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i class="fab fa-facebook-f"
+            style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+          href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+            style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+          href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+            style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+          href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+            style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a>
+        <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+          href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+            style="margin-right: 11px;margin-left: 5px;"></i>Twitter</a>
+      </div>
+    </div>
+    <div class="col">
+      <h2 class="text-center" style="margin: 20px;font-family: 'Libre Baskerville', serif;"><strong>Seller
+          Profile</strong></h2>
+      <div class="card mb-3">
+        <div class="card-header py-3" style="background-color: #f8f9fc;">
+          <p class="m-0 font-weight-bold float-left" style="color: black;font-size: 18px;">Personal Info</p>
+          <div class="text-right"><a href="#myModal" data-toggle="modal"><button class="btn btn-sm"
+                style="background-color: #01011e; color: white; font-size: 14px;padding: 5px 10px;" type="button"><i
+                  class="icon ion-edit" style="margin: 0px 7px;font-size: 14px;"></i>Edit&nbsp;&nbsp;</button></a></div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col-12 col-md-5" style="padding: 10px;">
+              <div class="card-body text-center" style="padding: 0px;"><img class="rounded-circle img-fluid mb-3 mt-4"
+                  src="/static/staticfiles/img/human.jpg" width="109px" height="109px">
+              </div>
+            </div>
+            <div class="col" style="padding: 10px; font-size: 15px;">
+              <div class="form-group"><label><strong>Name : </strong>{{ data.name }}</label></div>
+              <div class="form-group"><label><strong>Phone Number : </strong>+91 {{ data.numb }}</label></div>
+              <div class="form-group"><label><strong>Email : </strong>{{ data.email }}</label></div>
+              <div class="form-group"><label><strong>Password : </strong>{{ data.pswd }}</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3" style="background-color: #f8f9fc;">
+          <p class="m-0 font-weight-bold float-left" style="color: black;font-size: 18px;">Company Details</p>
+          <div class="text-right"><a href="#myMmodal" data-toggle="modal"><button class="btn btn-sm"
+                style="background-color: #01011e; color: white; font-size: 14px;padding: 5px 10px;" type="button"><i
+                  class="icon ion-edit" style="margin: 0px 7px;font-size: 14px;"></i>Edit&nbsp;&nbsp;</button></a></div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col" style="padding: 10px; font-size: 15px;">
+              <div class="form-group"><label><strong>Company Name : </strong>{{ data.company }}</label></div>
+              <div class="form-group"><label><strong>Pickup Location : </strong>{{ data.pickup }}</label></div>
+              <div class="form-group"><label><strong>Categories Serviced : </strong>{{ data.categories }}</label></div>
+              <div class="form-group"><label><strong>About The Brand : </strong>{{ data.about }}</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3" style="background-color: #f8f9fc;">
+          <p class="m-0 font-weight-bold float-left" style="color: black;font-size: 18px;">Entity Details <i
+              class="far fa-question-circle" data-toggle="tooltip" data-bs-tooltip="" style="font-size: 12px;"
+              title="These Get Automatically Filled After Documents Verification"></i></p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col" style="padding: 10px; font-size: 15px;">
+              <div class="form-group"><label><strong>GST Number : </strong></label></div>
+              <div class="form-group"><label><strong>Business PAN : </strong></label></div>
+              <div class="form-group"><label><strong>Document Used : </strong></label></div>
+              <div class="form-group"><label><strong>Entity Document : </strong></label></div>
+              <div class="form-group"><label><strong>Corporate Identity Number : </strong></label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3" style="background-color: #f8f9fc;">
+          <p class="m-0 font-weight-bold" style="color: black;font-size: 18px;">Bank Details <i
+              class="far fa-question-circle" data-toggle="tooltip" data-bs-tooltip="" style="font-size: 12px;"
+              title="These Get Automatically Filled After Documents Verification"></i></p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col" style="padding: 10px; font-size: 15px;">
+              <div class="form-group"><label><strong>Account Holder Name : </strong></label></div>
+              <div class="form-group"><label><strong>Account Number : </strong></label></div>
+              <div class="form-group"><label><strong>IFSC Code : </strong></label></div>
+              <div class="form-group"><label><strong>Bank Name : </strong></label></div>
+              <div class="form-group"><label><strong>Branch : </strong></label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+        <div class="modal-dialog" style="max-width: 95%;" role="document">
+          <div class="modal-content">
+            <form method="POST" action="/afterdashacc/">
+              {% csrf_token %}
+              <div class="modal-header" style="padding: 2rem 3rem 1rem 3rem;">
+                <h2 style="color: black;font-family: 'Source Serif Pro', serif;"><strong>Add Details</strong>&nbsp;</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">×</span></button>
+              </div>
+
+              <div class="modal-body" style="padding: 5% 10%;">
+                <!-- Horizontal material form -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Name</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Name" value="{{data.name}}"
+                        style="border-radius: 0px;" name="name">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Mobile Number</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Number" value="{{data.numb}}" maxlength="10"
+                        style="border-radius: 0px;" name="mobile">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Email</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="email" class="form-control" placeholder="Email" value="{{data.email}}"
+                        style="border-radius: 0px;" name="email">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Password</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Password" value="{{data.pswd}}"
+                        style="border-radius: 0px;" name="pass">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <!-- Horizontal material form -->
+              </div>
+              <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="padding: 7px 60px;"
+                  type="button">Close</button><button class="btn btn-primary" type="submit"
+                  style="margin-top: 4px;background: #091030; padding: 7px 50px;">Submit</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" role="dialog" tabindex="-1" id="myMmodal">
+        <div class="modal-dialog" style="max-width: 95%;" role="document">
+          <div class="modal-content">
+            <form method="POST" action="/afterdashaccl/">
+              {% csrf_token %}
+              <div class="modal-header" style="padding: 2rem 3rem 1rem 3rem;">
+                <h2 style="color: black;font-family: 'Source Serif Pro', serif;"><strong>Add Details</strong>&nbsp;</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">×</span></button>
+              </div>
+
+              <div class="modal-body" style="padding: 5% 10%;">
+                <!-- Horizontal material form -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Company Name</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Company Name" value="{{data.company}}"
+                        style="border-radius: 0px;" name="comp">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Pickup Location</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Address" value="{{data.pickup}}"
+                        style="border-radius: 0px;" name="pick">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>Categories</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="Categories" value="{{data.categories}}"
+                        style="border-radius: 0px;" name="categ">
+                    </div>
+                  </div>
+                </div>
+                <!-- Grid row -->
+                <div class="form-group row">
+                  <!-- Material input -->
+                  <label class="col-sm-2 col-form-label"><strong>About The Brand</strong></label>
+                  <div class="col-sm-10">
+                    <div class="md-form mt-0">
+                      <input type="text" class="form-control" placeholder="About The Brand" value="{{data.about}}"
+                        style="border-radius: 0px;" name="about">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Horizontal material form -->
+              </div>
+              <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="padding: 7px 60px;"
+                  type="button">Close</button><button class="btn btn-primary" type="submit"
+                  style="margin-top: 4px;background: #091030; padding: 7px 50px;">Submit</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "footer.html" %}
+
+  <script>
+    var l = window.location.pathname.split('/')[1];
+    document.getElementById('lastword').innerHTML = l;
+  </script>
+
+  <script src="/static/staticfiles/js/jquery.min.js"></script>
+  <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/staticfiles/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  </body>
+
+</html>

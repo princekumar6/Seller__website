@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Panel</title>
+    <link rel="stylesheet" href="/static/staticfiles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/font-awesome.min.css">
+</head>
+
+<body class="text-center" style="height: auto;">
+    <form action="/seller/sendemail/" method="POST">
+        {% csrf_token %}
+
+        <div style="border-style: none;margin: 2%;width: auto;">
+            <h1 style="padding: 20px;">Send Mail</h1>
+            <input type="email" style="font-size: 150%;" placeholder="Email" name="email">
+            <select required class="form-control" name="em" style="height:40px; margin: 2% 0px;">
+                <option value="" disabled selected>Select Template</option>
+                <option value="1">Email Verification</option>
+                <option value="2">Welcome To Seventh Square!</option>
+                <option value="3">Sell on India's first Home Products Marketplace</option>
+                <option value="4">Account Verification</option>
+            </select>
+            <button class="btn btn-danger" type="submit" style="font-size: 20px;padding: 4px 20px;">SEND</button>
+        </div>
+    </form>
+    <form action="/seller/viewdetail/" method="POST">
+        {% csrf_token %}
+
+        <div style="border-style: none;margin: 3%;width: auto;">
+            <h1 style="padding: 20px;">View Seller Details</h1><input type="text" style="font-size: 150%;"
+                placeholder="Seller ID" name="id"><button class="btn btn-primary" type="submit"
+                style="font-size: 20px;padding: 4px 20px;">FETCH</button>
+        </div>
+    </form>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

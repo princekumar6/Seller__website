@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+<div class="row" style="margin: 0px;margin-bottom: 30px;">
+<div class="col-1 col-md-3"></div>
+<div class="col">
+    <h2 class="text-center text-capitalize"
+        style="color: black;font-weight: 700;font-family: 'Libre Baskerville', serif;margin: 25px;line-height: 1.5;">
+        Importance of Packaging in E-commerce</h2>
+    <div class="text-center"
+        style="color: black;font-family: 'Hind Siliguri', sans-serif;font-size: 13px;line-height: 1.8;letter-spacing: 1.5px; margin: 30px;">
+        FEB 03, 2021 <br> By - <strong
+            style="color: rgb(226, 2, 2);letter-spacing: 0px;font-family: 'Libre Baskerville', serif;font-size: 14px;">Seventh
+            Square</strong>
+    </div>
+    <!-- <p style="font-family: 'Hind Siliguri', sans-serif;margin: 0px;">Seventh Square doesn’t just give you a platform to
+        reach the end consumer. We also help sellers reach institutions, producers & professionals like Builders,
+        Construction Firms, Architects & Interior Designers as well as small businesses who are looking to buy in bulk.
+    </p> -->
+
+    <img src="https://seller.seventhsq.com/static/staticfiles/img/b6.png" alt="" style="width: 100%;margin: 20px 0px;">
+    <p style="font-family: 'Hind Siliguri', sans-serif;">Packaging is the first thing the customer sees on receiving the order. Figuring out the best suitable packaging is important for online sellers as it not only builds brand perception but also protects from product or order tampering.</p>
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">Brand Perception</strong>
+    </h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">Brand Value is built on consumer’s shopping experience. Inadequate packaging develops a negative opinion about the brand in the consumer’s mind and deters the customer from purchasing from the same seller again. On the other hand, good packaging helps in brand marketing as customers tell their friends about it and also sometimes share it on social media. Even though you and you competitor might have the same product and pricing, order packaging can help you get ahead.</span>
+
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">Safety</strong>
+    </h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">Any product has to go through various bumps in the road and multiple weather conditions before reaching the customer. Adequate packaging is important here to keep up the product conditions across shipping process by avoiding any product damage or order tampering. <br><br>Thus It’s important to develop a good packaging standard suitable to your category. It’s advisable to do so in the starting so your costs are not increased and your business can run as uninterrupted. <br><br><strong>So, finally, how to choose suitable packaging?</strong><br><br>There are two basic types of packaging – external and internal. <br><br>External Packaging involves parcels and flyer bags. Parcels include corrugated boxes, Double or triple walled boxes. These are used to pack heavy items such as electronic appliances, furniture and also fragile items like glass bottles, Sanitaryware etc. A Flyer bag can be used to store small items like boxes, Home Décor etc. They can accommodate products up to 4kg in weight.<br><br>Internal packaging materials include bubble wrap, air bags, cardboard, and foam pellets. These have various functions like cushioning, void filling, protection and dividers, and shock absorption. When packing fragile/special products, it is a must that these products be used in ample quantity along with the correct internal packaging to avoid any tampering.<br><br> At the end, choose the packaging material, box size, proper seal & labels, and you’ll be on your way to expand your business in no time.<br><br>For packaging materials, you can reach out at <u>seller@seventhsq.com</u>. Our partners will help you get good quality materials at competitive prices.</span>
+
+</div>
+<div class="col-1 col-md-3"></div>
+</div>
+<div class="row" style="margin: 0px;">
+    <div class="col-2"></div>
+    <div class="col">{% include "blogstrip.html" %}</div>
+    <div class="col-2"></div>
+</div>
+{% include "footer.html" %}
+<script>
+  var l = window.location.pathname.split('/')[2];
+  document.getElementById('lastword').innerHTML = l;
+  var l2 = window.location.pathname.split('/')[1];
+  document.getElementById('last2word').innerHTML = l2;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

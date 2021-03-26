@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+<div class="row" style="margin: 0px;margin-bottom: 30px;">
+<div class="col-1 col-md-3"></div>
+<div class="col">
+    <h2 class="text-center text-capitalize"
+        style="color: black;font-weight: 700;font-family: 'Libre Baskerville', serif;margin: 25px;line-height: 1.5;">
+        Earning in the 21st century: How e-commerce can help you grow</h2>
+    <div class="text-center"
+        style="color: black;font-family: 'Hind Siliguri', sans-serif;font-size: 13px;line-height: 1.8;letter-spacing: 1.5px; margin: 30px;">
+        JAN 25, 2021 <br> By - <strong
+            style="color: rgb(226, 2, 2);letter-spacing: 0px;font-family: 'Libre Baskerville', serif;font-size: 14px;">Seventh
+            Square</strong>
+    </div>
+    <p style="font-family: 'Hind Siliguri', sans-serif;margin: 0px;">I recently heard a story about a woman in a tier-4
+        city in Rajasthan where she wanted some furniture & furnishings for her house. They got their initial furniture
+        done by a carpenter while they were constructing the house and the new furniture was coming to be too expensive
+        for the carpenter as it was too small an order. She looked within the city, but couldn’t find any readymade
+        furniture worth buying. After exhausting all options, she orders all of it online. It turned out to be better
+        quality within their budget. On getting such a good deal, she was even happy to pay for the expensive furniture
+        shipping which usually deters people from buying in the metros. After this, she started purchasing most of her
+        household items online and is hoping to save enough to remodel her kitchen soon.
+    </p>
+
+    <img src="https://seller.seventhsq.com/static/staticfiles/img/b2.png" alt="" style="width: 100%;margin: 20px 0px;">
+
+
+    <p style="font-family: 'Hind Siliguri', sans-serif;margin: 0px;">This is usually the story of most online shoppers
+        beyond metros. Even in metros, people have experiences of how shopping online has saved them time and money.</p>
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">Covid-19 effects on retail</strong></h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">The pandemic has given a boost to Home Products being sold
+        online. You must have started hearing people buying their Home décor or furniture for the first time during this
+        pandemic. Even those categories where people preferred to see, feel and then shop are experiencing online
+        traction with the help of many offers from online marketplaces. Furniture & Furnishings, Home Appliances and
+        Home Décor have entered the mature online market category where people are much more comfortable ordering these
+        categories online, while Lighting, Bath & Kitchenware & Home Improvement e-commerce is growing steadily. Before
+        pandemic, around 80 million Indian Households shopped for their Home online, while after Covid-19, it is
+        expected that more than 120 million households will shop in these categories online. <br><br> You might have
+        heard digitization and e-commerce is the way to go. But how does it really help you as a brand?</span>
+
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">Benefits to brands</strong></h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">Indian consumer is defined by 450 million millennials who
+        prefer convenient, timeless and effortless shopping. Even if you are a retailer in a high end mall or a
+        multi-store retail brand, having an online presence is necessary for growth and building your brand. E-commerce
+        doesn’t just connect you to your customers in your present cities but to consumers across the country. It’s a
+        perfect way to build your brand in a cost effective way and service to customers across the country without
+        having to establish a location or office in every region. Having an online presence also adds to your existing
+        offline presence as it helps in building trust in your brand. <br><br> Whether you are a thriving retailer with
+        a brand or a struggling manufacturer, building your online presence and starting with e-commerce will surely
+        help you build and grow your business.</span>
+
+</div>
+<div class="col-1 col-md-3"></div>
+</div>
+<div class="row" style="margin: 0px;">
+    <div class="col-2"></div>
+    <div class="col">{% include "blogstrip.html" %}</div>
+    <div class="col-2"></div>
+</div>
+{% include "footer.html" %}
+<script>
+  var l = window.location.pathname.split('/')[2];
+  document.getElementById('lastword').innerHTML = l;
+  var l2 = window.location.pathname.split('/')[1];
+  document.getElementById('last2word').innerHTML = l2;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

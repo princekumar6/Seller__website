@@ -1,0 +1,305 @@
+.login__section {
+  width: 100%;
+  height: 100vh;
+  background-color: lightgray;
+  padding-top: 30px;
+  font-family: Arial;
+}
+.main__block {
+  width: 70%;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-left: 15%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.left__panel {
+    margin-top: 52px;
+  width: 40%;
+  height: 78vh;
+  background-color: rgb(50, 168, 168);
+}
+.right__panel {
+    margin-top: 52px;
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+  height: 78vh;
+}
+.right__panel .login__heading {
+  padding: 10px;
+  margin: 10px;
+}
+.right__panel .login__heading h3 {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+login section */
+
+.myform {
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  width: 450px;
+  pointer-events: auto;
+  outline: 0;
+}
+.Main__box{
+    margin-left: 110px;
+}
+.contact, .password, .verify{
+    margin-top: 10px;
+    width: 380px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: #111; 
+    border-radius: none;
+    border-bottom: 2px solid #111 !important; 
+}
+.contact{
+    width: 380px;
+    height: 40px;
+    margin-bottom: 20px;
+    
+}
+.forgetblock{
+    margin-left: 250px;
+    padding-top: 10px;
+}
+.form-group a{
+    color: #999;
+}
+.form-group a:hover{
+    color: #111;
+    transition: color 1s;
+    
+}
+.tx-tfm {
+  text-transform: uppercase;
+  height: 40px;
+}
+.mybtn {
+  border-radius: 50px;
+}
+form .error {
+  color: #222;
+}
+.button_line{
+    display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+.button_line input{
+  border-radius: 5px;
+  background-color: #222;
+  color:#999;
+padding:10px 25px;
+}
+.Donthaveacc a{
+color: grey;
+}
+
+/* signup page code start */
+.Login__body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+.Login__body .individual{
+    padding: 12px;
+ text-align: center;
+    width: 70%;
+    margin: 30px;
+    height: 60px;
+    background-color: transparent;
+    color: grey;
+}
+.Login__body .individual a, .Login__body .institutional a{
+    color: #999;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+.Login__body .institutional{
+    padding: 12px;
+    text-align: center;
+    width:70%;
+    height: 60px;
+    margin: 30px;
+    background-color: #fff;
+    color: grey;
+}
+.back-menu{
+bottom: 0;
+left:0;
+background-color:black;
+width: 80px;
+margin-top: 100px;
+}
+/* individual signup styling is starts from here */
+
+.contact_line{
+    display: flex;
+    flex-direction: row;
+}
+.phone input{
+    border: none;
+    width: 250px;
+    border-bottom: 2px solid #111;
+}
+.contact_line .phone_verify{
+    margin-left: 50px;
+    width: 80px;
+    border: 2px solid #111;
+    color: #999;
+    background-color: #444;
+}
+
+
+/* responsive design starts from here */
+
+@media (max-width: 920px){
+  .login__section {
+    height: auto;
+    font-family: Arial;
+  }
+  .main__block {
+top:20px;
+    width: 100%;
+    height: auto;
+    margin: 1%;
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .left__panel {
+      margin-top: 2px;
+    width: 100%;
+    height: auto;
+    background-color: rgb(50, 168, 168);
+  }
+  .right__panel {
+      margin-top: 0px;
+    width: 100%;
+    height: auto;
+  }
+  .right__panel .login__heading {
+    padding: 5px;
+    margin: 5px;
+  }
+  .right__panel .login__heading h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  /* 
+  login section */
+  
+  .myform { 
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 100%;
+    display: block;
+    pointer-events: auto;
+    outline: 0;
+  }
+  .Main__box{
+      margin-left: 110px;
+  }
+  .contact, .password, .verify{
+      margin-top: 10px;
+      width: 380px;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      color: #111; 
+      border-radius: none;
+      border-bottom: 2px solid #111 !important; 
+  }
+  .contact{
+      width: 380px;
+      height: 40px;
+      margin-bottom: 20px;
+      
+  }
+  .forgetblock{
+      margin-left: 250px;
+      padding-top: 10px;
+  }
+  .form-group a{
+      color: #999;
+  }
+  .form-group a:hover{
+      color: #111;
+      transition: color 1s;
+      
+  }
+  .tx-tfm {
+    text-transform: uppercase;
+    height: 40px;
+  }
+  .mybtn {
+    border-radius: 50px;
+  }
+  form .error {
+    color: #222;
+  }
+  .button_line{
+      display: flex;
+  flex-direction: column;
+  }
+  .button_line .button{
+      margin-left: 90px;
+      margin-top: 30px;
+      width: 180px;
+      border:1px solid #666;
+      border-radius: 5px;
+      background-color: #333;
+      color: #999;
+      padding: 0;
+  }
+  .button_line .forget_button{
+      margin-top: 0px;
+      width: 180px;
+      border:1px solid #666;
+      border-radius: 5px;
+      background-color: #333;
+      color: #999;
+      padding: 0;
+  }
+  .forget_button-line{
+      display: flex;
+  flex-direction: row;
+  }
+  .forget_button-line .help{
+      margin-left: 20px;
+  }
+  .Donthaveacc a{
+  color: grey;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

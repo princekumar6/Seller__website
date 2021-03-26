@@ -1,0 +1,232 @@
+{% extends 'seller_com.html' %}
+
+{% block body%}
+<div class="col-lg-8 col-xl-9">
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3">
+        <h4 class="text-center" style="margin: 20px;font-family: 'Source Serif Pro', serif;"><strong>Seller
+            Profile</strong></h4>
+        <div class="card-header py-3">
+          <p class="m-0 font-weight-bold float-left" style="color: #01011e;font-size: 18px;">Personal Info</p>
+          <div class="text-right"><a href="#myModal" data-toggle="modal"><button class="btn btn-sm"
+                style="background-color: #01011e; color: white; font-size: 16px;" type="button"><i class="icon ion-edit"
+                  style="margin: 0px 8px;font-size: 16px;"></i>Edit&nbsp;&nbsp;</button></a></div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col">
+              <div class="card mb-3" style="border-style: solid;border-color: rgb(255,255,255);">
+                <div class="card-body text-center" style="padding: 0px;"><img class="rounded-circle img-fluid mb-3 mt-4"
+                    src="/static/staticfiles/img/human.jpg" width="109px" height="109px">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group"><label><strong>Name : </strong>{{ data.name }}</label></div>
+              <div class="form-group"><label><strong>Phone Number : </strong>+91 {{ data.numb }}</label></div>
+              <div class="form-group"><label><strong>Email : </strong>{{ data.email }}</label></div>
+              <div class="form-group"><label><strong>Password : </strong>{{ data.pswd }}</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3">
+          <p class="m-0 font-weight-bold float-left" style="color: #01011e;font-size: 18px;">Company Details</p>
+          <div class="text-right"><a href="#myMmodal" data-toggle="modal"><button class="btn btn-sm"
+                style="background-color: #01011e; color: white; font-size: 16px;" type="button"><i class="icon ion-edit"
+                  style="margin: 0px 8px;font-size: 16px;"></i>Edit&nbsp;&nbsp;</button></a></div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label><strong>Company Name : </strong>{{ data.company }}</label></div>
+              <div class="form-group"><label><strong>Pickup Location : </strong>{{ data.pickup }}</label></div>
+              <div class="form-group"><label><strong>Categories Serviced : </strong>{{ data.categories }}</label></div>
+              <div class="form-group"><label><strong>About The Brand : </strong>{{ data.about }}</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3">
+          <p class="m-0 font-weight-bold float-left" style="color: #01011e;font-size: 18px;">Entity Details <i
+              class="fa fa-question-circle-o" data-toggle="tooltip" data-bs-tooltip="" style="font-size: 12px;"
+              title="These Get Automatically Filled After Documents Verified"></i></p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label><strong>GST Number : </strong></label></div>
+              <div class="form-group"><label><strong>Business PAN : </strong></label></div>
+              <div class="form-group"><label><strong>Document Used : </strong></label></div>
+              <div class="form-group"><label><strong>Entity Document : </strong></label></div>
+              <div class="form-group"><label><strong>Corporate Identity Number : </strong></label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header py-3">
+          <p class="m-0 font-weight-bold" style="color: #01011e;font-size: 18px;">Bank Details <i
+              class="fa fa-question-circle-o" data-toggle="tooltip" data-bs-tooltip="" style="font-size: 12px;"
+              title="These Get Automatically Filled After Documents Verified"></i></p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label><strong>Account Holder Name : </strong></label></div>
+              <div class="form-group"><label><strong>Account Number : </strong></label></div>
+              <div class="form-group"><label><strong>IFSC Code : </strong></label></div>
+              <div class="form-group"><label><strong>Bank Name : </strong></label></div>
+              <div class="form-group"><label><strong>Branch : </strong></label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+  <div class="modal-dialog" style="max-width: 95%;" role="document">
+    <div class="modal-content">
+      <form method="POST" action="/afterdashacc/">
+        {% csrf_token %}
+        <div class="modal-header" style="padding: 2rem 3rem 1rem 3rem;">
+          <h2 style="color: black;font-family: 'Source Serif Pro', serif;"><strong>Add Details</strong>&nbsp;</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">×</span></button>
+        </div>
+
+        <div class="modal-body" style="padding: 5% 10%;">
+          <!-- Horizontal material form -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Name</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Name" value="{{data.name}}"
+                  style="border-radius: 0px;" name="name">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Mobile Number</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Number" value="{{data.numb}}" maxlength="10"
+                  style="border-radius: 0px;" name="mobile">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Email</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="email" class="form-control" placeholder="Email" value="{{data.email}}"
+                  style="border-radius: 0px;" name="email">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Password</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Password" value="{{data.pswd}}"
+                  style="border-radius: 0px;" name="pass">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <!-- Horizontal material form -->
+        </div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="padding: 7px 60px;"
+            type="button">Close</button><button class="btn btn-primary" type="submit"
+            style="margin-top: 4px;background: #091030; padding: 7px 50px;">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="myMmodal">
+  <div class="modal-dialog" style="max-width: 95%;" role="document">
+    <div class="modal-content">
+      <form method="POST" action="/afterdashaccl/">
+        {% csrf_token %}
+        <div class="modal-header" style="padding: 2rem 3rem 1rem 3rem;">
+          <h2 style="color: black;font-family: 'Source Serif Pro', serif;"><strong>Add Details</strong>&nbsp;</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">×</span></button>
+        </div>
+
+        <div class="modal-body" style="padding: 5% 10%;">
+          <!-- Horizontal material form -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Company Name</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Company Name" value="{{data.company}}"
+                  style="border-radius: 0px;" name="comp">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Pickup Location</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Address" value="{{data.pickup}}"
+                  style="border-radius: 0px;" name="pick">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>Categories</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="Categories" value="{{data.categories}}"
+                  style="border-radius: 0px;" name="categ">
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+          <div class="form-group row">
+            <!-- Material input -->
+            <label class="col-sm-2 col-form-label"><strong>About The Brand</strong></label>
+            <div class="col-sm-10">
+              <div class="md-form mt-0">
+                <input type="text" class="form-control" placeholder="About The Brand" value="{{data.about}}"
+                  style="border-radius: 0px;" name="about">
+              </div>
+            </div>
+          </div>
+
+          <!-- Horizontal material form -->
+        </div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="padding: 7px 60px;"
+            type="button">Close</button><button class="btn btn-primary" type="submit"
+            style="margin-top: 4px;background: #091030; padding: 7px 50px;">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}

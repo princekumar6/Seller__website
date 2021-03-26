@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+<div class="alert alert-{{color}} text-center" style="margin: 0% 5%;">
+    <strong>{{message}}</strong>
+</div>
+<div class="row" style="margin:0px;">
+    <div class="col-12 col-md-2"></div>
+    <div class="col-4"><img class="d-none float-left d-lg-block" src="/static/staticfiles/img/Registration%20Promotion.png"
+            style="width: 100%;"></div>
+    <div class="col-12 col-md-4 register">
+        <form class="float-left text-center" method="POST" action="/verify/" style="padding: 15px;">
+            {% csrf_token %}
+            <h1 class="text-capitalize text-center"
+                style="margin-bottom: 5px; letter-spacing: 2px; font-weight: bold;font-family: 'Voga Medium'; font-size: 48px;">
+                Register</h1>
+            <h1 class="text-capitalize text-center"
+                style="font-family: 'Voga Medium'; letter-spacing: 2px; font-style: normal; font-weight: 500;">
+                Your Seller Account</h1>
+            <div class="form-group"><input class="form-control" type="text" name="Representativename" required
+                    placeholder="Your Name"></div>
+            <div class="form-group"><input class="form-control" type="text" name="companyName" required
+                    placeholder="Company Name"></div>
+            <div class="form-group"><input class="form-control" type="number" name="mobileNumber" required
+                    placeholder="Contact No." maxlength="10" pattern="(6|7|8|9)\d{9}"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+            <div class="form-group"><input id="password-field" class="form-control icon-wrapper input" type="password"
+                    name="password" required placeholder="Password"><span toggle="#password-field" onclick="myFunction()"
+                    class="ion ion-eye field-icon toggle-password" style="font-size: 22px;"></span></div>
+            <div class="form-group"><input class="form-control" type="text" required name="companyGSTNumber" placeholder="GST No.">
+            </div>
+            <div class="form-group" style="padding: 0px 0px 0px 30px;">
+                <div class="form-check" style="padding-left: 0px;"><input class="form-check-input" required
+                            type="checkbox">I Agree With <a href="/marketplace/">Marketplace Agreement </a>And
+                        <a href="/policy/">Policies</a>.</div>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                    style="background: #091030;">Sign Up</button></div>Already have an
+                account? <u>
+            <a class="text-capitalize already" href="/login/" style="color:#4f4f4f">Login
+                here</a></u>
+        </form>
+    </div>
+    <div class="col-12 col-md-2"></div>
+</div>
+
+<div style="margin-top:50px;">
+    <div class="row" style="margin: 0px;text-align: center;">
+        <div class="col-12 col-md-1"></div>
+        <div class="col" style="padding: 25px 40px;margin: 20px; background: rgba(214,214,214,0.36);">
+            <h5 style="color: rgb(0,0,0);font-weight: 700;margin: 8px;">Benefits</h5><i class="la la-gift d-block"
+                style="color: #010133;font-size: 60px;margin: 15px;"></i><span class="d-block"
+                style="color: rgb(0,0,0);margin: 5px;">Having second thoughts? <br> See what we has to offer as
+                specialised marketplace.</span><a class="btn btn-primary" href="/blog/Explore-SS/" type="button"
+                style="background: white;color: #010122;font-weight: 700;margin: 9px;padding: 5px 18px;border: 1px solid rgba(1,1,34,0.7) ;">Benefits</a>
+        </div>
+        <div class="col" style="padding: 25px 40px;margin: 20px; background: rgba(214,214,214,0.36);">
+            <h5 style="color: rgb(0,0,0);font-weight: 700;margin: 8px;">Getting Started</h5><i
+                class="la la-question-circle d-block"
+                style="color: #010133;font-size: 60px;margin: 15px;font-weight: 500;"></i><span class="d-block"
+                style="color: rgb(0,0,0);margin: 5px;">Learn more about selling with Seventh Square.<br><br></span><a
+                class="btn btn-primary" href="/faqs/general/" type="button"
+                style="background: white;color: #010122;font-weight: 700;margin: 9px;padding: 5px 18px;border: 1px solid rgba(1,1,34,0.7) ;">FAQs</a>
+        </div>
+        <div class="col" style="padding: 25px 40px;margin: 20px; background: rgba(214,214,214,0.36);">
+            <h5 style="color: rgb(0,0,0);font-weight: 700;margin: 8px;">Help</h5><i class="fas fa-headset d-block"
+                style="color: #010133;font-size: 60px;margin: 15px;font-weight: 600;"></i><span class="d-block"
+                style="color: rgb(0,0,0);margin: 5px;">Get help from one of our executive in getting started with
+                Seventh Square.</span><a class="btn btn-primary" href="/contact/" type="button"
+                style="background: white;color: #010122;font-weight: 700;margin: 9px;padding: 5px 18px;border: 1px solid rgba(1,1,34,0.7) ;">Contact
+                Us</a>
+        </div>
+        <div class="col-12 col-md-1"></div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+<script>
+    function myFunction() {
+        var x = document.getElementById("password-field");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<script>
+  var l = window.location.pathname.split('/')[1];
+  document.getElementById('lastword').innerHTML = l;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mobile Verification</title>
+    <link rel="stylesheet" href="/static/staticfiles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&amp;subset=latin-ext">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/typicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Accordion.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Animated-Info-Panel.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/login-form.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Table-With-Search.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/untitled.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"
+></script>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+    <style>
+        @media only screen and (max-width: 600px) {
+            .foter-1 {
+                display: block !important;
+            }
+
+            .foter-2 {
+                display: none !important;
+            }
+
+            .imgage-1 {
+                padding-right: 5rem !important;
+                padding-left: 5rem !important;
+            }
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .accordion-button {
+          color: white;
+        }
+        .accordion-button:not(.collapsed) {
+          color: white;
+          background-color: #222222;
+          border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand shadow mb-4 topbar static-top" style="background: #01010e;">
+        <div class="container-fluid"><img src="https://seller.seventhsq.com/static/staticfiles/img/white%20png%20(1).png" height="40px" />
+            <ul class="nav navbar-nav flex-nowrap ml-auto">
+                <li class="nav-item dropdown no-arrow"><a class="nav-link" href="/"><i class="fa fa-home"></i></a></li>
+                <li class="nav-item dropdown no-arrow"><a class="nav-link" href="/">Login/Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-sm-12 col-md-4 offset-sm-0 offset-md-4"
+        style="text-align: center;box-shadow: 0px 0px 5px; padding: 20px;">
+        <h2 class="text-capitalize" style="margin: 20px; font-family: 'Source Serif Pro', serif;"><strong>Mobile
+                Verification</strong></h2>
+        <form style="padding: 0px;" method="POST" action="/mobileverify/">
+            {% csrf_token %}
+            <h6 style="padding: 15px; color: #858796;">Please Enter The OTP (One-time Password) Sent To The Registered
+                Phone Number</h6>
+            <div class="form-group" style="padding: 20px;"><input class="form-control" name="otpp" type="number"
+                    placeholder="Enter Here">
+            </div>
+            <div class="form-group" style="margin: 0px;padding: 37px;padding-top: 0px;"><button
+                    class="btn btn-primary btn-block" type="submit" style="background: #091030;">SUBMIT</button></div>
+        </form>
+    </div>
+    <footer class="foter-1 text-center"
+    style="display: none; margin-top: 30px !important; padding: 20px;background: #1b1b1b;">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Know Us
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-mdb-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+                <a class="btn btn-secondary text-left" role="button" href="/about/" style="background: transparent;border-style: none;color: #999999;width: 100%;">About</a>
+                <a class="btn btn-secondary text-left" role="button" href="/careers/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Careers</a>
+                <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Media</a>
+                <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Reviews</a>
+                <a class="btn btn-secondary text-left" role="button" href="/forum/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Forum</a>
+                <a class="btn btn-secondary text-left" role="button" href="/contact/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Reach us</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Help
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-mdb-parent="#accordionFlushExample"
+          >
+          <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/faq/" style="background: transparent;border-style: none;color: #999999;width: 100%;">FAQs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/policy/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Policies</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Sitemap</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Shipping & Returns</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Terms & Conditions</a>
+            <a class="btn btn-secondary text-left" role="button" href="/contact/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Write to us</a>
+        </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Services
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-mdb-parent="#accordionFlushExample"
+          >
+          <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Advertising</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Bulk Order</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Enquiry</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consulting</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Merchant Assistance</a>
+            <a class="btn btn-secondary text-left" role="button" href="/" style="background: transparent;border-style: none;color: #999999;width: 100%;">Seller Registation</a>         
+        </div>        
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+              Partner With Us
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingFour"
+            data-mdb-parent="#accordionFlushExample"
+          >
+          <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Architect</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Builder</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Contractor</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consultant</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Designer</a>
+            <a class="btn btn-secondary text-left" role="button" style="background: transparent;border-style: none;color: #999999;width: 100%;">Product Seller</a>       
+        </div>        
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin: 10px;">
+        <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/facebook.png" /></a></div>
+        <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/instagram.png" /></a></div>
+        <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/linkedin.png" /></a></div>
+        <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/pinterest.png" /></a></div>
+        <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/twitter.png" /></a></div>
+    </div>
+    <!-- <h6 style="padding-top: 5px;"><strong><a href="/partner/" style="color: white; margin-right: 15px;">Partner
+                With Us</a><a href="/contact/" style="color: white; margin-left: 15px">Customer
+                Support</a></strong></h6>
+    <h6 style="margin-top: 15px;"><strong>Categories</strong></h6>
+    <h6 style="font-size: 13px;color: #999;">Lights | Bath & Kitchen | Furniture | Furnishings | Home Decor | Hardware |
+        Home Improvement | Building Materials</h6>
+    <h6 style="margin-top: 15px;"><strong>Policies</strong></h6>
+    <h6 style="font-size: 13px;color: #999;">Marketplace Agreement | Payment Policy | Privacy Policy | Shipping &
+        Returns Policy | Terms Of Use</h6>
+    <div class="social-links social-icons"><a href="https://www.facebook.com/Seventh-Square-101727191683337/"
+            target='_blank'><i class="fa fa-facebook"></i></a><a href="https://www.instagram.com/seventhsquare/"
+            target='_blank'><i class="fa fa-instagram"></i></a><a href="https://www.linkedin.com/company/seventh-square"
+            target='_blank'><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.pinterest.com/seventhsq/" target='_blank'><i class="fa fa-pinterest"></i></a><a
+            href="https://twitter.com/SeventhSq/"><i class="fa fa-twitter"></i></a>
+    </div> -->
+</footer>
+<footer class="foter-2"
+    style="padding-top: 50px;padding-bottom: 50px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
+            <h3><a href="/"><img class="img-fluid imgage-1" src="/static/staticfiles/img/white%20png%20(1).png"
+                        style="padding-left: 30px;padding-right: 30px;"></a></h3>
+            <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;">
+                <strong>Registered Office</strong></h6>
+            <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
+                Area, Jaipur, Rajasthan-302012</p>
+                <div class="row" style="margin: 10px;">
+                  <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/facebook.png" /></a></div>
+                  <div class="col" style="padding: 0px 5px;"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/instagram.png" /></a></div>
+                  <div class="col" style="padding: 0px 5px;"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/linkedin.png" /></a></div>
+                  <div class="col" style="padding: 0px 5px;"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/pinterest.png" /></a></div>
+                  <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/staticfiles/email/twitter.png" /></a></div>
+              </div>
+        </div>
+        <div class="col footer-contacts">
+            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>KNOW US</strong></h5>
+            <div>
+                <ul class="list-unstyled">
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">About
+                            us</a></li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Reviews<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Reach
+                            us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col footer-contacts">
+            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>HELP</strong></h5>
+            <div>
+                <ul class="list-unstyled">
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faq/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
+                            & Returns<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
+                            Conditions<br></a></li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Write to
+                            us<br></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col footer-contacts">
+            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>SERVICES</strong></h5>
+            <div>
+                <ul class="list-unstyled">
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
+                            Order<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                            Consulting<br></a></li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
+                            Assistance<br></a></li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Seller
+                            Registation<br></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col footer-contacts">
+            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>PARTNER WITH US</strong>
+            </h5>
+            <div>
+                <ul class="list-unstyled">
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                            Consultant<br></a>
+                    </li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                            Designer<br></a></li>
+                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                            style="color: #999999;font-weight: normal;font-size: 13px;">Product
+                            Seller<br></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+    <div style="padding: 12px;background: #01011e;color: rgb(255,255,255);">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
+                <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square. All Rights
+                    Reserved.<br></span></div>
+            <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
+                style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+                <div><img src="/static/staticfiles/img/p.jpg" style="margin-top: 5px;"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/chart.min.js"></script>
+    <script src="/static/staticfiles/js/bs-init.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Animated-Info-Panel.js"></script>
+    <script src="/static/staticfiles/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="/static/staticfiles/js/Table-With-Search.js"></script>
+    <script src="/static/staticfiles/js/theme.js"></script>
+</body>
+
+</html>

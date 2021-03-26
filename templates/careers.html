@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square Careers</title>
+    {% include "styles.html" %}
+    {% include "navlogout.html" %}
+    <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+        <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+            <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+        </ol>
+    </nav>
+    <section id="carousel">
+        <div class="carousel slide" data-ride="carousel" id="carousel-1">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="jumbotron pulse animated hero-photography carousel-hero text-center"
+                        style="padding: 50px 30px;margin: 0px; background-image: url(/static/staticfiles/img/IMG-20200912-WA0029.jpg);">
+                        <p style="margin-top: 30px;"><br><br><br><a class="btn btn-primary" role="button" href="#"
+                                style="background: #01011e;width: 230px; font-size: 20px;"> Join Us</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="jumbotron pulse animated hero-photography carousel-hero text-center"
+                        style="padding: 50px 30px;margin: 0px; background-image: url(/static/staticfiles/img/Untitled-1.jpg);">
+                        <p style="margin-top: 30px;"><br><br><br><a class="btn btn-primary hero-button plat"
+                                role="button" href="#" style="background: #01011e;width: 230px; font-size: 20px;"> Join
+                                Us</a></p>
+                    </div>
+                </div>
+            </div>
+            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><i
+                        class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a
+                    class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i
+                        class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-1" data-slide-to="0"></li>
+                <li data-target="#carousel-1" data-slide-to="1" class="active"></li>
+            </ol>
+        </div>
+    </section>
+    <h1 class="text-center" style="margin: 20px;font-family: 'Source Serif Pro', serif; color: black;">
+        <strong>Careers</strong>
+    </h1>
+    <div class="container-fluid canv" style="padding: 0px; width: 70%;">
+        <div class="text-center" style="margin: 20px;"><span style="font-size: 16px;"><strong>We’re Looking For Creative
+                    Geniuses Who’ll Make This Company A Better Place To Shop As Well As A Better Place To Work.</span>
+        </div>
+        <div class="text-center">
+            <button class="btn" type="button"
+                style="background: #01011e;width: 150px; height: 50px;margin: 10px;color:white;">Our
+                Values</button><button class="btn" type="button"
+                style="background: #ffffff;width: 150px; height: 50px;margin: 10px;color: #01011e;border: 1px solid #01011e;">Innovation</button>
+        </div>
+        <div class="text-center"><button class="btn" type="button"
+                style="width: 150px; height: 50px;margin: 10px;color: #01011e;border: 1px solid #01011e;">Hard
+                Work</button><button class="btn" type="button"
+                style="background: #01011e;width: 150px; height: 50px;margin: 10px;color:white;">Creativity</button>
+        </div>
+        <h2 style="font-size: 28px; margin: 20px; font-family: 'Source Serif Pro', serif; color: black;">
+            <strong>Hiring Process:</strong>
+        </h2>
+        <div class="row" style="margin: 20px;">
+            <ul>
+                <li>Apply in the current openings section or email us at <a
+                        href="mailto: hr@seventhsq.com?subject = Requirement&body = Message" style="color: #858796;">
+                        hr@seventhsq.com</a> </li>
+                <li>Interview with our HR team</li>
+                <li> Join us with a final offer </li>
+            </ul>
+        </div>
+        <h2 style="font-size: 28px; margin: 20px; font-family: 'Source Serif Pro', serif; color: black;">
+            <strong>Current Openings:</strong>
+        </h2>
+        <div class="row" style="margin: 20px;">
+            <ul>
+                <!-- <li><strong>Step 1: </strong>Send us your query/requirement including product, brief description,
+                        quantity, expected price, expected delivery date, contact name, contact number and entity name.
+                    </li>
+                    <li><strong>Step 2: </strong>Out team will review your requirement and prepare a detailed quote for
+                        you with customized prices and send it to you. </li>
+                    <li><strong>Step 3: </strong>You can review the quote, confirm it and make the payment. After that,
+                        sit back and track your order!</li> -->
+            </ul>
+        </div>
+    </div>
+
+
+
+    {% include "footer.html" %}
+    <script>
+        var l = window.location.pathname.split('/')[1];
+        document.getElementById('lastword').innerHTML = l;
+    </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

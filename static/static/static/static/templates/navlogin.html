@@ -1,0 +1,145 @@
+
+  <style>
+    .dropdown-menu {
+      left: auto !important;
+      /* right: auto!important; */
+      float: left !important;
+      min-width: 15rem !important;
+    }
+
+    .dropdown-menu[style] {
+      right: 0 !important;
+      left: auto !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/static/staticfiles/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-expand shadow topbar static-top" style="background: black;">
+    <button class="btn btn-default open-sidebar foter-1"
+      style="display: none;font-size: 20px;color: #999;padding-left: 10px;" type="button"><i
+        class="fa fa-navicon"></i></button>
+    <div class="container-fluid"><a href="/"><img src="https://seller.seventhsq.com/static/staticfiles/img/white%20png%20(1).png"
+        height="40px" /></a>
+      <form class="form-inline d-none d-sm-inline-block mr-auto navbar-search" style="margin-left: 100px;width: 30rem;">
+        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search"
+            style="border-radius: 0px;">
+          <div class="input-group-append"><button class="btn btn-light py-0" style="border-radius: 0px;"
+              type="button"><i class="fas fa-search" style="color: #858796;"></i></button></div>
+        </div>
+      </form>
+
+      <ul class="nav navbar-nav flex-nowrap ml-auto">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <div class="nav-item dropdown no-arrow"><a class="nav-link" data-toggle="dropdown"
+              aria-expanded="false" style="font-size: 25px;"><span style="border-radius: 1em;right: 0.5rem;transform: scale(.5);margin: 0px;"
+                class="badge badge-danger badge-counter">{{notif.coun}}</span><i class="fas fa-bell fa-fw"></i></a>
+            <div style="border-radius: 0px;"
+              class="dropdown-menu dropdown-menu-left dropdown-list dropdown-menu-right animated--grow-in">
+              <h6 class="dropdown-header" style="background-color: #01011e; border: 0px;">
+                notifications</h6>
+              <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s1}};" href="{{notif.l1}}">
+                <div class="mr-3">
+                  <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                  </div>
+                </div>
+                <div><span class="small text-gray-500"></span>
+                  <p>{{notif.n1}}</p>
+                </div>
+              </a>
+              <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s2}};" href="{{notif.l2}}">
+                <div class="mr-3">
+                  <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                  </div>
+                </div>
+                <div><span class="small text-gray-500"></span>
+                  <p>{{notif.n2}}</p>
+                </div>
+              </a>
+              <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s3}};" href="{{notif.l3}}">
+                <div class="mr-3">
+                  <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                  </div>
+                </div>
+                <div><span class="small text-gray-500"></span>
+                  <p>Some fields of your new products are empty</p>
+                  <!-- <p>{{notif.n3}}</p> -->
+                </div>
+              </a><a class="text-center dropdown-item small text-gray-500" href="/notify_read/">Mark
+                All Read</a>
+            </div>
+          </div>
+        </li>
+        <div class="d-block topbar-divider" style="margin: auto 0px;"></div>
+        <li class="nav-item dropdown no-arrow">
+          <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+              aria-expanded="false"><img class="border rounded-circle img-profile"
+                src="/static/staticfiles/img/human.jpg"></a>
+            <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item"
+                href="/Profile/"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout/"><i
+                  class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <div class="overlay"></div>
+    <div id="sidebar">
+      <div class="sidebar-header text-center">
+        <img src="https://seller.seventhsq.com/static/staticfiles/img/white%20png%20(1).png" height="40px" />
+      </div>
+      <ul>
+        <li> <a href="/"><i class="fa fa-home" style="margin-right: 10px;"></i>Home</a></li>
+        <li><a class="collapsed" data-toggle="collapse" aria-expanded="false" href="#submenu"><i
+              class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+          <ul class="list-unstyled collapse" id="submenu" aria-expanded="false">
+            <li> <a href="/coming-soon/"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Current Orders</a>
+            </li>
+            <li> <a href="/coming-soon/"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Past Orders</a></li>
+          </ul>
+        </li>
+        <li><a class="collapsed" data-toggle="collapse" aria-expanded="false" href="#submenu1"><i class="fas fa-box"
+              style="margin-right: 10px;"></i>Products</a>
+          <ul class="list-unstyled collapse" id="submenu1" aria-expanded="false">
+            <li> <a href="/newproduct/"><i class="fas fa-box" style="margin-right: 10px;"></i>Add New Product</a></li>
+            <li> <a href="/viewproducts/"><i class="fas fa-box" style="margin-right: 10px;"></i>Active Products</a></li>
+          </ul>
+        </li>
+        <li> <a href="/coming-soon/"><i class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+            History</a></li>
+        <li> <a href="/coming-soon/"><i class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+            Performance</a></li>
+        <li> <a href="/coming-soon/"><i class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer Reviews</a></li>
+        <li> <a href="/contact/"><i class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a></li>
+        <hr>
+        <li> <a href="/commercial-terms/"><i class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+            Terms</a></li>
+        <li> <a href="/docverify/"><i class="fas fa-clipboard-check"
+              style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a></li>
+        <li> <a href="/faqs/general/"><i class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+            FAQ's</a></li>
+        <li> <a href="/policy/"><i class="fas fa-vote-yea" style="margin-right: 7px;"></i>Policies</a></li>
+        <li> <a href="/marketplace/"><i class="fas fa-clipboard-list"
+              style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a></li>
+        <li> <a href="/guidelines/"><i class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller Guidelines</a>
+        </li>
+        <li> <a href="/terms/"><i class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a></li>
+        <hr>
+        <li> <a href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i
+              class="fab fa-facebook-f" style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a></li>
+        <li> <a href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+              style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a></li>
+        <li> <a href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+              style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a></li>
+        <li> <a href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+              style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a></li>
+        <li> <a href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+              style="margin-right: 13px;margin-left: 5px;"></i>Twitter</a></li>
+      </ul>
+    </div>
+  </div>

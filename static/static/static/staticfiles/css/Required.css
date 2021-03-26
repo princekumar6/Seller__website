@@ -1,0 +1,225 @@
+  
+@media only screen and (max-width: 600px) {
+    .list-group-item {
+        color: white;
+    }
+
+    .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: none;
+        overflow: hidden;
+    }
+
+    .foter-1{
+        display: block !important;
+    }
+
+    .foter-2 {
+        display: none !important;
+    }
+
+    .imgage-1 {
+        padding-right: 5rem !important;
+        padding-left: 5rem !important;
+    }
+
+    .canv {
+        width: 100% !important;
+        padding: 0% 5% !important;
+    }
+    
+    /* Dashboard */
+    .dashborder {
+        border-right-style: none!important;
+    }
+    .happyclient {
+        width: 70% !important;
+    }
+}
+html, body {
+    font-family: 'Mukta', sans-serif !important;
+}
+
+.accordion {
+    color: #6e707e;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion-button {
+	color: white;
+}
+
+.accordion-button:not(.collapsed) {
+	/* color: #222222 !important; */
+	background-color: #222222 !important;
+	border: none;
+}
+
+a.carousel-control-prev:hover,
+a.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.border.rounded.payment {
+   opacity: 0.5;
+}
+ 
+.border.rounded.payment:hover {
+   opacity: 1;
+}
+
+.backdrop {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.backdrop-transition {
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+    transition-property: visibility;
+}
+
+.backdrop-dark {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+#back-to-top.show,#back-to-prev.show {
+    opacity: 1;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #01011e;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    border: 2px #e8e8e8 solid;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+#back-to-prev {
+    position: fixed;
+    bottom: 20px;
+    left: 5px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #01011e;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    border: 2px #e8e8e8 solid;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+footer a:hover {
+    color: white !important;
+}
+
+.icon-wrapper {
+    display: inline;
+    float: right;
+}
+
+.ion-eye, .ion-more {
+    position: relative;
+    top: -30px;
+    float: right;
+    right: 20px;
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    font-weight: bold;
+}
+
+.list-group-item.active {
+    color: #6e707e;
+    font-size: bold;
+}
+
+.map-container-6 {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-container-6 iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.nav-link.active {
+	background: #01011e !important;
+	color: white !important;
+}
+.sidebar {
+    width: 40rem;
+}
+ 
+.social-links a:hover {
+   background-color: rgb(83,131,211);
+   color: #fff;
+}
+
+thead,tbody,th,tr {
+    border: none;
+}
+
+.table>:not(caption)>*>* {
+    padding: 10px;
+}
+
+/* Registration Page only */
+.register .form-control {
+    background: #f7f9fc;
+    border: none;
+    border-bottom: 1px solid #dfe7f1;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    text-indent: 6px;
+    height: 40px;
+}

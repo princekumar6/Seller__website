@@ -1,0 +1,156 @@
+{% extends 'seller_faq.html' %}
+
+{% block body%}
+<div class="row" style="margin: 0px;">
+<div class="col-12 col-md-2"></div>
+<div class="col" style="margin: 0px 20px;">
+  <h1 class="text-center"
+    style="margin: 30px 0px; color: black;font-weight: 700;font-family:'Times New Roman', Times, serif;">Dashboard FAQs
+  </h1>
+  <div class="accordion_bk">
+    <div class="mx-auto">
+      <!-- Accordion -->
+      <div id="accordionExample" class="accordion">
+
+        <!-- Accordion item 1 -->
+        <div class="card">
+          <div id="f1" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span data-toggle="collapse" data-target="#f1-1" aria-expanded="true"
+                aria-controls="f1-1" class="d-block position-relative text-dark text-uppercase py-2"><strong>1.</strong>
+                &nbsp;How can I update Inventory for any product?</span></h6>
+          </div>
+          <div id="f1-1" aria-labelledby="f1" data-parent="#accordionExample" class="collapse show">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">You can go to <strong>Active Products</strong> and select edit for the
+                product you want to update inventory for. </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item 2 -->
+        <div class="card">
+          <div id="f2" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span data-toggle="collapse" data-target="#f2-1" aria-expanded="false"
+                aria-controls="f2-1"
+                class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>2.</strong>
+                &nbsp;How do I manage Orders?</span></h6>
+          </div>
+          <div id="f2-1" aria-labelledby="f2" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">You can address all your orders easily on the dashboard in your seller
+                account under the <strong>Current Orders</strong> tab.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item 3 -->
+        <div class="card">
+          <div id="f3" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f3-1"
+                aria-expanded="false" aria-controls="f3-1"
+                class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>3.</strong>
+                &nbsp;How can I add products?</span></h6>
+          </div>
+          <div id="f3-1" aria-labelledby="f3" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">You can add products on <strong>Add New Product</strong> tab in your
+                Seller Panel.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item 4 -->
+        <div class="card">
+          <div id="f4" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f4-1"
+                aria-expanded="false" aria-controls="f4-1"
+                class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>4.</strong>
+                &nbsp;Where do I choose my Shipping Policy with Seventh Square?</span></h6>
+          </div>
+          <div id="f4-1" aria-labelledby="f4" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">Shipping can be chosen differently for every product added and is
+                available as an option when you’re adding a new product. <br>You can also edit the same for an
+                added/existing product by going to the <strong>Active Products</strong> section in your seller
+                dashboard.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item 5 -->
+        <div class="card">
+          <div id="f5" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f5-1"
+                aria-expanded="false" aria-controls="f5-1"
+                class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>5.</strong>
+                &nbsp;What do I do if I have any issues in listing my catalogue?</span></h6>
+          </div>
+          <div id="f5-1" aria-labelledby="f5" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">You can reach out to the Seller Help at <u>seller@seventhsq.com</u> with
+                your query. They will guide you from the start regarding listing & uploading your portfolio. We also
+                have partnered with cataloguing partners who will update your listing to make it more attractive and
+                complete for the customers at competitive prices. </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item 6 -->
+        <div class="card">
+          <div id="f6" class="card-header bg-grey shadow-sm">
+            <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f6-1"
+                aria-expanded="false" aria-controls="f6-1"
+                class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>6.</strong>
+                &nbsp;If any issue, how do I reach out to SS?</span></h6>
+          </div>
+          <div id="f6-1" aria-labelledby="f6" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-3">
+              <p class="font-weight-light m-0">You can reach out to Seventh Square’s Seller Help at
+                <u>seller@seventhsq.com</u> or write to us <a href="/contact/" target="__blank">here</a>.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<a href="/faqs/orders/" id="back-to-prev" title="Back to top" class="foter-1" style="display: none;"><i class="fa fa-angle-left"></i></a>
+<a href="/faqs/pricing/" id="back-to-top" title="Back to top" class="foter-1" style="display: none;"><i class="fa fa-angle-right"></i></a>
+<div class="col-md-3 foter-2" style="margin-top: 50px;border-left: 1px solid rgb(222,222,222) ;">
+  <h5 style="margin-bottom: 30px;font-weight: 500;">Explore More Topics</h5>
+  <a href="/faqs/account/">
+    <div style="padding: 10px 25px;color: black;"><strong>Account FAQs</strong></div>
+  </a>
+  <a href="/faqs/advertising/">
+    <div style="padding: 10px 25px;color: black;"><strong>Advertising FAQs</strong></div>
+  </a>
+  <a href="/faqs/orders/">
+    <div style="padding: 10px 25px;color: black;"><strong>Orders FAQs</strong></div>
+  </a>
+  <a href="/faqs/dashboard/">
+    <div style="padding: 5px 20px;color: white !important;background-color: #01011e;"><strong>Dashboard FAQs</strong>
+    </div>
+  </a>
+  <a href="/faqs/pricing/">
+    <div style="padding: 10px 25px;color: black;"><strong>Pricing & Payments FAQs</strong></div>
+  </a>
+  <a href="/faqs/policies/">
+    <div style="padding: 10px 25px;color: black;"><strong>Policies FAQs</strong></div>
+  </a>
+  <a href="/faqs/registration/">
+    <div style="padding: 10px 25px;color: black;"><strong>Registration FAQs</strong></div>
+  </a>
+  <a href="/faqs/shipping/">
+    <div style="padding: 10px 25px;color: black;"><strong>Shipping & Returns FAQs</strong></div>
+  </a>
+  <a href="/faqs/general/">
+    <div style="padding: 10px 25px;color: black;"><strong>General FAQs</strong></div>
+  </a>
+  <a href="/pricecalculator/">
+    <div style="padding: 10px 25px;color: black;"><strong>Price Calculator</strong></div>
+  </a>
+  <!-- <div style="padding: 10px 25px;color: black;"><strong>Account FAQs</strong></div> -->
+</div>
+</div>
+{%endblock%}

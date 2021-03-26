@@ -1,0 +1,17 @@
+.list-group-item-action:focus, .list-group-item-action:hover {
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  background-color: rgb(83,131,211);
+  color: #fff;
+}
+
+.border.rounded.payment {
+  opacity: 0.5;
+}
+
+.border.rounded.payment:hover {
+  opacity: 1;
+}
+

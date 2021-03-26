@@ -1,0 +1,54 @@
+{% extends 'seller_gen_com.html' %}
+
+{% block body%}
+    <div class="register-photo" style="padding-top: 10px;background: rgb(255,255,255);padding-bottom: 0px;">
+        <h1 class="text-center" style="margin: 20px;font-family: 'Source Serif Pro', serif; color: black;">
+            <strong>Partner With Us</strong></h1>
+        <div class="text-center " style="margin: 20px;">We'd love to work together building the next big thing!
+            <br>Share with us your services, ideas or plans and we'd get back within 24 hours!</div>
+        <div class="container-fluid canv" style="padding: 0px; width: 70%;">
+            <form method="POST" action="/afterpartner/" style="display: block; padding: 20px;">
+                {% csrf_token %}
+                <div class="col-12" id="message">
+                    <div class="form-group"><label>Name</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                        class="fa fa-user-o"></i></span></div><input class="form-control" type="text"
+                                id="from-name" name="name" required="" placeholder="Full Name">
+                        </div>
+                    </div>
+                    <div class="form-group"><label>Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                        class="fa fa-envelope-o"></i></span></div><input class="form-control"
+                                type="text" id="from-email" name="email" required="" placeholder="Email Address"
+                                inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        </div>
+                    </div>
+                    <div class="form-group"><label>Contact Number</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                        class="fa fa-phone"></i></span></div><input class="form-control" type="number"
+                                id="from-phone" name="numb" required="" placeholder="Primary Phone" maxlength="10"
+                                pattern="(6|7|8|9)\d{9}" inputmode="tel">
+                        </div>
+                    </div>
+                    <div class="form-group"><label>Write us a friendly message here!</label><textarea
+                            class="form-control" id="from-comments" name="msg" placeholder="Message" rows="5"
+                            required=""></textarea></div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col"><button class="btn btn-primary btn-block" type="reset"
+                                    style="background: #01012e;"><i class="fa fa-undo"></i> Reset</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" type="submit"
+                                    style="background: #01012e;">Send</button></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="text-center " style="margin: 20px;">Whether you are an Architect, Interior Designer, Interior
+            Consultant, Builder, Contractor<br>We have opportunities to work and grow together!</div>
+    </div>
+    
+{%endblock%}

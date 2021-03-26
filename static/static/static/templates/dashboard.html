@@ -1,0 +1,412 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square Seller Dashboard</title>
+
+    {% include "styles.html" %}
+    {% include "navlogin.html" %}
+
+    <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+        {{msg}}</div>
+    <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+        <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+            <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+        </ol>
+    </nav>
+    <div class="row" style="margin: 0px;">
+        <div class="col d-none d-lg-block"
+            style="max-width: 19%;padding-left: 5px;border-right: 1px solid rgb(221, 221, 221);">
+            <div class="list-group" style="margin-top: 10px;">
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/"><i
+                        class="fa fa-home" style="margin-right: 10px;"></i>Home</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming-soon/"><i
+                        class="fas fa-shopping-cart" style="margin-left: 20px;margin-right: 10px;"></i>Current
+                    Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming-soon/"><i
+                        class="fas fa-shopping-cart" style="margin-left: 20px;margin-right: 10px;"></i>Past Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-box" style="margin-right: 10px;"></i>Products</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/newproduct/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Add New
+                    Product</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/viewproducts/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Active
+                    Products</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming-soon/"><i
+                        class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+                    History</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming-soon/"><i
+                        class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+                    Performance</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/coming-soon/"><i
+                        class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer Reviews</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/contact/"><i
+                        class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/commercial-terms/"><i class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+                    Terms</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/docverify/"><i class="fas fa-clipboard-check"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/faqs/general/"><i class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+                    FAQ's</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/policy/"><i
+                        class="fas fa-vote-yea" style="margin-right: 9px;"></i>Policies</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/marketplace/"><i class="fas fa-clipboard-list"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/guidelines/"><i class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller
+                    Guidelines</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/terms/"><i
+                        class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i
+                        class="fab fa-facebook-f" style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+                        style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+                        style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+                        style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+                        style="margin-right: 11px;margin-left: 5px;"></i>Twitter</a>
+            </div>
+        </div>
+        <div class="col" style="padding: 10px 20px;">
+            <h2 style="color: rgb(0,0,0);margin: 0px;font-size: 35px;font-family: 'Crimson Text', serif;"><strong id="greet"></strong></h2>
+            <span>Here's
+                what your dashboard looks like</span>
+            <div class="row" style="margin-top: 30px;margin-right: 3px;margin-left: 3px;">
+                <div class="col-6 col-lg-3" style="text-align: center; margin-top: 10px;"><span
+                        style="font-size: 16px;"><i class="fa fa-truck" style="padding-right: 8px;"></i>Shipments
+                        Today</span>
+                    <div class="row" style="margin: 0px;">
+                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 dashborder"
+                    style="text-align: center; margin-top: 10px;border-color: rgb(210,210,210);border-right-width: 1px;border-right-style: solid;border-left-width: 1px;border-left-style: solid;">
+                    <span style="font-size: 16px;"><i class="material-icons"
+                            style="padding-right: 8px;font-size: 18px;">repeat</i>Return Requests</span>
+                    <div class="row" style="margin: 0px;">
+                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3"
+                    style="text-align: center; margin-top: 10px;border-color: rgb(210,210,210);border-right-width: 1px;border-right-style: solid;">
+                    <span style="font-size: 16px;"><i class="fa fa-hourglass-half"
+                            style="padding-right: 10px;"></i>Pending Orders</span>
+                    <div class="row" style="margin: 0px;">
+                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" style="text-align: center; margin-top: 10px;"><span
+                        style="font-size: 16px;"><i class="material-icons"
+                            style="padding-right: 5px;font-size: 18px;">question_answer</i>Customer
+                        Enquiries</span>
+                    <div class="row" style="margin: 0px;">
+                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion accordion-flush" style="margin-top: 3rem;" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading1">
+                        <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+                            style="background-color: white !important;color: #4f4f4f;border: 1px solid #e3e6f0;padding: 13px 20px;"
+                            data-mdb-target="#flush-collapse1" aria-expanded="true" aria-controls="flush-collapse1"><i
+                                class="fas fa-info-circle" style="font-size: 22px;padding: 0px 12px;"></i>
+                            New
+                            Updates
+                        </button>
+                    </h2>
+                    <div id="flush-collapse1" class="accordion-collapse collapse show" aria-labelledby="flush-heading1"
+                        data-mdb-parent="#accordionFlushExample">
+                        <div class="accordion-body" style="background-color: rgb(232,232,232);padding: 13px 20px;">
+                            <a class="btn text-left" role="button" href=""
+                                style="background: transparent;box-shadow: none;border-radius: 0px; width: 100%;padding: 10px 0px;">
+                                <div class="row">
+                                    <div class="col-1 pr-0" style="width: 44px;"><span
+                                            style="top: 0px; border-radius: 10em;padding: 0px;"
+                                            class="badge badge-primary"><i class="fas fa-file-alt text-white"
+                                                style="margin: 8px 10px;font-size: 15px;"></i></span></div>
+                                    <div class="col"><span>Welcome to Seventh Square</span></div>
+                                </div>
+                            </a>
+                            <hr style="margin: 0.5rem;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <h2 class="text-capitalize"
+                    style="letter-spacing: 2px; padding: 20px 10px;margin: 0px;color: rgb(108,108,108); font-family: 'Dancing Script', cursive;">
+                    <strong>Business is a never ending growth story.</strong></h2>
+                <a href="/coming-soon/"><img class="img-fluid" src="/static/staticfiles/img/IMG-20200912-WA0029.jpg"></a>
+            </div>
+            <h3
+                style="color: rgb(0,0,0);margin: 0px;font-size: 20px;padding-left: 0px;padding-bottom: 15px;padding-top: 15px;margin-top: 10px;">
+                <i class="typcn typcn-th-small" style="margin: 10px;font-size: 24px;"></i><strong>Overview</strong>
+            </h3>
+            <div style="color: rgb(0,0,0);">
+                <div class="row" style="margin-left: 3px;margin-right: 3px;">
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <!-- <div> -->
+                        <div class="col"
+                            style="text-align: center;padding: 20px;padding-bottom:0px;background: rgb(232,232,232);">
+                            <div class="row" style="margin: 0px;">
+                                <div class="col"><span style="font-size: 35px;"><strong>0</strong></span></div>
+                            </div><span>Revenue&nbsp;</span>
+                            <div><span style="color: #858796; font-size: 11px;">From Past
+                                    Week&nbsp;<i class="fa fa-caret-up"></i><strong>&nbsp;0%</strong></span>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <div>
+                            <div class="col"
+                                style="text-align: center;padding: 20px;padding-bottom:0px;background: rgb(232,232,232);">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col"><span style="font-size: 35px;"><strong>0</strong></span></div>
+                                </div><span>Orders&nbsp;</span>
+                                <div><span style="color: #858796; font-size: 11px;">From Past
+                                        Week&nbsp;<i class="fa fa-caret-down"></i><strong>&nbsp;0%</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <div>
+                            <div class="col" style="text-align: center;padding: 20px;background: rgb(232,232,232);">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col"><span style="font-size: 35px;"><strong>{{l}}</strong></span></div>
+                                </div><span>Products Live&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 3px;margin-right: 3px;">
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <div>
+                            <div class="col" style="text-align: center;padding: 20px;background: rgb(232,232,232);">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col"><span style="font-size: 35px;"><strong>0</strong></span></div>
+                                </div><span>Pending Shipments</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <div>
+                            <div class="col" style="text-align: center;padding: 20px;background: rgb(232,232,232);">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col"><span style="font-size: 35px;"><strong>0</strong></span></div>
+                                </div><span>Cancelled Orders&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 p-3">
+                        <div>
+                            <div class="col" style="text-align: center;padding: 20px;background: rgb(232,232,232);">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col"><span style="font-size: 35px;"><strong>0</strong></span></div>
+                                </div><span>Refunded Orders&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: rgb(0,0,0);margin: 0px;font-size: 20px;padding-bottom: 15px;padding-top: 15px;">
+                    <i class="icon ion-ios-people" style="margin: 10px;font-size: 24px;"></i><strong>See
+                        What People Are
+                        Talking About You</strong>
+                </h3>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading2">
+                            <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+                                style="background-color: white !important;color: #4f4f4f;border: 1px solid #e3e6f0;padding: 13px 20px;"
+                                data-mdb-target="#flush-collapse2" aria-expanded="true"
+                                aria-controls="flush-collapse2"><i class="fas fa-user"
+                                    style="font-size: 22px;padding: 0px 12px;color: #ccc;"></i>No New Updates!!!
+                            </button>
+                        </h2>
+                        <div id="flush-collapse2" class="accordion-collapse collapse show"
+                            aria-labelledby="flush-heading2" data-mdb-parent="#accordionFlushExample">
+                            <div class="accordion-body" style="background-color: rgb(232,232,232);padding: 13px 20px;">
+                                <!-- <a class="btn text-left" role="button" href=""
+                                style="background: transparent;box-shadow: none;border-radius: 0px; width: 100%;padding: 10px 0px;">
+                                <div class="row">
+                                    <div class="col-1 pr-0" style="width: 44px;"><span
+                                            style="top: 0px; border-radius: 10em;padding: 0px;"
+                                            class="badge badge-primary"><i class="fas fa-file-alt text-white"
+                                                style="margin: 8px 10px;font-size: 15px;"></i></span></div>
+                                    <div class="col"><span>Welcome to Seventh Square</span></div>
+                                </div>
+                            </a> -->
+                                <hr style="margin: 0.5rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: rgb(0,0,0);margin: 0px;font-size: 20px;padding-bottom: 15px;padding-top: 15px;">
+                    <i class="fab fa-blogger-b" style="margin: 10px;font-size: 18px;"></i><strong>Seller
+                        Blogs</strong>
+                </h3>
+                {% include "blogstrip.html" %}
+
+            </div>
+        </div>
+        <div class="col d-none d-lg-block"
+            style="padding: 1px;max-width: 21%;border-left: 1px solid rgb(215,215,215) ;">
+            <div style="background: rgb(232,232,232);">
+                <div class="row" style="text-align: center;margin: 0px;">
+                    <div class="col" style="padding: 20px;"><i class="fas fa-user-circle" style="font-size: 6rem;"></i>
+                        <hr style="margin-bottom: 0px;">
+                    </div>
+                </div>
+                <div style="padding: 20px;padding-top: 0px;padding-bottom: 10px;"><label class="d-block"
+                        style="color: #4f4f4f;font-size: 14px;"><strong>City :
+                        </strong>{{loca.city}}</label><label class="d-block"
+                        style="color: #4f4f4f;font-size: 14px;"><strong>Name :
+                        </strong>{{nam}}<br></label><label class="d-block"
+                        style="color: #4f4f4f;font-size: 14px;"><strong>Company :
+                        </strong>{{loca.company}}</label><label class="d-block"
+                        style="color: #4f4f4f;font-size: 14px;"><strong>Categories :
+                        </strong>{{loca.categories}}</label><label class="d-block"
+                        style="color: #4f4f4f;font-size: 14px;margin-bottom: 15px;"><strong>Account
+                            Verified : </strong>{{loca.verified}}</label> <a href="/Profile/" class="d-block"
+                        style="font-size: 14px; color: #858796;">View Profile</a>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 10px; color: black; border: none;">
+                <div class="card-header d-flex justify-content-between align-items-center"
+                    style="background: transparent; border: none;">
+                    <h6 class="font-weight-bold m-0">Sales Summary</h6><i class="material-icons"
+                        style="padding-right: 10px;">insert_chart</i>
+                </div>
+                <div class="card-body" style="padding: 0px;padding-top: 10px;padding-right: 10px; border: none;">
+                    <table id="example" class="table-striped" width="100%" style="color: #4f4f4f; font-size: 14px;">
+                        <thead style=" border: none;">
+                            <tr>
+                                <th></th>
+                                <th style="padding: 10px;">Sales</th>
+                                <th>Products</th>
+                            </tr>
+                        </thead>
+                        <tbody style=" border: none;">
+                            <tr>
+                                <td style="padding: 10px;">Today</td>
+                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">Past 7 Days</td>
+                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">Past 15 Days</td>
+                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">Past 30 Days</td>
+                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="">
+                        <h6
+                            style="font-size:12px;border-top: 1px solid rgba(133,135,150,0.26);text-align: center;padding-top: 15px;color: black;text-decoration: none;">
+                            Show all statistics</h6>
+                    </a>
+                </div>
+            </div>
+            <div class="card border rounded-0 mb-4" style="background: rgb(232,232,232);margin-top: 10px;">
+                <div class="card-header d-flex justify-content-between align-items-center"
+                    style="background: transparent;border-bottom-style: solid;border-bottom-color: rgb(193,196,203);">
+                    <h6 class="font-weight-bold m-0" style="color: rgb(0,0,0);">Revenue Generated</h6><i
+                        class="fas fa-chart-line" style="padding-right: 10px;color: black;font-size: 18px;"></i>
+                </div>
+                <div class="card-body" style="padding: 0px;padding-top: 10px;padding-right: 10px;">
+                    <div class="chart-area" style="height: auto;"><canvas
+                            style="height: 180px;width: 100%;display: block;"
+                            data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;,&quot;Sat&quot;,&quot;Sun&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;fill&quot;:true,&quot;data&quot;:[&quot;0&quot;,&quot;15000&quot;,&quot;5000&quot;,&quot;10000&quot;,&quot;1000&quot;,&quot;1900&quot;,&quot;11000&quot;],&quot;backgroundColor&quot;:&quot;rgba(78, 115, 223, 0.05)&quot;,&quot;borderColor&quot;:&quot;rgb(99,99,99)&quot;}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;reverse&quot;:false},&quot;title&quot;:{&quot;display&quot;:false},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:10}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:true},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:10}}]}}}"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgb(232,232,232);">
+                <h5 style="color: rgb(0,0,0);font-size: 16px;padding: 12px;padding-bottom: 0px;">
+                    <strong>Activity</strong><i class="fas fa-tasks"
+                        style="padding-right: 20px;font-size: 18px; float: right;"></i>
+                </h5>
+                <hr style="margin: 10px;">
+                <div class="row" style="margin: 0px;padding-bottom: 10px;">
+                    <div class="col-xl-10"><span class="d-block"
+                            style="color: rgb(0,0,0);font-size: 14px;line-height: 18px;">Welcome to
+                            Seventh Square</span><span style="font-size: 14px;">&nbsp;</span></div>
+                    <div class="col-xl-2" style="padding-left: 0px;"><i class="far fa-check-circle"
+                            style="font-size: 30px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+
+    <script>
+        var l = window.location.pathname.split('/')[1];
+        document.getElementById('lastword').innerHTML = l;
+    </script>
+
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+        var geet;
+
+        if (hrs < 12)
+            geet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            geet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            geet = 'Good Evening';
+
+        document.getElementById('greet').innerHTML = geet + ', {{nam}}';
+
+    </script>
+    <script src="/static/staticfiles/js/chart.min.js"></script>
+    <script src="/static/staticfiles/js/bs-init.js"></script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    </body>
+
+</html>

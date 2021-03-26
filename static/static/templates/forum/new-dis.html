@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller Forum</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+    <div class="row" style="margin: 0px;height: 50%;">
+        <div class="col" style="padding: 0px;"><img class="img-fluid" src="/static/staticfiles/img/Untitled-1%20-%20Copy.jpg" style="width: 100%;"></div>
+    </div>
+    <div class="row" style="margin: 0px;padding: 0px 20px;">
+        <div class="col-xl-3" style="padding: 30px 40px;"><button class="btn btn-primary border rounded-0" type="button" style="background: #010122;width: 90%;border-width: 0px;margin-bottom: 15px;"><strong>New Discussion</strong></button>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fab fa-discourse"></i><strong>&nbsp; &nbsp;All Discussions</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-align-left"></i><strong>&nbsp; &nbsp;All Topics</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;margin-top: 30px;font-size: 14px;"><i class="fas fa-chair" style="color: var(--blue);font-size: 16px;"></i><strong>&nbsp; &nbsp;Furniture</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-cash-register" style="color: var(--cyan);font-size: 16px;"></i><strong>&nbsp; &nbsp;Sales</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="far fa-newspaper" style="font-size: 16px;color: var(--danger);"></i><strong>&nbsp; &nbsp;Marketing</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-warehouse" style="font-size: 16px;color: var(--orange);"></i><strong>&nbsp; &nbsp;Overview</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-cash-register" style="color: var(--cyan);font-size: 16px;"></i><strong>&nbsp; &nbsp;Sales</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="far fa-newspaper" style="font-size: 16px;color: var(--danger);"></i><strong>&nbsp; &nbsp;Marketing</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-warehouse" style="font-size: 16px;color: var(--orange);"></i><strong>&nbsp; &nbsp;Overview</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-cash-register" style="color: var(--cyan);font-size: 16px;"></i><strong>&nbsp; &nbsp;Sales</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="far fa-newspaper" style="font-size: 16px;color: var(--danger);"></i><strong>&nbsp; &nbsp;Marketing</strong></h5>
+            <h5 style="font-family: Poppins, sans-serif;margin: 18px 0px;color: var(--dark);font-weight: 300;font-size: 14px;"><i class="fas fa-warehouse" style="font-size: 16px;color: var(--orange);"></i><strong>&nbsp; &nbsp;Overview</strong></h5>
+        </div>
+        <div class="col" style="padding: 30px 50px;">
+            <form method="POST" action="/forum/addnew/" style="padding: 0px 20px;">
+                {% csrf_token %}    
+                <h2 class="text-center" style="margin: 20px;margin-top: 0px;"><strong>New Discussion</strong></h2>
+                <div class="form-group"><input class="form-control" name="topic" type="text" placeholder="Topic" style="font-size: 18px;border-style: none;border-bottom: 2px solid rgba(154,154,154,0.5) ;"></div>
+                <div class="form-group" style="margin-top: 40px;border-style: none;"><textarea class="form-control" style="font-size: 18px;border: 2px solid rgba(201,201,201,0.5) ;" rows="10" name="content" placeholder="Describe Your Experience Here"></textarea></div><span style="font-size: 14px;">Votes <strong>0</strong></span>
+                <div class="form-group" style="text-align: center;"><button class="btn btn-secondary border rounded-0" type="submit" style="width: 45%;margin-top: 25px;"><strong>Submit</strong></button></div>
+            </form>
+        </div>
+    </div>
+    {% include "footer.html" %}
+    <script>
+      var l = window.location.pathname.split('/')[2];
+      document.getElementById('lastword').innerHTML = l;
+      var l2 = window.location.pathname.split('/')[1];
+      document.getElementById('last2word').innerHTML = l2;
+    </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Table-With-Search.js"></script>
+</body>
+
+</html>

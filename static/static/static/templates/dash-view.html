@@ -1,0 +1,94 @@
+{% extends 'seller_com.html' %}
+
+{% block body%}
+{% load bootstrap_pagination %}
+<div class="col" style="font-size: 14px;background: #ffffff;margin-right: 10px;">
+    <h4
+        style="color: #01011e;font-family: 'Source Serif Pro', serif;font-weight: 900;padding-top: 20px;padding-bottom: 5px;padding-left: 20px;">
+        <strong>Your Product List</strong></h4>
+    <hr style="max-width: 75%;margin-left: 0px;margin-right: 0px;">
+    <div class="card" style="border-width: 0px;background: TRANSPARENT;">
+        <div class="card-body" style="padding: 0px;">
+            <div class="row" style="padding: 0px 2%;">
+                <div class="col-6">
+                    <div id="dataTable_filter" class="dataTables_filter"><label><input type="search"
+                                class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"
+                                style="padding-right: 100px;background: transparent;border-width: 2px;border-style: solid;"></label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite" style="text-align: right;">Showing : {% if data.has_previous %}{{ request.get_full_path|slice:"-1:"|add:'-1' }}{% else %}0{%endif%}1-{% if not data.has_previous %}10{% elif not data.has_next %}{{l}}{% else %}{{ request.get_full_path|slice:"-1:" }}0{%endif%} of {{l}}</p>
+                </div>
+            </div>
+            <div class="table-responsive table-borderless" id="dataTable">
+                <table class="table table-bordered table-hover">
+                    <thead
+                        style="border-bottom-width: 2px;border-bottom-style: solid;background: rgba(37,71,106,0.56);color: rgb(255,255,255);">
+                        <tr>
+                            <th style="border-width: 1px;border-style: solid;">Sr. No.</th>
+                            <th style="border-width: 1px;border-style: solid;">Image</th>
+                            <th style="border-width: 1px;border-style: solid;">Title</th>
+                            <th style="border-width: 1px;border-style: solid;">Category</th>
+                            <th style="border-width: 1px;border-style: solid;">Inventory</th>
+                            <th style="border-width: 1px;border-style: solid;">Selling Price</th>
+                            <th style="border-width: 1px;border-style: solid;">Status</th>
+                            <th style="border-width: 1px;border-style: solid;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>{% for i in data %}{% if i.prod_status != "" %}
+                        <tr>
+                            <td class="text-center">{{ forloop.counter0|add:data.start_index }}</td>
+                            <td style="text-align: center;"><img class="img-fluid" src="{{ i.frstimg }}"
+                                    style="width: 40px;"></td>
+                            <td><a href="/preview/{{i.prod_id}}/" style="color: #858796;">{{ i.heading }}</a></td>
+                            <td>{{ i.category }}</td>
+                            <td>{{ i.inventory }}</td>
+                            <td>{{ i.sale }}</td>
+                            <td>{{ i.prod_status }}</td>
+                            <td style="padding: 5px;text-align: center;"><a href="/editproduct/{{ i.prod_id }}/"><button
+                                        class="btn btn-danger"
+                                        style="padding-right: 9px;padding-left: 9px;background: #00b760;border-style: none;"
+                                        type="submit"><i class="material-icons"
+                                            style="font-size: 16px;">edit</i></button></a>
+                                <a href="/dlt_new/{{ i.prod_id }}/"><button class="btn btn-danger"
+                                        style="border-style: none;" type="submit"><i
+                                            class="fa fa-trash"></i></button></a>
+                            </td>
+                        </tr>{% endif %}{% endfor %}
+                    </tbody>
+                    <tfoot style="border-width: 1px;border-style: solid;">
+                        <tr></tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                </div>
+                <div class="col-7">
+                    {% bootstrap_paginate data range=10 show_prev_next="false" show_first_last="true" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+{%endblock%}
+<!-- <nav class="dataTables_paginate paging_simple_numbers">
+    <ul class="pagination">
+        {% if data.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{data.previous_page_number}}" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+        {% endif %}
+        {% for num in data.paginator.page_range %}
+        {% if data.number == num %}
+        <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% elif num > data.number|add:'-3' and num < data.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if data.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{data.next_page_number}}" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+        {% endif %}
+    </ul>
+</nav> -->

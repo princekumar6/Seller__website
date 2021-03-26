@@ -1,0 +1,170 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+background-color: black;
+  height: 4rem;
+}
+.head_container{
+overflow: hidden;
+}
+.logo{
+  display: none;
+}
+.menu{
+  
+text-align: center;
+}
+.menu ul{
+  text-align: center;
+  display: flex;
+  justify-content :space-evenly;
+list-style-type: none;
+margin-right: -10px;
+}
+.menu li{
+  margin-left: -130px;
+  margin-top: 25px;
+display: inline-block;
+}
+.menu li a{
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+.menu a{
+text-decoration: none;
+font-weight: 500;
+color: #c7c7c7;
+padding:10px;
+padding-left: 15px;
+  margin-top: -45px;
+padding-right: 15px;
+}
+.menu a:hover { 
+color: #b96d08;
+  transition: 0.2s;
+  transform: scale(1.01);
+
+}
+.icon{
+display: none;
+}
+.li__img{
+  margin-top: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+@media screen and (max-width: 920px) {
+  .logo{
+      display: block;
+  }
+.logo img {
+      width:130px;
+
+}
+ul > li:first-of-type{
+  display:none;
+}
+.menu{
+  margin:0;
+}
+}
+
+
+@media  (max-width: 920px) {
+  .header{
+    height: 3.5rem;
+  }
+.menu li, .li__img{
+display: none;
+}
+.icon{
+  padding: 0;
+  margin: 0;
+  margin-left: 650px;
+  margin-top: -25px;
+  display: flex;
+}
+.logo img {
+      padding: 8px;
+      margin-bottom: -10px;
+}
+}
+@media  (max-width:768px) {
+  header{
+      height: 3.5rem;
+    }
+  .icon{
+      padding: 0;
+      margin: 0;
+      margin-left: 570px;
+      margin-top: -25px;
+      display: flex;
+  }
+}
+@media (max-width: 560px) {
+  header{
+    height: 3rem;
+  }
+.icon{
+  padding: 0;
+  margin: 0;
+  margin-left: 360px;
+  margin-top: -25px;
+  display: flex;
+}
+}
+@media  (max-width:420px) {
+  header{
+    height: 3rem;
+  }
+  .icon{
+    padding: 0;
+    margin: 0;
+    margin-left: 250px;
+    margin-top: -25px;
+    display: flex;
+  }
+  }
+
+
+.sidenav {
+height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1; 
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  transition: 0.6s;
+  padding-top: 87px;
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.24);
+}
+
+.sidenav a {
+  border-bottom: 2px solid #b96d08;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 40px;
+  color: #c5c5c5;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover{
+  color: #bb8e3a;
+  border-bottom: 2px solid #c0c0c0;
+}
+.offcanvas a:focus{
+  color: #bb8e3a;
+  border-bottom: 2px solid #c0c0c0;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}

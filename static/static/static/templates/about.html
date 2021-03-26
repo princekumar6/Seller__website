@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square</title>
+    <style>
+        h1 {
+            color: black;
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 3px;
+            font-size: 3rem !important;
+        }
+
+        h4 {
+            color: black;
+            line-height: 1.4 !important;
+        }
+
+        .strt1 {
+            left: 66.66667% !important;
+        }
+
+        .strt2 {
+            right: 33.3333% !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .row {
+                margin: 10px !important;
+            }
+
+            .row1 {
+                margin: 30px !important;
+            }
+
+            .row2 {
+                margin: 50px 20px !important;
+                letter-spacing: 3px !important;
+            }
+
+            .strt {
+                margin: 30px 10px !important;
+            }
+
+            .strt1 {
+                left: 0% !important;
+            }
+
+            .strt2 {
+                right: 0% !important;
+            }
+
+            h4 {
+                font-size: 14px !important;
+            }
+
+            h1 {
+                font-size: 23px !important;
+            }
+
+            .col-12.col-md-5,
+            .col-12.col-md-4.strt1 {
+                padding: 1rem;
+            }
+        }
+    </style>
+    {% include "styles.html" %}
+    {% include "navlogout.html" %}
+    <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+        <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+            <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+        </ol>
+    </nav>
+    <div class="row strt" style="margin: 100px;">
+        <div class="col-4 text-center">
+            <h1>Who we are</h1>
+        </div>
+        <div class="col text-center">
+            <h4>We are a marketplace for Home Interior products started with the aim to make shopping for your Home
+                simpler!</h4>
+        </div>
+    </div>
+    <div class="row" style="margin: 100px;">
+        <div class="col-12 col-md-5"><img src="https://seller.seventhsq.com/static/staticfiles/img/about1.png" alt=""
+                style="width: 100%;"></div>
+        <div class="col text-right">
+            <h1 style="margin-bottom:20px;">How it started</h1>
+            <h4 style="padding-left: 20px;">It started when I wanted to help my parents build interiors for our newly
+                constructed house in Jaipur. They wanted to shop for lights, furniture & furnishings, doors & windows
+                and Decor. I went around at least 17 shops and multiple online stores before I finally completed Home
+                Shopping with my family. It was exhausting and if I had to do it again, I wouldn't. That's how Seventh
+                Square was born, so that Home Shopping could be done on a single website or an app sitting at home
+                sipping tea. <br>-Aditya Agarwal <br>Founder</h4>
+        </div>
+    </div>
+    <div class="row" style="margin: 100px;">
+        <div class="col-12 col-md-4 strt1"><img src="https://seller.seventhsq.com/static/staticfiles/img/about2.png" alt=""
+                style="width: 100%;"></div>
+        <div class="col-12 col-md-8 strt2">
+            <h1 style="margin-bottom:20px;">What we do</h1>
+            <h4 style="padding-right: 20px;">We make the Home Shopping experiences simpler & much more interesting
+                without burning a hole in anyone's pocket! With the help of our sellers, Consumers can enjoy 1000s of
+                products across every interior category with easy payment & shipping. We even take care of your
+                reservations about shopping for your home online. See how the product would actually look in your space
+                with our Design Room. Get consultation online with our Interior Designers too. Shop only after you're
+                completely satisfied with every aspect. After ordering, we also offer installation so that you don't
+                have to do anything.</h4>
+        </div>
+    </div>
+    <div class="row" style="margin: 100px;">
+        <div class="col-12 col-md-5"><img src="https://seller.seventhsq.com/static/staticfiles/img/about3.png" alt=""
+                style="width: 100%;"></div>
+        <div class="col text-right">
+            <h1 style="margin-bottom:20px;">Our Vision</h1>
+            <h4 style="padding-left: 20px;">Is to make Home Products shopping simple, convenient & accessible for
+                consumers in every region of the country. We're making it happen by providing complete Home Shopping
+                experiences on a single platform including consultancy, virtual designing & installation.</h4>
+        </div>
+    </div>
+    <div class="row1" style="margin: 100px;">
+        <h1>Meet us</h1>
+        <h4>Seventh Square Internet Private Limited <br>75, Jhotwara Industrial Area, Jaipur-302012 Rajasthan</h4>
+    </div>
+    <h1 class="row2 text-center" style="margin: 80px;line-height: 1.7;letter-spacing: 4px;">Lighting&ensp;&ensp;Bath &
+        Kitchen&ensp;&ensp;Furniture&ensp;&ensp;Furnishings&ensp;&ensp;Home Decor&ensp;&ensp;Home
+        Improvement&ensp;&ensp;Building Materials</h1>
+
+    {% include "footer.html" %}
+    <script>
+        var l = window.location.pathname.split('/')[1];
+        document.getElementById('lastword').innerHTML = l;
+    </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

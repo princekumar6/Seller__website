@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+            crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <title>Seventhsq.com</title>
+    <style>
+        .container {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        nav {
+            padding-left: 0px;
+            background-color: transparent;
+            margin-bottom: 30px !important;
+        }
+
+        nav ul {
+            list-style: none;
+            position: relative;
+            text-align: left;
+            height: 30px;
+
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: #444;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            padding: .75em .75em;
+            font-weight: 400;
+        }
+
+        .header_li a :hover {
+            background-color: white;
+            border-radius: 10px 10px 0 0;
+            color: #444;
+        }
+
+        nav li:hover a {
+            color: Black;
+            font-weight: 500;
+        }
+
+
+        .menu-sub {
+            position: absolute;
+            top: 33px;
+            left: 0;
+            border-radius: 0 0 1px 1px;
+            background-color: whitesmoke;
+            width: auto;
+            display: none;
+            color: rgb(43, 41, 41);
+            padding: .5em;
+        }
+
+        .building {
+            width: 100%;
+        }
+
+        .construction-chemicals {
+            position: absolute;
+            top: 33px;
+            left: 500px;
+            border-radius: 0 0 1px 1px;
+            background-color: whitesmoke;
+            width: auto;
+            display: none;
+            color: rgb(43, 41, 41);
+            padding: .5em;
+        }
+
+        .more {
+            position: absolute;
+            top: 33px;
+            left: 400px;
+            border-radius: 0 0 1px 1px;
+            background-color: whitesmoke;
+            width: 100%;
+            display: none;
+            color: rgb(43, 41, 41);
+            padding: .5em;
+        }
+
+        .hvac {
+            left: 100px;
+            width: 300px;
+        }
+
+        .sanitaryware {
+            left: 200px;
+        }
+
+        .flooring {
+            left: 350px;
+        }
+
+        .menu-sub h4 {
+            font-size: 17px;
+            color: lightcoral;
+        }
+
+        nav li:hover .menu-sub {
+            display: block;
+        }
+
+        .menu-sub li {
+            display: block;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .menu-sub a {
+            padding: 0;
+            margin-bottom: .35em;
+            color: black;
+        }
+
+        .menu-sub a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-category {
+            margin: .5em 0 .5em;
+        }
+
+        .menu-category:first-of-type {
+            margin-top: 0;
+        }
+
+        .menu-col-1,
+        .menu-col-2,
+        .menu-col-3,
+        .menu-col-4 {
+            padding-left: 1.5em;
+            float: left;
+
+        }
+
+        .menu-sub .menu-col-1,
+        .menu-col-2,
+        .menu-col-3,
+        .menu-col-4 ul li a {
+            color: #555 !important;
+        }
+
+        .menu-col-1 {
+            width: auto;
+        }
+
+        .menu-col-2 {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="upper-pannel">
+            <div class="help"><i class="fas fa-question"> </i><span> Help</span></div>
+            <div class="r_y_o"><i class="fas fa-book-open"> </i><span> Request your Quote</span></div>
+            <div class="t_y_o"><i class="fas fa-truck-moving"> </i><span> Track your Order</span></div>
+
+        </div>
+        <div class="main-container">
+            <input type="checkbox" name="" id="check">
+
+            <div class="logo-container">
+                <img src="../img/logo.png" alt="">
+            </div>
+            <div class="nav-btn">
+                <div class="nav-links">
+                    <ul>
+                        <li class="input__box" style="--i: .85s">
+                            <input type="text" class="form-control" placeholder="Search Your Product"
+                                aria-label="Search Your Product" aria-describedby="button-addon2"><i
+                                class="fas fa-search"></i>
+                        </li>
+                        <li class="log-sign location" style="--i: .85s">
+                            <span><select class="custom-select">
+                                    <option selected>Select City </option>
+                                    <option value="1">Jaipur</option>
+                                    <option value="2">Nvi Mumbai</option>
+                                    <option value="3">Delhi</option>
+                                </select></span>
+                        </li>
+                        <li class="log-sign" style="--i: .85s">
+                            <a href="../ProductFile/cart.html"><i class="fas fa-shopping-cart"></i></a><span>Cart</span>
+                        </li>
+                        <li class="log-sign" style="--i: .85s">
+                            <a href="../login/index.html"><i class="fas fa-user"></i></a> <span>Login/Register</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <nav>
+                    <div class="container">
+                        <ul class="menu-main">
+                            <li class="header_li"><a href="">Building Materials</a>
+                                <div class="menu-sub building">
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Bricks</h4>
+                                        <ul>
+                                            <li><a href="">AAC Blocks</a></li>
+                                            <li><a href="">Red Clay Bricks</a></li>
+                                        </ul>
+
+                                        <h4 class="menu-category">TMT Steel</h4>
+                                        <ul>
+                                            <li><a href="">Fe415</a></li>
+                                            <li><a href="">Fe500</a></li>
+                                            <li><a href="">Fe550</a></li>
+                                            <li><a href="">Fe600</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Structural Steel</h4>
+                                        <ul>
+                                            <li><a href="">MS Pipe</a></li>
+                                            <li><a href="">MS Angle</a></li>
+                                            <li><a href="">MS Beam</a></li>
+                                            <li><a href="">MS Channel</a></li>
+                                            <li><a href="">HR Sheet</a></li>
+                                            <li><a href="">HR coil</a></li>
+                                            <li><a href="">SS Coil</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Aggregates</h4>
+                                        <ul>
+                                            <li><a href="">Coarse</a></li>
+                                            <li><a href="">Fine</a></li>
+                                        </ul>
+
+                                        <h4 class="menu-category">Construction Pipes</h4>
+                                        <ul>
+                                            <li><a href="">Cast Iron</a></li>
+                                            <li><a href="">GI</a></li>
+                                            <li><a href="">Plastic- UPVC, PVC, CPVC</a></li>
+                                            <li><a href="">Fitting & Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Natural Stones</h4>
+                                        <ul>
+                                            <li><a href="">Granite</a></li>
+                                            <li><a href="">Marble</a></li>
+                                            <li><a href="">Sandstone</a></li>
+                                            <li><a href="">Limestone</a></li>
+                                            <li><a href="">Slate</a></li>
+                                            <li><a href="">Quartz</a></li>
+                                            <li><a href="">Laterite</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">More</h4>
+                                        <ul>
+                                            <li><a href="">Cement</a></li>
+                                            <li><a href="">Sand</a></li>
+                                            <li><a href="">Ready Mix Concrete</a></li>
+                                            <li><a href="">Gravel</a></li>
+                                            <li><a href="">AAC Block Adhesive</a></li>
+                                            <li><a href="">Shuttering PLY</a></li>
+                                            <li><a href="">Architectural Glass/ Stones</a></li>
+                                            <li><a href="">Timber/ Wood</a></li>
+                                            <li><a href="">Plywood</a></li>
+                                            <li><a href="">Paint & Finishes</a></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header_li"><a href="">HVAC</a>
+                                <div class="menu-sub hvac">
+                                    <div class="menu-col-2">
+                                        <h4 class="menu-category">Products</h4>
+                                        <ul>
+                                            <li><a href="">Exhaust Fans</a></li>
+                                            <li><a href="">Switchgears</a></li>
+                                            <li><a href="">Wires & Cables</a></li>
+                                            <li><a href="">Distribution Boards</a></li>
+                                            <li><a href="">Air Conditioner</a></li>
+                                            <li><a href="">Fans</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header_li"><a href="">Sanitaryware</a>
+                                <div class="menu-sub sanitaryware">
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Products</h4>
+                                        <ul>
+                                            <li><a href="">Faucets</a></li>
+                                            <li><a href="">Urinals</a></li>
+                                            <li><a href="">Wash Basins</a></li>
+                                            <li><a href="">Water Closet</a></li>
+                                            <li><a href="">Shower & Bath</a></li>
+                                            <li><a href="">Cisterns</a></li>
+                                            <li><a href="">Water Heaters</a></li>
+                                            <li><a href="">Kitchen Sinks</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Accessories</h4>
+                                        <ul>
+                                            <li><a href="">Mirriors</a></li>
+                                            <li><a href="">Holders</a></li>
+                                            <li><a href="">Racks & Hooks</a></li>
+                                            <li><a href="">Shelf</a></li>
+                                            <li><a href="">Ring</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header_li"><a href="">Flooring & wall</a>
+                                <div class="menu-sub flooring">
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Products</h4>
+                                        <ul>
+                                            <li><a href="">Hardwood</a></li>
+                                            <li><a href="">Marble</a></li>
+                                            <li><a href="">Tiles</a></li>
+                                            <li><a href="">Vinyl</a></li>
+                                            <li><a href="">Granite</a></li>
+                                            <li><a href="">Bamboo</a></li>
+                                            <li><a href="">Laminate</a></li>
+                                            <li><a href="">Linoleum</a></li>
+                                            <li><a href="">Terrazzo/ Mosaic</a></li>
+                                            <li><a href="">Brick</a></li>
+                                            <li><a href="">Quartz</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Oxide</h4>
+                                        <ul>
+                                            <li><a href="">Oxide Powder</a></li>
+                                            <li><a href="">Marble Powder/ Lime</a></li>
+                                        </ul>
+                                        <h4 class="menu-category">Flooring Accessories</h4>
+                                        <ul>
+                                            <li><a href="">Wall Base</a></li>
+                                            <li><a href="">Maoulding</a></li>
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="header_li"><a href="">Construction Chemicals</a>
+                                <div class="menu-sub construction-chemicals">
+                                    <div class="menu-col-2">
+                                        <h4 class="menu-category">Products</h4>
+                                        <ul>
+                                            <li><a href="">Water Proofing</a></li>
+                                            <li><a href="">Construction Adhesive</a></li>
+                                            <li><a href="">Shuttering Oil</a></li>
+                                            <li><a href="">Concrete Admixture</a></li>
+                                            <li><a href="">Grauting Material</a></li>
+                                            <li><a href="">Sealant</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header_li"><a href="">Sustainable</a>
+                            </li>
+                            <li class="header_li"><a href="">Discover</a>
+                            </li>
+                            <li class="header_li"><a href="">More</a>
+                                <div class="menu-sub more">
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Hardware and Railing</h4>
+                                        <ul>
+                                            <li><a href="">Glass Hardware</a></li>
+                                            <li><a href="">Handles and Knobs</a></li>
+                                            <li><a href="">Floor Hings</a></li>
+                                            <li><a href="">Door Closers</a></li>
+                                            <li><a href="">Latches</a></li>
+                                            <li><a href="">Deadbolt</a></li>
+                                            <li><a href="">Smoke Detectors</a></li>
+                                            <li><a href="">Security Systems</a></li>
+                                            <li><a href="">Plumbing Hardware</a></li>
+                                            <li><a href="">Curtain Rings & Rods</a></li>
+                                            <li><a href="">Railing Systems</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Doors and Windows</h4>
+                                        <ul>
+                                            <li><a href="">UPVC</a></li>
+                                            <li><a href="">Wooden</a></li>
+                                            <li><a href="">Aluminium</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="menu-col-1">
+                                        <h4 class="menu-category">Modular</h4>
+                                        <ul>
+                                            <li><a href="">Kitchen</a></li>
+                                            <li><a href="">Bath</a></li>
+                                            <li><a href="">Wardrobe</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+
+            <div class="hamburger-menu-container">
+                <div class="hamburger-menu">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- ------Main block is starting from here--------- -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-11 mx-auto">
+                <h1 class="py-4 font-weight-bold text-center title">Cart</h1>
+                <div class="row mt-5 gx-3">
+                    <!-- left side div -->
+                    <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                        <div class="card p-4">
+                            <div class="row">
+                                <!-- cart images div -->
+                                <div
+                                    class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                    <img src="../img/bathroom.png" class="img-fluid" alt="cart img">
+                                </div>
+                                <!-- cart product details -->
+                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="row">
+                                        <!-- product name  -->
+                                        <div class="col-6 card-title">
+                                            <h1 class="mb-4 product_name">Cements</h1>
+                                            <p class="mb-2">ABC Cement</p>
+                                            <p class="mb-2">Product : </p>
+                                            <p class="mb-3">Quantity: </p>
+                                        </div>
+                                        <!-- quantity inc dec -->
+                                        <div class="col-6">
+                                            <ul class="pagination justify-content-end set_quantity">
+                                                <li class="page-item">
+                                                    <button class="page-link "
+                                                        onclick="decreaseNumber('textbox','itemval')">
+                                                        <i class="fas fa-minus"></i> </button>
+                                                </li>
+                                                <li class="page-item"><input type="text" name="" class="page-link"
+                                                        value="0" id="textbox">
+                                                </li>
+                                                <li class="page-item">
+                                                    <button class="page-link"
+                                                        onclick="increaseNumber('textbox','itemval')"> <i
+                                                            class="fas fa-plus"></i></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- //remover move and price -->
+                                    <div class="row">
+                                        <div class="col-8 d-flex justify-content-between remove_wish">
+                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-end price_money">
+                                            <h3>$<span id="itemval">0.00 </span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <!-- 2nd cart product -->
+                        <div class="card p-4">
+                            <div class="row">
+                                <!-- cart images div -->
+                                <div
+                                    class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                    <img src="../img/building__material.png" class="img-fluid" alt="cart img">
+                                </div>
+
+
+
+
+                                <!-- cart product details -->
+                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="row">
+                                        <!-- product name  -->
+                                        <div class="col-6 card-title">
+                                            <h1 class="mb-4 product_name">Cements</h1>
+                                            <p class="mb-2">ABC Cement</p>
+                                            <p class="mb-2">Product : </p>
+                                            <p class="mb-3">Quantity: </p>
+                                        </div>
+                                        <!-- quantity inc dec -->
+                                        <div class="col-6">
+                                            <ul class="pagination justify-content-end set_quantity">
+                                                <li class="page-item">
+                                                    <button class="page-link "
+                                                        onclick="decreaseNumber('textbox1','itemval1')"> <i
+                                                            class="fas fa-minus"></i> </button>
+                                                </li>
+                                                <li class="page-item"><input type="text" name="" class="page-link"
+                                                        value="0" id="textbox1">
+                                                </li>
+                                                <li class="page-item">
+                                                    <button class="page-link"
+                                                        onclick="increaseNumber('textbox1','itemval1')"> <i
+                                                            class="fas fa-plus"></i></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- //remover move and price -->
+                                    <div class="row">
+                                        <div class="col-8 d-flex justify-content-between remove_wish">
+                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-end price_money">
+                                            <h3><i class="fas fa-rupee-sign"></i><span id="itemval1">0.00 </span> </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right side div -->
+                    <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                        <div class="right_side p-3 shadow bg-white">
+                            <h2 class="product_name mb-5">The Total Amount Of</h2>
+                            <div class="price_indiv d-flex justify-content-between">
+                                <p>Product amount</p>
+                                <p><i class="fas fa-rupee-sign"></i><span id="product_total_amt">0.00</span></p>
+                            </div>
+                            <div class="price_indiv d-flex justify-content-between">
+                                <p>GST</p>
+                                <p><i class="fas fa-rupee-sign"></i><span id="shipping_charge">20.0</span></p>
+                            </div>
+                            <hr />
+                            <div class="total-amt d-flex justify-content-between font-weight-bold">
+                                <p>Cart Total</p>
+                                <p><i class="fas fa-rupee-sign"></i><span id="total_cart_amt">0.00</span></p>
+                            </div>
+                            <button class="btn btn-primary text-uppercase">Checkout</button>
+                        </div>
+                        <!-- discount code part -->
+                        <div class="discount_code mt-3 shadow">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a class="d-flex justify-content-between" data-toggle="collapse"
+                                        href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        Add a discount code (optional)
+                                        <span><i class="fas fa-chevron-down pt-1"></i></span>
+                                    </a>
+                                    <div class="collapse" id="collapseExample">
+                                        <div class="mt-3">
+                                            <input type="text" name="" id="discount_code1"
+                                                class="form-control font-weight-bold"
+                                                placeholder="Enter the discount code">
+                                            <small id="error_trw" class="text-dark mt-3">code is ...........</small>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm mt-3"
+                                            onclick="discount_code()">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- discount code ends -->
+                        <div class="mt-3 shadow p-3 bg-white">
+                            <div class="pt-4">
+                                <h5 class="mb-4">Expected delivery Timeline</h5>
+                                <p>July 27th 2021 - July 29th 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section is starting  -->
+
+    <!--footer start-->
+    <footer>
+        <div class="first">
+            <div class="image">
+                <img src="../img/footer.png" alt="Footer Image" srcset="">
+            </div>
+            <div class="address">
+                <p class="address__bar">
+                    75, Jhotwara Industrial Area, Jaipur, Rajasthan-302012
+                </p>
+                <p class="cin">
+                    CIN No. U 12345 DL 2020 PLC 098765
+                </p>
+            </div>
+
+
+        </div>
+        <div class="second">
+            <h4 class="second-about"> About</h4>
+            <p> About Us</p>
+            <p>Blog</p>
+            <p>Sell on Seventh Square</p>
+            <p> Media</p>
+            <p> Careers</p>
+            <p> Customer Stories</p>
+        </div>
+        <div class="third">
+            <h4>Help</h4>
+            <p>Contact Us</p>
+            <p>Terms & Consitions</p>
+            <p>Privacy Policy</p>
+            <p> FAQ's</p>
+            <p>Track Your Order</p>
+        </div>
+        <div class="fourth">
+            <h4>Resources</h4>
+            <p>How it Works</p>
+            <p>Request for Quote</p>
+            <p>Request for Proporsal</p>
+            <p>Request for Information</p>
+            <p>Blanket PO</p>
+            <p>Payment Options</p>
+        </div>
+        <div class="fifth">
+            <h2 class=" h3">Subscribe our Newsletter</h2>
+            <div class="input__group">
+                <ul>
+                    <li><input type=" email" class="form-control" placeholder="Enter your email"></li>
+                    <li><button class="btn-theme" type="submit">Subscribe</button></li>
+                </ul>
+            </div>
+            <div class="social__icons">
+                <ul>
+                    <li><i class="fab fa-facebook-f fa-2x"></i></li>
+                    <li><i class="fab fa-linkedin-in fa-2x"></i></li>
+                    <li><i class="fab fa-instagram fa-2x"></i></li>
+                    <li><i class="fab fa-pinterest-p fa-2x"></i></li>
+                    <li><i class="fab fa-twitter fa-2x"></i></li>
+                    <li><i class="fab fa-whatsapp fa-2x"></i></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    <div class="bottomnav" style="background: #01011e;color: rgb(255,255,255);">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
+                <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
+                    Internet Pvt. Ltd.</span>
+            </div>
+            <div class="col-sm-12 col-md-2 col-xl-4 d-none d-md-block"
+                style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+                <div><img src="img/p.jpg" style="margin-top: 5px;"></div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <script type="text/javascript">
+
+        var product_total_amt = document.getElementById('product_total_amt');
+        var shipping_charge = document.getElementById('shipping_charge');
+        var total_cart_amt = document.getElementById('total_cart_amt');
+        var discountCode = document.getElementById('discount_code1');
+        const decreaseNumber = (incdec, itemprice) => {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+            console.log(itemprice.innerHTML);
+            // console.log(itemval.value);
+            if (itemval.value <= 0) {
+                itemval.value = 0;
+                alert('Negative quantity not allowed');
+            } else {
+                itemval.value = parseInt(itemval.value) - 1;
+                itemval.style.background = '#fff';
+                itemval.style.color = '#000';
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
+                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+            }
+        }
+        const increaseNumber = (incdec, itemprice) => {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+            // console.log(itemval.value);
+            if (itemval.value >= 5) {
+                itemval.value = 5;
+                alert('max 5 allowed');
+                itemval.style.background = 'red';
+                itemval.style.color = '#fff';
+            } else {
+                itemval.value = parseInt(itemval.value) + 1;
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
+                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+            }
+        }
+        const discount_code = () => {
+            let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+            let error_trw = document.getElementById('error_trw');
+            if (discountCode.value === 'seventhsq2021') {
+                let newtotalamt = totalamtcurr - 15;
+                total_cart_amt.innerHTML = newtotalamt;
+                error_trw.innerHTML = "Hurray! code is valid";
+            } else {
+                error_trw.innerHTML = "Try Again! Valid code is thapa";
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

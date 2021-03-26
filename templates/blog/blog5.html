@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+<div class="row" style="margin: 0px;">
+    <div class="col-1 col-md-3"></div>
+    <div class="col">
+        <h2 class="text-center text-capitalize"
+            style="color: black;font-weight: 700;font-family: 'Libre Baskerville', serif;margin: 25px;line-height: 1.5;">
+            Online Furniture Market in India</h2>
+        <div class="text-center"
+            style="color: black;font-family: 'Hind Siliguri', sans-serif;font-size: 13px;line-height: 1.8;letter-spacing: 1.5px; margin: 30px;">
+            FEB 01, 2021 <br> By - <strong
+                style="color: rgb(226, 2, 2);letter-spacing: 0px;font-family: 'Libre Baskerville', serif;font-size: 14px;">Seventh
+                Square</strong>
+        </div>
+        <p style="font-family: 'Hind Siliguri', sans-serif;margin: 0px;">According to RedSeer Consulting, the online
+            furniture market in
+            India grew at a CAGR of approximately 80-85% to reach approximately $310 million in FY19 as compared to $104
+            million in FY17, and is likely to have touched $700 million in FY20. But despite this rapid growth, online
+            has
+            less than 3% share in the overall furniture market which is pegged at $17 billion.</p>
+
+        <img src="https://seller.seventhsq.com/static/staticfiles/img/b5.png" alt="" style="width: 100%;margin: 20px 0px;">
+        <p style="font-family: 'Hind Siliguri', sans-serif;">The pandemic, over the last few months, has pushed forward
+            some
+            upcoming trends in the massive and growing Indian Furniture market.</p>
+
+        <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+            <strong style="font-family: 'Crimson Text', serif;">Organized Retail</strong>
+        </h2>
+        <span style="font-family: 'Hind Siliguri', sans-serif;">Once dominated by mom & pop stores, the furniture
+            market has witnessed major shift towards organized retail and e-commerce. As supply chains become more
+            efficient, the cost for e-tailing and building a multi-channel furniture brand has come down
+            substantially. Consumer preferences in metros and tier-I have also pushed shift to organized retail,
+            with smaller brands emerging across the country.</span>
+
+        <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+            <strong style="font-family: 'Crimson Text', serif;">Consumer Preferences</strong>
+        </h2>
+        <span style="font-family: 'Hind Siliguri', sans-serif;">As lockdown forced consumers to stay inside their
+            homes, the need for comfortable and multi-functional furniture increased. This was duly serviced by
+            e-commerce players and organized segment, including the new major entrant IKEA. Consumers, having plenty
+            of time in hand during lockdown, learnt more about online shopping and many became comfortable with over
+            time, which increased the demand for suitable online portals providing them a convenient and cost
+            effective way to buy their furniture. <br>As consumers educated themselves over lockdown, return rates
+            have also fallen across categories which has helped many sellers become even more confident about
+            selling online.</span>
+
+        <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+            <strong style="font-family: 'Crimson Text', serif;">Supply Chains</strong>
+        </h2>
+        <span style="font-family: 'Hind Siliguri', sans-serif;">As supply chains also strengthened, processing
+            orders safely and efficiently became easy, giving a boost to both sellers as well as consumers, who
+            started trusting online more than offline retail. With current infrastructure, it became possible for a
+            seller in Mumbai to sell to a consumer in a small town in Himachal, which otherwise wouldn’t have been
+            possible. Consumers and sellers see this infra upgrade as a win-win where sellers, who have developed a
+            good portfolio can showcase their products to every part of the country and the consumer can get a
+            product which he wouldn’t find in his own town.</span>
+
+        <p style="font-family: 'Hind Siliguri', sans-serif;margin-top: 20px;margin-bottom: 30px;">With continuous improvement in tech and
+            logistics, e-commerce
+            in furniture will continue to grow as consumers in tier-IV also start trusting the process. Multi-functional
+            furniture will gain more traction as consumers look to save space and build their home better. Services will
+            also play an important part in e-commerce as consumer focuses more on experience.</p>
+    </div>
+    <div class="col-1 col-md-3"></div>
+</div>
+<div class="row" style="margin: 0px;">
+    <div class="col-2"></div>
+    <div class="col">{% include "blogstrip.html" %}</div>
+    <div class="col-2"></div>
+</div>
+{% include "footer.html" %}
+<script>
+  var l = window.location.pathname.split('/')[2];
+  document.getElementById('lastword').innerHTML = l;
+  var l2 = window.location.pathname.split('/')[1];
+  document.getElementById('last2word').innerHTML = l2;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

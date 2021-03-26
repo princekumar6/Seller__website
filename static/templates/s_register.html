@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  <!-- Registeration page css links -->
+  <link rel="stylesheet" href="/static/staticfiles/css/s_style.css">
+  <link rel="stylesheet" href="/static/staticfiles/css/s_responsive.css">
+  <link rel="stylesheet" href="/static/staticfiles/css/s_footer.css">
+  <link rel="stylesheet" href="/static/staticfiles/css/s_navbar.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+  {% include "styles.html" %}
+</head>
+<body>
+    <header>
+        <div class="head_container">
+             <div class="logo">
+                <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" width="200px" alt="Logo Image">
+            </div>
+            <div class="menu" id="myTopnav">
+                <ul>
+                    <a href="javascript:void(0);" style="font-size:25px; float: right;" class="icon" onclick="openNav()">&#9776;</a>
+                    <li><a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a></li>
+                    <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" class="li__img" width="150px" alt="Logo Image">
+                    <li><a class="v-class-resp options" href="#Callback">Request A Callback</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="index.html">Home</a>
+          <a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
+          <a class="v-class-resp options" href="#Callback">Request A Callback</a>
+          
+    </div>
+  <!-- body starts from here -->
+  <section class="background firstSection">
+    <div class="box-main">
+        <div class="firstHalf">
+            <p class="text-big">Reach out to the $600 billion+ industry from your office</p>
+            <div class="box">
+                <a href="#Register" class="bton bton-black bton-animation-1">Become a Seller</a> 
+            </div>
+        </div>
+    </div>
+    <div class = "box-bottom">
+        <p id="star-content" >Figure as per Industry Estimates for Home Interiors & Construction Industry</p>
+    </div>
+    </div>
+</section>
+<section class="secondSection">
+    <div class="heading">
+        <p>Why sell with Seventh Square?</p>
+    </div>
+    <div class = "inline">
+        <div class = "square">
+            <p class = "text-head" style = "text-align: left;">Bigger & Better Clientele</p>
+            <p class="text-para-small">Reach Clients all over India. Sell to Builders
+                & Developers, Contractors & Construction
+                Firms, Architects, Institutions and
+                Individual Home Buyers from a single
+                dashboard.</p>
+                <hr class="custom">
+        </div>
+        <div class = "square">
+            <p class = "text-head" style = "text-align: right;">Customer Services</p>
+            <p class="text-para-small" style = "text-align: right;">Superior Services to clients such as One-stop shop
+                for Building Materials & Home Interiors, Automatic
+                Invoicing & Tax Management, Delivery & Order
+                scheduling for bigger projects, third-party financing
+                etc. for free</p>
+            <hr class="custom" style=" float: right;">
+        </div>
+    </div>
+    <div class = "inline">
+        <div class = "square">
+            <p class = "text-head" style = "text-align: left;">Seventh Square Specialty</p>
+            <p class="text-para-small">Receive orders & quote updates on text,
+                whatsapp, email & call. Track payments in
+                your dashboard. Dedicated Relationship
+                Manager for all your doubts & queries;
+                and much more...</p>
+                <hr class="custom">
+        </div>
+        <div class = "square">
+            <p class = "text-head" style = "text-align: right;">Lowest Fees</p>
+            <p class="text-para-small" style = "text-align: right;">5% Commission across all categories. No
+                added charges, so you can give customers
+                the best prices without lowering margins.</p>
+            <hr class="custom" style=" float: right;">
+        </div>
+    </div>
+    <div class = "inline"></div>
+</section>
+<section class = "thirdSection">
+    <div class="heading">
+        <p>How it works?</p>
+    </div>
+    <div class="inline">
+        <div class="square" style="display: flex;">
+            <div class="text-num">1</div>
+            <p class="text-para-big">Register with us and
+                complete your profile</p>
+        </div>
+        <div class="square" style="display: flex;">
+            <div class="text-num">2</div>
+            <p class="text-para-big">Upload your product
+                portfolio</p>
+        </div>
+    </div>
+    <div class="inline">
+        <div class="square" style="display: flex;">
+            <div class="text-num">3</div>
+            <p class="text-para-big">Start receiving orders.
+                Check status in Dashboard</p>
+        </div>
+        <div class="square" style="display: flex;">
+            <div class="text-num">4</div>
+            <p class="text-para-big">Receive your payments
+                directly in bank</p>
+        </div>
+    </div>
+</section>
+<section class="fourthSection" id = "Register">
+    <div class="heading">
+        <p>Register as a Seller with Seventh Square</p>
+    </div>
+    <div class="inline thirdSection">
+        <div class="square">
+            <p class="text-para-small">Become a seller with us by filling this form.
+                To sell with Seventh Square, you need:</p>
+            <p class="text-para-small"><span class = "tick">&#128504</span> Identification Number (GSTIN)</p>
+            <p class="text-para-small"><span class = "tick">&#128504</span>Bank Account</p>
+            <p class="text-para-small"><span class = "tick">&#128504</span>PAN</p>
+            <p class="text-para-small">Our team will contact you after you've
+                filled the form. For any queries, check our
+                FAQ page or arrange a callback.</p>
+        </div>
+        <div class="square register" id="reg-form">
+            <form class="text-center" method="POST" action="GSTIN.html" >
+                {% csrf_token %}
+                <div class="form-group" id="Mob-div">
+                    <input class="form-control " id = "num" type="number" name="mobile" required
+                        placeholder="Mobile Number" maxlength="10" pattern="(6|7|8|9)\d{9}">
+                    <button type="button" id="OTP-button" onclick="myFunction_two()" class="btn btn-secondary" >Send OTP</button>
+                </div>
+                <div class="form-group"><input class="form-control" type="number" name="OTP" required style="display: none;" id="myDIV"
+                    placeholder="Enter OTP" maxlength="10" pattern="(6|7|8|9)\d{6}"></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+                <div class="form-group"><input id="password-field" class="form-control icon-wrapper input" type="password"
+                        name="pass" required placeholder="Password"><span toggle="#password-field" onclick="myFunction()"
+                        class="ion ion-eye field-icon toggle-password" style="font-size: 22px;"></span></div>
+                
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                    style="background: #000;border-color: #4f4f4f;    margin-top: 10px;">Continue</button></div>Already have an
+                    account? <u>
+                <a class="text-capitalize already" href="Seller_login.html" style="color:#4f4f4f">Login
+                    here</a></u>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% include "footer.html" %}
+<script>
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        //document.getElementById("header").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        //document.getElementById("header").style.marginLeft= "0";
+    };
+    function myFunction() {
+        var x = document.getElementById("password-field");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    
+    function myFunction_two() {
+        var x = document.getElementById("myDIV");
+            x.style.display = "block";
+        
+    }
+    function myFunction_three() {
+        var x = document.getElementById("menu");
+            x.style.display = "block";
+        
+    }
+    </script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("password-field");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<script>
+  var l = window.location.pathname.split('/')[1];
+  document.getElementById('lastword').innerHTML = l;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

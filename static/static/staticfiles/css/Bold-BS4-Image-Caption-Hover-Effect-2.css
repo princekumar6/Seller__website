@@ -1,0 +1,23 @@
+.hover-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.hover img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hover-2-title {
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  width: 93%;
+  z-index: 99;
+}

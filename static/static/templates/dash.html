@@ -1,0 +1,879 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square - Seller Dashboard</title>
+    <link rel="stylesheet" href="/static/staticfiles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&amp;subset=latin-ext">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/typicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Bootstrap-Tags-Input.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/login-form.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Multi-step-form.css">
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav
+            class="navbar navbar-dark d-sm-block d-md-none align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 toggled">
+            <div class="container-fluid d-flex flex-column p-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <div class="list-group " style="margin-top: 70px;"><a href="/"><button
+                                class="list-group-item list-group-item-action"
+                                style="border-style: none;padding: 10px 10px 2px 0px;font-size: 14px; background: transparent;"><i
+                                    class="fa fa-home"
+                                    style="margin-left: 5px;margin-right: 5px;"></i><span>Home</span></button></a>
+                        <button class="list-group-item list-group-item-action border-white accordion"
+                            style="color: white; background: transparent;border-style: none; padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="material-icons"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Orders</span></button>
+                        <div class="panel">
+                            <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                    style="color: white; background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Current
+                                        Orders</span></button></a>
+                            <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                    style=" color: white; background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Past
+                                        Orders</span></button></a>
+                        </div>
+                        <button class="list-group-item list-group-item-action border-white accordion"
+                            style="color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="icon ion-cube"
+                                style="margin-left: 5px;margin-right: 5px;"></i><span>Products</span></button>
+                        <div class="panel">
+                            <a href="/newproduct/"><button class="list-group-item list-group-item-action border-white"
+                                    style=" background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                        class="icon ion-cube" style="margin-left: 5px;margin-right: 5px;"></i><span>Add
+                                        new
+                                        Product</span></button></a>
+                            <a href="/viewproducts/"><button class="list-group-item list-group-item-action border-white"
+                                    style=" background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                        class="icon ion-cube"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Active
+                                        Products</span></button></a>
+                        </div>
+                        <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-cash-register"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Payment
+                                    History</span></button></a>
+                        <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-file-signature"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Reports &amp;
+                                    Performance</span></button></a>
+                        <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="material-icons"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 17px;">rate_review</i><span>Customer
+                                    Reviews</span></button></a>
+                        <a href="/contact/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="material-icons"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;">contact_mail</i><span>Contact
+                                    Us</span></button></a>
+                        <h6 style="font-weight: 900; padding-top: 20px;">LEGAL</h6>
+                        <hr style="margin: 0px">
+                        <a href="/docverify/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="icon ion-document-text"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Document
+                                    Verification&nbsp;</span></button></a>
+                        <a href="/faq/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-question-circle"
+                                    style="margin-left: 5px;margin-right: 5px;"></i><span>General
+                                    FAQ's</span></button></a>
+                        <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-vote-yea"
+                                    style="margin-left: 5px;margin-right: 5px;"></i><span>Policies</span></button></a>
+                        <a href="/marketplace/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 3px 10px 2px 0px;font-size: 14px;"><i
+                                    class="icon ion-document-text"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Seller
+                                    Agreement</span></button></a>
+
+                        <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-book-reader"
+                                    style="margin-left: 5px;margin-right: 5px;"></i><span>Seller
+                                    Guidelines</span></button></a>
+
+                        <a href="/terms/"><button class="list-group-item list-group-item-action border-white"
+                                style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="fas fa-business-time"
+                                    style=" margin-left: 5px; margin-right: 5px;"></i><span>Terms Of
+                                    use</span></button></a>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
+                        id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light navbar-expand fixed-top shadow topbar" style="background: #01010e;">
+            <div class="container-fluid">
+                <button class="btn btn-link d-md-none rounded-circle mr-2" id="sidebarToggleTop" type="button"><i
+                        class="fas fa-bars" style="color: #858796;"></i></button>
+                <a href="/"><img src="/static/staticfiles/img/white%20png%20(1).png" style="width: 90px;"></a>
+                <form class="form-inline d-none d-sm-inline-block mr-auto navbar-search" style="margin-left: 100px;">
+                    <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                            placeholder="Search" style="border-radius: 0px;">
+                        <div class="input-group-append"><button class="btn btn-light py-0" style="border-radius: 0px;"
+                                type="button"><i class="fas fa-search" style="color: #858796;"></i></button></div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav d-none d-lg-flex flex-nowrap ml-auto">
+                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                            data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto navbar-search w-100">
+                                <div class="input-group"><input class="bg-light form-control small" type="text"
+                                        placeholder="Search" style="border-radius: 0px;">
+                                    <div class="input-group-append"><button class="btn btn-primary py-0"
+                                            style="border-radius: 0px;" type="button"><i
+                                                class="fas fa-search"></i></button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/corporate/">Corporate
+                            Enquiry</a></li>
+                    <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/partner/">Partner With Us</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav flex-nowrap ml-auto">
+                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                            data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto navbar-search w-100">
+                                <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                                        placeholder="Search">
+                                    <div class="input-group-append"><button class="btn btn-primary py-0"
+                                            type="button"><i class="fas fa-search"></i></button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                data-toggle="dropdown" aria-expanded="false" style="font-size: 25px;"><span
+                                    class="badge badge-danger badge-counter">{{notif.coun}}</span><i
+                                    class="fas fa-bell fa-fw"></i></a>
+                            <div style="border-radius: 0px;"
+                                class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+                                <h6 class="dropdown-header" style="background-color: #01011e; border: 0px;">
+                                    notifications</h6>
+                                <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s1}};"
+                                    href="{{notif.l1}}">
+                                    <div class="mr-3">
+                                        <div class="icon-circle" style="background-color: #01011e;"><i
+                                                class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div><span class="small text-gray-500"></span>
+                                        <p>{{notif.n1}}</p>
+                                    </div>
+                                </a>
+                                <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s2}};"
+                                    href="{{notif.l2}}">
+                                    <div class="mr-3">
+                                        <div class="icon-circle" style="background-color: #01011e;"><i
+                                                class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div><span class="small text-gray-500"></span>
+                                        <p>{{notif.n2}}</p>
+                                    </div>
+                                </a>
+                                <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s3}};"
+                                    href="{{notif.l3}}">
+                                    <div class="mr-3">
+                                        <div class="icon-circle" style="background-color: #01011e;"><i
+                                                class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div><span class="small text-gray-500"></span>
+                                        <p>{{notif.n3}}</p>
+                                    </div>
+                                </a><a class="text-center dropdown-item small text-gray-500" href="/notify_read/">Mark
+                                    All Read</a>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="d-none d-sm-block topbar-divider"></div>
+                    <li class="nav-item dropdown no-arrow">
+                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                data-toggle="dropdown" aria-expanded="false"><span
+                                    class="d-none d-lg-inline mr-2 text-gray-300 small"
+                                    style="font-size: 16px;"><strong>{{ nam }}</strong></span><img
+                                    class="border rounded-circle img-profile" src="/static/staticfiles/img/human.jpg"></a>
+                            <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
+                                    class="dropdown-item" href="/accountinfo/"><i
+                                        class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout/"><i
+                                        class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper" style="background: white;">
+            <div id="content" style="padding-top: 60px;">
+                <div class="container-fluid" style="padding: 0px;">
+                    <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+                        {{msg}}</div>
+                    <div class="row">
+                        <div class="col d-none d-lg-block" style="max-width: 19%;padding-left: 5px;">
+                            <!-- fixed-content -->
+                            <div class="list-group"
+                                style="margin-left: 25px;margin-top: 10px;border-right: 1px solid rgb(221,221,221);">
+                                <a href="/"><button class="list-group-item list-group-item-action"
+                                        style="border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;background: transparent;"><i
+                                            class="fa fa-home"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Home</span></button></a>
+                                <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Orders</span></button>
+                                <div class="panel">
+                                    <a href="/coming/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="material-icons"
+                                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Current
+                                                Orders</span></button></a>
+                                    <a href="/coming/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="material-icons"
+                                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Past
+                                                Orders</span></button></a>
+                                </div>
+                                <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="icon ion-cube"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Products</span></button>
+                                <div class="panel">
+                                    <a href="/newproduct/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="icon ion-cube"
+                                                style="margin-left: 5px;margin-right: 5px;"></i><span>Add new
+                                                Product</span></button></a>
+                                    <a href="/viewproducts/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="icon ion-cube"
+                                                style="margin-left: 5px;margin-right: 5px;"></i><span>Active
+                                                Products</span></button></a>
+                                </div>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-cash-register"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Payment
+                                            History</span></button></a>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-file-signature"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Reports
+                                            &amp; Performance</span></button></a>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 17px;">rate_review</i><span>Customer
+                                            Reviews</span></button></a>
+                                <a href="/contact/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;">contact_mail</i><span>Contact
+                                            Us</span></button></a>
+                                <h6 style="font-weight: 900; padding-top: 20px;">LEGAL</h6>
+                                <hr style="margin: 0px;width: 80%;">
+                                <a href="/docverify/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="icon ion-document-text"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Document
+                                            Verification&nbsp;</span></button></a>
+                                <a href="/faq/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-question-circle"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>General
+                                            FAQ's</span></button></a>
+                                <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-vote-yea"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Policies</span></button></a>
+                                <a href="/marketplace/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 3px 10px 2px 0px;font-size: 14px;"><i
+                                            class="icon ion-document-text"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Seller
+                                            Agreement</span></button></a>
+
+                                <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-book-reader"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Seller
+                                            Guidelines</span></button></a>
+
+                                <a href="/terms/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-business-time"
+                                            style=" margin-left: 5px; margin-right: 5px;"></i><span>Terms Of
+                                            use</span></button></a>
+                            </div>
+                        </div>
+
+                        <div class="col" style="padding-top: 15px;padding-left: 20px;padding-right: 20px;">
+                            <h2 style="color: rgb(0,0,0);margin: 0px;font-size: 30px;"><strong id="greet"></strong></h2>
+                            <span>Here's
+                                what your dashboard looks like</span>
+                            <div class="row" style="margin-top: 30px;margin-right: 3px;margin-left: 3px;">
+                                <div class="col-6 col-lg-3" style="text-align: center; margin-top: 10px;"><span
+                                        style="font-size: 16px;"><i class="fa fa-truck"
+                                            style="padding-right: 8px;font-size: 20px;"></i>Shipments Today</span>
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3"
+                                    style="text-align: center; margin-top: 10px;border-color: rgb(210,210,210);border-right-width: 1px;border-right-style: solid;border-left-width: 1px;border-left-style: solid;">
+                                    <span style="font-size: 16px;"><i class="material-icons"
+                                            style="padding-right: 8px;font-size: 18px;">repeat</i>Return Requests</span>
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3"
+                                    style="text-align: center; margin-top: 10px;border-color: rgb(210,210,210);border-right-width: 1px;border-right-style: solid;">
+                                    <span style="font-size: 16px;"><i class="fa fa-hourglass-half"
+                                            style="padding-right: 10px;"></i>Pending Orders</span>
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3" style="text-align: center; margin-top: 10px;"><span
+                                        style="font-size: 16px;"><i class="material-icons"
+                                            style="padding-right: 5px;font-size: 18px;">question_answer</i>Customer
+                                        Enquiries</span>
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col"><span style="font-size: 50px;"><strong>0</strong></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion_bk" style="margin-top:50px;">
+                                <!-- Accordion -->
+                                <div id="accordionExample" class="accordion">
+
+                                    <!-- Accordion item 1 -->
+                                    <div class="card">
+                                        <div id="headingOne" class="card-header" style="padding: 0px;">
+                                            <h6 class="font-weight-bold" style="padding:0px 10px 5px 0px;margin:0px;">
+                                                <span data-toggle="collapse" data-target="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne"
+                                                    class="d-block position-relative text-dark text-uppercase collapsible-link"><i
+                                                        class="fas fa-info-circle"
+                                                        style="font-size: 22px;padding:12px 12px 7px 12px;"></i><strong></strong>
+                                                    New
+                                                    Updates</span>
+                                            </h6>
+                                        </div>
+                                        <div id="collapseOne" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample" class="collapse show">
+                                            <div class="card-body" style="background-color: rgb(232,232,232);">
+                                                <a class="d-flex align-items-center dropdown-item" href="#"
+                                                    style="padding:0px;white-space:inherit">
+                                                    <div class="mr-3">
+                                                        <div class="bg-primary icon-circle"><i
+                                                                class="fas fa-file-alt text-white"></i></div>
+                                                    </div>
+                                                    <div><span class="small text-gray-500"></span>
+                                                        <p>Welcome to Seventh Square</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <h4
+                                    style="padding: 20px;margin: 0px;color: rgb(108,108,108); font-family: 'Lato', sans-serif;">
+                                    <strong>Business is a never ending growth story.</strong>
+                                </h4><a href="/coming/"><img class="img-fluid"
+                                        src="/static/staticfiles/img/IMG-20200912-WA0029.jpg"></a>
+                            </div>
+                        </div>
+                        <div class="col d-none d-lg-block"
+                            style="padding: 1px;max-width: 21%;border-left: 1px solid rgb(215,215,215) ;">
+                            <div style="background: rgb(232,232,232);">
+                                <div class="row" style="text-align: center;margin: 0px;">
+                                    <div class="col" style="padding: 20px;"><img id="avatar" class="avatar round"
+                                            src="/static/staticfiles/img/human.jpg">
+                                        <hr style="margin-bottom: 0px;">
+                                    </div>
+                                </div>
+                                <div style="padding: 20px;padding-top: 0px;padding-bottom: 10px;"><label class="d-block"
+                                        style="color: rgb(0,0,0);font-size: 14px;"><strong>City :
+                                        </strong>{{loca.city}}</label><label class="d-block"
+                                        style="color: rgb(0,0,0);font-size: 14px;"><strong>Name :
+                                        </strong>{{nam}}<br></label><label class="d-block"
+                                        style="color: rgb(0,0,0);font-size: 14px;"><strong>Company :
+                                        </strong>{{loca.company}}</label><label class="d-block"
+                                        style="color: rgb(0,0,0);font-size: 14px;"><strong>Categories :
+                                        </strong>{{loca.categories}}</label><label class="d-block"
+                                        style="color: rgb(0,0,0);font-size: 14px;margin-bottom: 15px;"><strong>Account
+                                            Verified
+                                            : </strong>{{loca.verified}}</label> <a href="/accountinfo/" class="d-block"
+                                        style="font-size: 14px; color: #858796;">View Profile</a>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 10px; color: black; border: none;">
+                                <div class="card-header d-flex justify-content-between align-items-center"
+                                    style="background: transparent; border: none;">
+                                    <h6 class="font-weight-bold m-0">Sales Summary</h6><i class="material-icons"
+                                        style="padding-right: 10px;">insert_chart</i>
+                                </div>
+                                <div class="card-body"
+                                    style="padding: 0px;padding-top: 10px;padding-right: 10px; border: none;">
+                                    <table id="example" class="table-striped" width="100%" style="color: black;">
+                                        <thead style=" border: none;">
+                                            <tr>
+                                                <th></th>
+                                                <th style="padding: 10px;"><strong>Sales</strong></th>
+                                                <th><strong>Products</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style=" border: none;">
+                                            <tr>
+                                                <td style="padding: 10px;">Today</td>
+                                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                                <td><strong>0</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px;">Past 7 Days</td>
+                                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                                <td><strong>0</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px;">Past 15 Days</td>
+                                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                                <td><strong>0</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 10px;">Past 30 Days</td>
+                                                <td><strong><i class="fa fa-rupee"></i> 0</strong></td>
+                                                <td><strong>0</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="">
+                                        <h6
+                                            style="font-size:12px;border-top: 1px solid rgba(133,135,150,0.26);text-align: center;padding-top: 15px;color: black;text-decoration: none;">
+                                            Show all statistics</h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="myModal" aria-labelledby="basicModal"
+            aria-hidden="true">
+            <table style="height: 100%; width: 100%;">
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div id="multple-step-form-n" class="container overflow-hidden"
+                                        style="margin-top: 0px;margin-bottom: 10px;">
+                                        <a href="/"><button type="button" class="close" style="font-size: 30px;"><span
+                                                    aria-hidden="true">×</span></button></a>
+                                        <div id="progress-bar-button" class="multisteps-form">
+                                            <div class="row" style="margin-top: 5px;">
+                                                <div class="col-12 col-lg-8 ml-auto mr-auto">
+                                                    <div class="multisteps-form__progress"><a
+                                                            class="btn multisteps-form__progress-btn js-active"
+                                                            role="button" title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="multistep-start-row" class="row">
+                                            <div id="multistep-start-column" class="col-12 m-auto"
+                                                style="height: auto;">
+                                                <form id="main-form myForm" class="multisteps-form__form" method="POST"
+                                                    action="/index1/" enctype="multipart/form-data" style="height: 671px;">
+                                                    {% csrf_token %}
+                                                    <div id="single-form-next"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
+                                                        data-animation="scaleIn">
+                                                        <a href="/"><img src="/static/staticfiles/img/black png (1).png"
+                                                                style="width: 100%; padding: 10%;"></a>
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Tell Us Where To Pick Your Orders From?</h3>
+                                                        <div id="form-content" class="multisteps-form__content"
+                                                            style="margin-top: 10%;">
+                                                            <div id="input-grp-single" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Warehouse/Store
+                                                                            Locations</strong></label><input type="text"
+                                                                        data-role="tagsinput" data-class="label-info"
+                                                                        name="store"
+                                                                        placeholder="Add more addresses here">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-button" class="button-row d-flex mt-4"><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Get Money Directly In Your Bank Account</h3>
+                                                        <div id="form-content-1" class="multisteps-form__content">
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Account
+                                                                            Holder
+                                                                            Name</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accname" type="text" placeholder="Name">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Account
+                                                                            Number</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accno" type="text" placeholder="Number">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>IFSC
+                                                                            Code</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accifsc" type="text" placeholder="Code">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-double-1" class="form-row mt-4">
+                                                                <div class="col-12 col-sm-6"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Bank
+                                                                            Name</strong></label>
+                                                                    <select class="form-control multisteps-form__input"
+                                                                        name="bname" id="options"
+                                                                        style="width:100%; height:35px;color: gray;">
+                                                                        <option value="" disabled selected>
+                                                                            Select Bank
+                                                                        </option>
+                                                                        <option value="Airtel Payments Bank Ltd">
+                                                                            Airtel Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="American Express Banking Corp.">
+                                                                            American Express Banking
+                                                                            Corp.</option>
+                                                                        <option value="Au Small Finance Bank Ltd.">
+                                                                            Au Small Finance Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Axis Bank Ltd. ">
+                                                                            Axis Bank Ltd. </option>
+                                                                        <option value="Bandhan Bank Ltd. ">
+                                                                            Bandhan Bank Ltd. </option>
+                                                                        <option value="Bank of Baroda">
+                                                                            Bank of Baroda</option>
+                                                                        <option value="Bank of India">
+                                                                            Bank of India</option>
+                                                                        <option value="Bank of Maharashtra">
+                                                                            Bank of Maharashtra</option>
+                                                                        <option value="Barclays PLC">
+                                                                            Barclays PLC</option>
+                                                                        <option value="BNP Paribas">BNP
+                                                                            Paribas</option>
+                                                                        <option value="Canara Bank">
+                                                                            Canara Bank</option>
+                                                                        <option value="Capital Small Finance Bank Ltd">
+                                                                            Capital Small Finance Bank
+                                                                            Ltd</option>
+                                                                        <option value="Central Bank of India">
+                                                                            Central Bank of India
+                                                                        </option>
+                                                                        <option value="CitiBank">
+                                                                            CitiBank</option>
+                                                                        <option value="City Union Bank Ltd.">
+                                                                            City Union Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Credit Suisse A.G">
+                                                                            Credit Suisse A.G</option>
+                                                                        <option value="CSB Bank Limited">CSB
+                                                                            Bank Limited</option>
+                                                                        <option value="DCB Bank Ltd.">
+                                                                            DCB Bank Ltd.</option>
+                                                                        <option value="Deutsche Bank">
+                                                                            Deutsche Bank</option>
+                                                                        <option value="Dhanlaxmi Bank Ltd.">
+                                                                            Dhanlaxmi Bank Ltd.</option>
+                                                                        <option value="Equitas Small Finance Bank Ltd">
+                                                                            Equitas Small Finance Bank
+                                                                            Ltd</option>
+                                                                        <option value="ESAF Small Finance Bank Ltd.">
+                                                                            ESAF Small Finance Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Federal Bank Ltd.">
+                                                                            Federal Bank Ltd.</option>
+                                                                        <option value="Fincare Small Finance Bank Ltd.">
+                                                                            Fincare Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="FINO Payments Bank Ltd">
+                                                                            FINO Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="HDFC Bank Ltd">
+                                                                            HDFC Bank Ltd</option>
+                                                                        <option value="HSBC Ltd.">HSBC
+                                                                            Ltd.</option>
+                                                                        <option value="ICICI Bank Ltd.">
+                                                                            ICICI Bank Ltd.</option>
+                                                                        <option value="IDBI Bank Limited">
+                                                                            IDBI Bank Limited</option>
+                                                                        <option value="IDFC FIRST Bank Limited">
+                                                                            IDFC FIRST Bank Limited
+                                                                        </option>
+                                                                        <option value="India Post Payments Bank Ltd">
+                                                                            India Post Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Indian Bank">
+                                                                            Indian Bank</option>
+                                                                        <option value="Indian Overseas Bank">
+                                                                            Indian Overseas Bank
+                                                                        </option>
+                                                                        <option value="IndusInd Bank Ltd">
+                                                                            IndusInd Bank Ltd</option>
+                                                                        <option value="Jammu & Kashmir Bank Ltd.">
+                                                                            Jammu & Kashmir Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Jana Small Finance Bank Ltd">
+                                                                            Jana Small Finance Bank Ltd
+                                                                        </option>
+                                                                        <option value="Jio Payments Bank Ltd">
+                                                                            Jio Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Karnataka Bank Ltd.">
+                                                                            Karnataka Bank Ltd.</option>
+                                                                        <option value="Karur Vysya Bank Ltd.">
+                                                                            Karur Vysya Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Kotak Mahindra Bank Ltd">
+                                                                            Kotak Mahindra Bank Ltd
+                                                                        </option>
+                                                                        <option value="Lakshmi Vilas Bank Ltd.">
+                                                                            Lakshmi Vilas Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Nainital bank Ltd.">
+                                                                            Nainital bank Ltd.</option>
+                                                                        <option
+                                                                            value="North East Small finance Bank Ltd">
+                                                                            North East Small finance
+                                                                            Bank Ltd</option>
+                                                                        <option value="NSDL Payments Bank Limited">
+                                                                            NSDL Payments Bank Limited
+                                                                        </option>
+                                                                        <option value="Paytm Payments Bank Ltd">
+                                                                            Paytm Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Punjab & Sind Bank">
+                                                                            Punjab & Sind Bank</option>
+                                                                        <option value="Punjab National Bank">
+                                                                            Punjab National Bank
+                                                                        </option>
+                                                                        <option value="RBL Bank Ltd.">
+                                                                            RBL Bank Ltd.</option>
+                                                                        <option value="South Indian Bank Ltd.">
+                                                                            South Indian Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Standard Chartered">
+                                                                            Standard Chartered</option>
+                                                                        <option value="State Bank of India">
+                                                                            State Bank of India</option>
+                                                                        <option
+                                                                            value="Suryoday Small Finance Bank Ltd.">
+                                                                            Suryoday Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="Tamilnad Mercantile Bank Ltd.">
+                                                                            Tamilnad Mercantile Bank
+                                                                            Ltd.</option>
+                                                                        <option value="UCO Bank">UCO
+                                                                            Bank</option>
+                                                                        <option value="Ujjivan Small Finance Bank Ltd.">
+                                                                            Ujjivan Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="Union Bank of India">
+                                                                            Union Bank of India</option>
+                                                                        <option value="Utkarsh Small Finance Bank Ltd.">
+                                                                            Utkarsh Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="YES Bank Ltd.">
+                                                                            YES Bank Ltd.</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                                                    <label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Branch
+                                                                            Name</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="branch" type="text"
+                                                                        placeholder="Branch Name">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-prev-buttons" class="button-row d-flex mt-4">
+                                                                <button class="btn js-btn-prev" type="button"
+                                                                    title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev-1"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Company KYC as mandated by the Government</h3>
+                                                        <div id="form-content-2" class="multisteps-form__content">
+                                                            <div id="input-grp-single-2" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Business
+                                                                            PAN</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="bpan" type="text" placeholder="Enter PAN">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-2" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Corporate
+                                                                            Identity
+                                                                            Number</strong></label><input
+                                                                        name="corporate"
+                                                                        class="form-control multisteps-form__input"
+                                                                        type="text" placeholder="Enter CIN">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-prev-buttons-1"
+                                                                class="button-row d-flex mt-4"><button
+                                                                    class="btn js-btn-prev" type="button" title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev-2"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Build your brand with us</h3>
+                                                        <div id="form-content-3" class="multisteps-form__content">
+                                                            <div id="input-grp-single-3" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Company
+                                                                            Logo</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="logo" type="file" placeholder="Logo"
+                                                                        style="height: auto;"></div>
+                                                            </div>
+                                                            <div id="input-grp-single-3" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>About
+                                                                            Your
+                                                                            Brand</strong></label><textarea
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="brand" placeholder="Describe Your Brand"
+                                                                        style="width: 100%;" rows="10"></textarea></div>
+                                                            </div>
+                                                            <div id="next-prev-buttons-2"
+                                                                class="button-row d-flex mt-4"><button
+                                                                    class="btn js-btn-prev" type="button" title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto" type="button"
+                                                                    onclick="this.closest('form').submit();return false;"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+        var geet;
+
+        if (hrs < 12)
+            geet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            geet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            geet = 'Good Evening';
+
+        document.getElementById('greet').innerHTML = geet + ', {{nam}}';
+
+    </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Bootstrap-Tags-Input-1.js"></script>
+    <script src="/static/staticfiles/js/Bootstrap-Tags-Input.js"></script>
+    <script src="/static/staticfiles/js/BS-34-Modal-Popup-Window-With-Image.js"></script>
+    <script src="/static/staticfiles/js/Multi-step-form.js"></script>
+</body>
+
+</html>

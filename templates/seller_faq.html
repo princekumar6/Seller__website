@@ -1,0 +1,35 @@
+{% load static %}
+
+<!-- for faq and blog pages -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+  {% block body %}
+  {% endblock %}
+
+  {% include "footer.html" %}
+  <script>
+    var l = window.location.pathname.split('/')[2];
+    document.getElementById('lastword').innerHTML = l;
+    var l2 = window.location.pathname.split('/')[1];
+    document.getElementById('last2word').innerHTML = l2;
+  </script>
+  <script src="/static/staticfiles/js/jquery.min.js"></script>
+  <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,41 @@
+.container {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 0 30px;
+}
+
+.container div {
+  background-color: #F7F7F7;
+  border: 1px solid #E2E2E2;
+  padding: 0 20px;
+  margin: 15px 0;
+}
+
+.container div:hover {
+  background-color: #fafafa;
+}
+
+.container div h3 span {
+  font-family: 'entypo';
+  font-size: 19px;
+  position: absolute;
+  right: 0;
+  transition: all .6s;
+}
+
+.container div p {
+  display: none;
+  margin-left: 10px;
+  padding: 0 15px;
+  border-left: 1px solid #ccc;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 0;
+  line-height: 40px;
+  color: #555;
+  cursor: pointer;
+  position: relative;
+}
+

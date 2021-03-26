@@ -1,0 +1,405 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square Seller</title>
+
+    {% include "styles.html" %}
+    {% include "navlogin.html" %}
+
+    <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+        {{msg}}</div>
+    <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+        <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+            <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+        </ol>
+    </nav>
+    <div class="row" style="margin: 0px;">
+        <div class="col d-none d-lg-block"
+            style="max-width: 19%;padding-left: 5px;border-right: 1px solid rgb(221, 221, 221);">
+            <div class="list-group" style="margin-top: 10px;">
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/"><i
+                        class="fa fa-home" style="margin-right: 10px;"></i>Home</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-shopping-cart"
+                        style="margin-left: 20px;margin-right: 10px;"></i>Current
+                    Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-shopping-cart"
+                        style="margin-left: 20px;margin-right: 10px;"></i>Past Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-box" style="margin-right: 10px;"></i>Products</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/newproduct/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Add New
+                    Product</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/viewproducts/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Active
+                    Products</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+                    History</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+                    Performance</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer
+                    Reviews</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/contact/"><i
+                        class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/commercial-terms/"><i class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+                    Terms</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/docverify/"><i class="fas fa-clipboard-check"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/faqs/general/"><i class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+                    FAQ's</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/policy/"><i
+                        class="fas fa-vote-yea" style="margin-right: 9px;"></i>Policies</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/marketplace/"><i class="fas fa-clipboard-list"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/guidelines/"><i class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller
+                    Guidelines</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/terms/"><i
+                        class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i
+                        class="fab fa-facebook-f" style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+                        style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+                        style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+                        style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+                        style="margin-right: 11px;margin-left: 5px;"></i>Twitter</a>
+            </div>
+        </div>
+        <div class="col">
+            <h2 class="text-center"
+                style="margin: 25px;margin-bottom: 40px;color: black;font-family: 'Libre Baskerville', serif;">
+                <strong>Account Verification</strong></h2>
+            <div class="text-center canv" style="padding: 0% 15%;">
+                <ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: #01011e" id="home-tab-just" data-toggle="tab"
+                            href="#home-just" role="tab" aria-controls="home-just" aria-selected="true">Bank
+                            Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #01011e;" id="profile-tab-just" data-toggle="tab"
+                            href="#profile-just" role="tab" aria-controls="profile-just" aria-selected="false">Entity
+                            KYC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #01011e;" id="contact-tab-just" data-toggle="tab"
+                            href="#contact-just" role="tab" aria-controls="contact-just"
+                            aria-selected="false">Representative KYC</a>
+                    </li>
+                </ul>
+                <div class="tab-content text-left pt-5" id="myTabContentJust" style="border: none; color: black;">
+                    <div class="tab-pane fade show active" id="home-just" role="tabpanel"
+                        aria-labelledby="home-tab-just">
+                        <form method="POST" action="/afterbankverify/">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Account Holder
+                                                Name</strong></label><input class="form-control" name="accname"
+                                            type="text" placeholder="Name" style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Account
+                                                Number</strong></label><input class="form-control" name="accno"
+                                            type="text" placeholder="Number" style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>IFSC</strong></label><input
+                                            class="form-control" name="accifsc" type="text" placeholder="Code"
+                                            style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Bank Name</strong></label><select
+                                            class="form-control" name="bname" id="options"
+                                            style="width:100%; height:35px;">
+                                            <option value="" disabled selected>Select Bank</option>
+                                            <option value="Airtel Payments Bank Ltd">Airtel Payments Bank
+                                                Ltd
+                                            </option>
+                                            <option value="American Express Banking Corp.">American Express
+                                                Banking
+                                                Corp.</option>
+                                            <option value="Au Small Finance Bank Ltd.">Au Small Finance Bank
+                                                Ltd.
+                                            </option>
+                                            <option value="Axis Bank Ltd. ">Axis Bank Ltd. </option>
+                                            <option value="Bandhan Bank Ltd. ">Bandhan Bank Ltd. </option>
+                                            <option value="Bank of Baroda">Bank of Baroda</option>
+                                            <option value="Bank of India">Bank of India</option>
+                                            <option value="Bank of Maharashtra">Bank of Maharashtra</option>
+                                            <option value="Barclays PLC">Barclays PLC</option>
+                                            <option value="BNP Paribas">BNP Paribas</option>
+                                            <option value="Canara Bank">Canara Bank</option>
+                                            <option value="Capital Small Finance Bank Ltd">Capital Small
+                                                Finance
+                                                Bank Ltd</option>
+                                            <option value="Central Bank of India">Central Bank of India
+                                            </option>
+                                            <option value="CitiBank">CitiBank</option>
+                                            <option value="City Union Bank Ltd.">City Union Bank Ltd.
+                                            </option>
+                                            <option value="Credit Suisse A.G">Credit Suisse A.G</option>
+                                            <option value="CSB Bank Limited">CSB Bank Limited</option>
+                                            <option value="DCB Bank Ltd.">DCB Bank Ltd.</option>
+                                            <option value="Deutsche Bank">Deutsche Bank</option>
+                                            <option value="Dhanlaxmi Bank Ltd.">Dhanlaxmi Bank Ltd.</option>
+                                            <option value="Equitas Small Finance Bank Ltd">Equitas Small
+                                                Finance
+                                                Bank Ltd</option>
+                                            <option value="ESAF Small Finance Bank Ltd.">ESAF Small Finance
+                                                Bank
+                                                Ltd.</option>
+                                            <option value="Federal Bank Ltd.">Federal Bank Ltd.</option>
+                                            <option value="Fincare Small Finance Bank Ltd.">Fincare Small
+                                                Finance
+                                                Bank Ltd.</option>
+                                            <option value="FINO Payments Bank Ltd">FINO Payments Bank Ltd
+                                            </option>
+                                            <option value="HDFC Bank Ltd">HDFC Bank Ltd</option>
+                                            <option value="HSBC Ltd.">HSBC Ltd.</option>
+                                            <option value="ICICI Bank Ltd.">ICICI Bank Ltd.</option>
+                                            <option value="IDBI Bank Limited">IDBI Bank Limited</option>
+                                            <option value="IDFC FIRST Bank Limited">IDFC FIRST Bank Limited
+                                            </option>
+                                            <option value="India Post Payments Bank Ltd">India Post Payments
+                                                Bank
+                                                Ltd</option>
+                                            <option value="Indian Bank">Indian Bank</option>
+                                            <option value="Indian Overseas Bank">Indian Overseas Bank
+                                            </option>
+                                            <option value="IndusInd Bank Ltd">IndusInd Bank Ltd</option>
+                                            <option value="Jammu & Kashmir Bank Ltd.">Jammu & Kashmir Bank
+                                                Ltd.
+                                            </option>
+                                            <option value="Jana Small Finance Bank Ltd">Jana Small Finance
+                                                Bank Ltd
+                                            </option>
+                                            <option value="Jio Payments Bank Ltd">Jio Payments Bank Ltd
+                                            </option>
+                                            <option value="Karnataka Bank Ltd.">Karnataka Bank Ltd.</option>
+                                            <option value="Karur Vysya Bank Ltd.">Karur Vysya Bank Ltd.
+                                            </option>
+                                            <option value="Kotak Mahindra Bank Ltd">Kotak Mahindra Bank Ltd
+                                            </option>
+                                            <option value="Lakshmi Vilas Bank Ltd.">Lakshmi Vilas Bank Ltd.
+                                            </option>
+                                            <option value="Nainital bank Ltd.">Nainital bank Ltd.</option>
+                                            <option value="North East Small finance Bank Ltd">North East
+                                                Small
+                                                finance Bank Ltd</option>
+                                            <option value="NSDL Payments Bank Limited">NSDL Payments Bank
+                                                Limited
+                                            </option>
+                                            <option value="Paytm Payments Bank Ltd">Paytm Payments Bank Ltd
+                                            </option>
+                                            <option value="Punjab & Sind Bank">Punjab & Sind Bank</option>
+                                            <option value="Punjab National Bank">Punjab National Bank
+                                            </option>
+                                            <option value="RBL Bank Ltd.">RBL Bank Ltd.</option>
+                                            <option value="South Indian Bank Ltd.">South Indian Bank Ltd.
+                                            </option>
+                                            <option value="Standard Chartered">Standard Chartered</option>
+                                            <option value="State Bank of India">State Bank of India</option>
+                                            <option value="Suryoday Small Finance Bank Ltd.">Suryoday Small
+                                                Finance
+                                                Bank Ltd.</option>
+                                            <option value="Tamilnad Mercantile Bank Ltd.">Tamilnad
+                                                Mercantile Bank
+                                                Ltd.</option>
+                                            <option value="UCO Bank">UCO Bank</option>
+                                            <option value="Ujjivan Small Finance Bank Ltd.">Ujjivan Small
+                                                Finance
+                                                Bank Ltd.</option>
+                                            <option value="Union Bank of India">Union Bank of India</option>
+                                            <option value="Utkarsh Small Finance Bank Ltd.">Utkarsh Small
+                                                Finance
+                                                Bank Ltd.</option>
+                                            <option value="YES Bank Ltd.">YES Bank Ltd.</option>
+                                        </select></div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Branch</strong></label><input
+                                            class="form-control" name="branch" type="text" placeholder="Branch"
+                                            style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align: center;"><button class="btn btn-primary btn-sm"
+                                    type="submit"
+                                    style="background: #01011e;padding-top: 6px;padding-bottom: 6px;padding-right: 50px;padding-left: 50px;">Verify</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="profile-just" role="tabpanel" aria-labelledby="profile-tab-just">
+                        <form method="POST" action="/afterentityverify/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>GST Number</strong></label><input
+                                            class="form-control" name="gst" type="text" placeholder="GST"
+                                            style="border-color: rgb(133,135,150);"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Business
+                                                PAN</strong></label><input class="form-control" name="bpan" type="text"
+                                            placeholder="PAN" style="border-color: rgb(133,135,150);"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Entity
+                                                KYC</strong></label><select class="form-control" name="ekyc"
+                                            id="options" style="width:100%; height:35px;" onclick="myFunct1()">
+                                            <option value="" disabled selected>Choose Document</option>
+                                            <option value="Certificate Of Incorporation">Certificate Of
+                                                Incorporation</option>
+                                            <option value="GST Registration Certificate">GST Registration
+                                                Certificate</option>
+                                            <option value="IT Return">IT Return</option>
+                                            <option value="Registration Certificate">Registration
+                                                Certificate
+                                            </option>
+                                        </select></div>
+                                </div>
+                                <div class="col" id="inv" style=" display: none;">
+                                    <div class="form-group"><label><strong>Document
+                                                Upload</strong></label><input class="form-control" type="file" multiple
+                                            name="doc"
+                                            style="border-color: rgb(133,135,150); padding-top: 5px;height:34px;"
+                                            placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Corporate Identity
+                                                Number</strong></label><input class="form-control" name="corporate"
+                                            type="text" placeholder="CIN" style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align: center;"><button class="btn btn-primary btn-sm"
+                                    type="submit"
+                                    style="background: #01011e;padding-top: 6px;padding-bottom: 6px;padding-right: 50px;padding-left: 50px;">Verify</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="contact-just" role="tabpanel" aria-labelledby="contact-tab-just">
+                        <form method="POST" action="/afterrepverify/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Name</strong></label><input
+                                            class="form-control" name="rname" type="text" placeholder="Name"
+                                            style="border-color: rgb(133,135,150);"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Contact
+                                                Number</strong></label><input class="form-control" name="dob"
+                                            type="number" placeholder="Phone" style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Email</strong></label><input
+                                            class="form-control" name="raddress" type="text" placeholder="Email"
+                                            style="border-color: rgb(133,135,150);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label><strong>Representative
+                                                KYC</strong></label><select class="form-control" name="rkyc"
+                                            id="options" style="width:100%; height:35px;" onclick="myFunct()">
+                                            <option value="" disabled selected>Choose Document</option>
+                                            <option value="Aadhar">Aadhar</option>
+                                            <option value="PAN">PAN</option>
+                                            <option value="Passport">Passport</option>
+                                        </select></div>
+                                </div>
+                                <div class="col" id="invw" style=" display: none;">
+                                    <div class="form-group"><label><strong>Document
+                                                Upload</strong></label><input class="form-control" type="file" multiple
+                                            name="rdoc"
+                                            style="border-color: rgb(133,135,150); padding-top: 5px;height: 34px;"
+                                            placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align: center;"><button class="btn btn-primary btn-sm"
+                                    type="submit"
+                                    style="background: #01011e;padding-top: 6px;padding-bottom: 6px;padding-right: 50px;padding-left: 50px;">Verify</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+
+    <script>
+        function myFunct() {
+            document.getElementById("invw").style.display = "block";
+        }
+        function myFunct1() {
+            document.getElementById("inv").style.display = "block";
+        }
+    </script>
+    <script>
+        var l = window.location.pathname.split('/')[1];
+        document.getElementById('lastword').innerHTML = l;
+    </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+.SingleSec{
+    height:100vh;
+    padding: 2.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+.box-singlesec{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PT Serif', serif;
+    margin: auto auto;
+    height: 100%;
+    background-color:rgb(255, 255, 255,0.7);
+}
+.film{
+    background-color:rgb(255, 255, 255,0.7);
+    height: 100%;
+}
+@media only screen and (max-width: 1024px){
+    .box-singlesec{
+        flex-direction: column;
+    }
+}
+@media (max-width:767px){
+    .SingleSec{
+        height: 150vh;
+    }
+    #content-col{
+        padding: 0rem 2rem;
+    }
+    #form-col{
+        padding: 0;
+    }
+    #form-col-det{
+        padding: 0;
+    }
+}
+@media (max-width:370px){
+    .SingleSec{
+        height: 200vh;
+    }
+    #content-head{
+        font-size: 1.6rem;
+    }
+}
+@media only screen and (max-width:567px){
+    .SingleSec{
+        height: 170vh;
+    }
+}

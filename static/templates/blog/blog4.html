@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Seventh Square Seller</title>
+  {% include "styles.html" %}
+  {% include "navlogout.html" %}
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+    <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+      <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+      <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e"></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+    </ol>
+  </nav>
+<div class="row" style="margin: 0px;margin-bottom: 30px;">
+<div class="col-1 col-md-3"></div>
+<div class="col">
+    <h2 class="text-center text-capitalize"
+        style="color: black;font-weight: 700;font-family: 'Libre Baskerville', serif;margin: 25px;line-height: 1.5;">
+        Seventh Square Business</h2>
+    <div class="text-center"
+        style="color: black;font-family: 'Hind Siliguri', sans-serif;font-size: 13px;line-height: 1.8;letter-spacing: 1.5px; margin: 30px;">
+        FEB 01, 2021 <br> By - <strong
+            style="color: rgb(226, 2, 2);letter-spacing: 0px;font-family: 'Libre Baskerville', serif;font-size: 14px;">Seventh
+            Square</strong>
+    </div>
+    <p style="font-family: 'Hind Siliguri', sans-serif;margin: 0px;">Seventh Square doesn’t just give you a platform to
+        reach the end consumer. We also help sellers reach institutions, producers & professionals like Builders,
+        Construction Firms, Architects & Interior Designers as well as small businesses who are looking to buy in bulk.
+    </p>
+
+    <img src="https://seller.seventhsq.com/static/staticfiles/img/b4.png" alt="" style="width: 100%;margin: 20px 0px;">
+
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">How it works?</strong>
+    </h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">For any bulk or business buyer, the best available catalog
+        is sent as per their requirements from one/various sellers based on several factors including location, price,
+        inventory, product reviews, return policy, etc. <br><br> For example, a builder in Surat, Gujarat is looking for
+        panel lights, bathroom sinks, faucets and building materials for his under construction site. We will go through
+        our sellers for every category and search for which sellers offer most affordable price for a particular product
+        and where the seller is based as compared to the builder. This adds some more filters like sellers with
+        inventory updated and flexible return policy, etc. and is finalized after discussing with the shortlisted
+        sellers. Finally, the quote is sent along with all details and when an order is placed, we deliver those items
+        from seller’s warehouse to the builders’ location. Follow up and after sales is done by Seventh Square’s
+        Business Team.</span>
+
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">Benefits to Sellers</strong>
+    </h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">Whether you are in Sanitaryware or Building Materials, we’ll
+        help you reach all potential business clients within your area and across the country. Sell easily without the
+        hassle of shipping and customer service and grow your business without any external marketing costs. We get the
+        clients, prepare the quote, deliver the order, transfer the payment to you and be in-touch with the clients all
+        along.</span>
+
+    <h2 style="font-size: 21px; margin: 20px 0px; font-family: 'Source Serif Pro', serif; color: black;">
+        <strong style="font-family: 'Crimson Text', serif;">How can you register yourself as a business/bulk
+            seller?</strong>
+    </h2>
+    <span style="font-family: 'Hind Siliguri', sans-serif;">Seventh Square has made it easy for sellers to register and
+        sell. For registering for B2B, send an email to <u>seller@seventhsq.com</u> with your business name, location
+        and categories serviced and our team will reach out and carry it forward with you. Seventh Square business works
+        on the backend for most transactions, so most work is finished within our offices and you can focus on growing
+        your own business with us.</span>
+</div>
+<div class="col-1 col-md-3"></div>
+</div>
+<div class="row" style="margin: 0px;">
+    <div class="col-2"></div>
+    <div class="col">{% include "blogstrip.html" %}</div>
+    <div class="col-2"></div>
+</div>
+{% include "footer.html" %}
+<script>
+  var l = window.location.pathname.split('/')[2];
+  document.getElementById('lastword').innerHTML = l;
+  var l2 = window.location.pathname.split('/')[1];
+  document.getElementById('last2word').innerHTML = l2;
+</script>
+<script src="/static/staticfiles/js/jquery.min.js"></script>
+<script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

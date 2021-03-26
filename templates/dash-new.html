@@ -1,0 +1,729 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square Seller Dashboard</title>
+    <link rel="stylesheet" href="/static/staticfiles/css/Bootstrap-Tags-Input.css">
+    <style>
+        .backdrop {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            display: block;
+            z-index: 10;
+            visibility: hidden;
+        }
+
+        .backdrop-transition {
+            transition-duration: .2s;
+            transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+            transition-property: visibility;
+        }
+
+        .backdrop-dark {
+            background-color: rgba(0, 0, 0, .8);
+        }
+    </style>
+    {% include "styles.html" %}
+    {% include "navlogin.html" %}
+
+    <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+        {{msg}}</div>
+    <nav aria-label="breadcrumb" style="font-size: 14px;border-bottom: 1px solid rgb(245, 245, 245);">
+        <ol class="breadcrumb m-0" style="background-color: #fff;padding: 2px 20px;">
+            <li class="breadcrumb-item"><a href="/" style="color:#01011e">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span id="lastword"></span></li>
+        </ol>
+    </nav>
+    <div class="row" style="margin: 0px;">
+        <div class="col d-none d-lg-block"
+            style="max-width: 19%;padding-left: 5px;border-right: 1px solid rgb(221, 221, 221);">
+            <div class="list-group" style="margin-top: 10px;">
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/"><i
+                        class="fa fa-home" style="margin-right: 10px;"></i>Home</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-shopping-cart"
+                        style="margin-left: 20px;margin-right: 10px;"></i>Current
+                    Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-shopping-cart"
+                        style="margin-left: 20px;margin-right: 10px;"></i>Past Orders</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"><i
+                        class="fas fa-box" style="margin-right: 10px;"></i>Products</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/newproduct/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Add New
+                    Product</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/viewproducts/"><i class="fas fa-box" style="margin-left: 20px;margin-right: 10px;"></i>Active
+                    Products</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+                    History</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+                    Performance</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/coming-soon/"><i class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer
+                    Reviews</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/contact/"><i
+                        class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/commercial-terms/"><i class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+                    Terms</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/docverify/"><i class="fas fa-clipboard-check"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/faqs/general/"><i class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+                    FAQ's</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/policy/"><i
+                        class="fas fa-vote-yea" style="margin-right: 9px;"></i>Policies</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/marketplace/"><i class="fas fa-clipboard-list"
+                        style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="/guidelines/"><i class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller
+                    Guidelines</a>
+
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button" href="/terms/"><i
+                        class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a>
+                <hr style="margin: 1em;">
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i
+                        class="fab fa-facebook-f" style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+                        style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+                        style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+                        style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a>
+                <a class="btn text-left" style="box-shadow: none;border-radius: 0px;" role="button"
+                    href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+                        style="margin-right: 11px;margin-left: 5px;"></i>Twitter</a>
+            </div>
+        </div>
+        <div class="col">
+            <h2 class="text-center" style="margin: 20px;font-family: 'Libre Baskerville', serif;color: black;">
+                <strong>Add New
+                    Product</strong></h2>
+            <div class="card mb-3">
+                <div class="card-header py-3 text-center" style="background-color: #f8f9fc;">
+                    <p class="m-0 font-weight-bold"
+                        style="color: black;font-size: 25px;font-family: 'Crimson Text', serif;">Product Details</p>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/afternew/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col" style="padding: 0px;">
+                                <div class="m-2">
+                                    <div id="backdrop" class="backdrop backdrop-transition backdrop-dark">
+                                        <div class="text-center w-100" style="position: absolute;top: 10%;">
+                                            <div class="bg-light border rounded border-success shadow-lg m-auto"
+                                                style="width: 150px;height: 150px;"><i class="fa fa-upload d-block p-4"
+                                                    style="font-size: 50px;"></i><span>Drop file to
+                                                    attach</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="jumbotron pt-1 pb-0 mb-1">
+                                        <div class="alert alert-success invisible mt-1" role="alert"><span
+                                                id="notify"></span></div>
+                                        <h4 class="text-center">Add Product Images and Videos<br></h4>
+                                        <p class="text-center"><label for="form-files"><a class="btn" role="button"
+                                                    style="padding: 7px 50px; background-color: #01011e;color: white;">Choose
+                                                    Files</a></label></p>
+                                        <p id="filecount"><br></p>
+                                        <div id="list"></div><input type="file" id="form-files" class="invisible"
+                                            name="prodimg" multiple="">
+                                    </div>
+                                    <div class="text-center bg-light p-2"><img id="image_preview" width="40%">
+                                        <div><button class="btn btn-warning btn-sm m-2"
+                                                onclick="previewClose()">Close</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>Title</strong></label>
+                                    <input class="form-control" name="heading" type="text" placeholder="Title" id="titl"
+                                        style="border-color: rgb(133,135,150);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>Category</strong></label><select required
+                                        class="form-control" name="cate" id="options" style="width:100%; height:35px;">
+                                        <option value="" disabled selected>Select Category</option>
+                                        <option value="SNT">Bath & Kitchen/Sanitarywares</option>
+                                        <option value="CST">Construction</option>
+                                        <option value="FRT">Furniture</option>
+                                        <option value="HDC">Home Decor</option>
+                                        <option value="HFR">Home Furnishings</option>
+                                        <option value="HIP">Home Improvement</option>
+                                        <option value="LHT">Lighting</option>
+                                    </select></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label><strong>Sub-Category</strong></label><select
+                                        class="form-control" name="sub_c" id="choices" style="width:100%; height:35px;">
+                                        <option value="" disabled selected>Sub Category</option>
+                                    </select></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Description&nbsp;</strong><br></label><textarea class="form-control"
+                                        id="desc" style="border-color: rgb(133,135,150);background: transparent;"
+                                        rows="4" name="desc"
+                                        placeholder="Add Product Details, How To Use, Tips & Tricks."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 col-md-4">
+                                <div class="form-group"><label><strong>Pick Up Location</strong></label><input
+                                        class="form-control" type="text" placeholder="Location" name="city" id="pul"
+                                        style="border-color: rgb(133,135,150);"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="form-group"><label><strong>Country Of Origin</strong></label><input id="co"
+                                        class="form-control" type="text" placeholder="Country Of Origin" name="coo"
+                                        style="border-color: rgb(133,135,150);"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="form-group"><label><strong>HSN
+                                            Code</strong></label><input class="form-control" type="text"
+                                        placeholder="HSN Code" name="hsn" style="border-color: rgb(133,135,150);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>Warranty </strong>(years)</label><input id="warr"
+                                        class="form-control" type="text" placeholder="Add Product Warranty" name="war"
+                                        style="border-color: rgb(133,135,150);"></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label><strong>Guarantee </strong>(years)</label><input
+                                        id="guar" class="form-control" type="text" placeholder="Add Product Guarantee"
+                                        name="gua" style="border-color: rgb(133,135,150);"></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label style="margin-bottom: 15px;"><strong>Inventory Status</strong></label>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                                            checked onclick="myFunct(this)" />
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">With Seventh Square</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-6" id="inv">
+                                <div class="form-group"><label><strong>Inventory</strong></label><input
+                                        class="form-control" type="number" name="inven"
+                                        style="border-color: rgb(133,135,150);" placeholder="0 units"></div>
+                            </div>
+                            <div class="col text-center" style="display: none;padding-top: 20px; display: none;"
+                                id="tex">
+                                <label><strong>It Is Recommended To Hold Suitable Inventory With You For Future
+                                        Orders</strong></label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>Colors</strong></label><input
+                                        class="form-control" type="text" name="colo" id="color" data-role="tagsinput" data-class="label-info"
+                                        style="border-color: rgb(133,135,150); " placeholder="Colors"></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label><strong>Sizes</strong></label><input class="form-control"
+                                        type="text" name="siz" id="size" style="border-color: rgb(133,135,150);"
+                                        placeholder="Sizes"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>About The Brand</strong></label><textarea
+                                        class="form-control" type="text" name="about" id="about"
+                                        style="border-color: rgb(133,135,150);background: transparent;" rows="2"
+                                        placeholder="About The Brand">{{data.about}}</textarea></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header py-3 text-center" style="background-color: #f8f9fc;">
+                    <p class="m-0 font-weight-bold"
+                        style="color: black;font-size: 25px;font-family: 'Crimson Text', serif;">Product
+                        Parameters&nbsp;
+                    </p>
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Product
+                                        Weight</strong> (in gm)</label><input class="form-control" name="s_weight"
+                                    required type="number" id="wt" style="border-color: rgb(133,135,150);"
+                                    placeholder="0 gm"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Material</strong></label><textarea id="mat"
+                                    class="form-control" type="text" name="mat" placeholder="Material"
+                                    style="border-color: rgb(133,135,150);background: transparent;" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 style="font-size: 19px;margin-top: 16px;"><strong>Product Dimensions</strong> (in cm)
+                    </h5>
+                    <h6 style="margin: 0px; font-size: 14px;">Leave Blank If Not Applicable</h6>
+                    <hr>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Length</strong></label><input class="form-control"
+                                    type="number" name="pl" id="pl" style="border-color: rgb(133,135,150); "
+                                    placeholder="0 cm"></div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group"><label><strong>Width</strong></label><input class="form-control"
+                                    type="number" name="pw" id="pw" style="border-color: rgb(133,135,150);"
+                                    placeholder="0 cm"></div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group"><label><strong>Height</strong><br></label><input
+                                    class="form-control" id="ph" type="number" name="ph"
+                                    style="border-color: rgb(133,135,150);" placeholder="0 cm"></div>
+                        </div>
+                    </div>
+                    <h5 style="font-size: 19px;margin-top: 16px;"><strong>Packaged Product-Box
+                            Dimensions</strong>
+                        (in cm)</h5>
+                    <hr>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Length</strong></label><input class="form-control"
+                                    type="number" name="bl" id="bl" value=0 style="border-color: rgb(133,135,150);"
+                                    placeholder="0 cm"></div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group"><label><strong>Width</strong></label><input class="form-control"
+                                    type="number" name="bw" id="bw" value=0 style="border-color: rgb(133,135,150);"
+                                    placeholder="0 cm"></div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group"><label><strong>Height</strong><br></label><input
+                                    class="form-control" id="bh" type="number" name="bh" value=0
+                                    style="border-color: rgb(133,135,150);" placeholder="0 cm"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header py-3 text-center" style="background-color: #f8f9fc;">
+                    <p class="m-0 font-weight-bold"
+                        style="color: black;font-size: 25px;font-family: 'Crimson Text', serif;">Price Details</p>
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Marked
+                                        Price/MRP&nbsp;</strong><i class="fa fa-question-circle-o" data-toggle="tooltip"
+                                        data-bs-tooltip="" style="font-size: 12px;"
+                                        title="Maximum Retail Price"></i></label><input class="form-control" name="mp"
+                                    type="number" id="mark" style="border-color: rgb(133,135,150);" placeholder="Rs. 0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row" style="display: none;">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Listed Price&nbsp;</strong><i
+                                        class="fa fa-question-circle-o" data-toggle="tooltip" data-bs-tooltip=""
+                                        style="font-size: 12px;"
+                                        title="Price Offered By You To The Customers Without Any Discount"></i></label><input
+                                    class="form-control" type="number" name="lp" style="border-color: rgb(133,135,150);"
+                                    placeholder="Rs. 0"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Selling Price&nbsp;</strong><i
+                                        class="fa fa-question-circle-o" data-toggle="tooltip" data-bs-tooltip=""
+                                        style="font-size: 12px;"
+                                        title="Price At Which Customers Purchase This Product"></i></label><input
+                                    class="form-control" required type="text" name="sp" id="sal" oninput="calcu();"
+                                    style="border-color: rgb(133,135,150);" placeholder="Rs. 0"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <div class="custom-control custom-switch"><input class="custom-control-input" name="sh" checked
+                                oninput="sasa();" type="checkbox" id="formCheck-2"><label class="custom-control-label"
+                                for="formCheck-2"><strong>Shipping With Seventh
+                                    Square</strong></label></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-12" style="margin-top: 15px;margin-bottom: 15px;">
+                            <h6 style="font-weight: 700;padding-left: 10px;"><i class="icon ion-pricetags"
+                                    style="padding-right: 6px;font-size: 20px;"></i>3% Payment Gateway Charges
+                                <i class="fa fa-rupee"></i>&nbsp;<span id="gateway"></span><br>
+                            </h6>
+                            <h6 style="font-weight: 700;padding-left: 10px;"><i class="icon ion-pricetags"
+                                    style="padding-right: 6px;font-size: 20px;"></i>Shipping Charges As Per
+                                Product
+                                Parameters <i class="fa fa-rupee"></i>&nbsp;<span id="shipping"></span><br></h6>
+                            <h6 style="font-weight: 700;padding-left: 10px;"><i class="icon ion-pricetags"
+                                    style="padding-right: 6px;font-size: 20px;"></i>5% Commission <i
+                                    class="fa fa-rupee"></i>&nbsp;<span id="com"></span><br></h6>
+                            <h6 style="font-weight: 700;padding-left: 10px;"><i class="icon ion-pricetags"
+                                    style="padding-right: 6px;font-size: 20px;"></i>18% GST <i
+                                    class="fa fa-rupee"></i>&nbsp;<span id="gst"></span><br></h6>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label><strong>Commercial Price&nbsp;</strong><i
+                                        class="fa fa-question-circle-o" data-toggle="tooltip" data-bs-tooltip=""
+                                        style="font-size: 12px;"
+                                        title="Amount Due To You On Any Order Of This Product"></i></label><input
+                                    required class="form-control" name="ip" type="text" placeholder="Seller Amount"
+                                    id="sel" style="border-color: rgb(133,135,150);" oninput="calc();"></div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <div class="custom-control custom-switch"><input class="custom-control-input" name="yo"
+                                type="checkbox" id="formCheck-1"><label class="custom-control-label"
+                                for="formCheck-1"><strong>Send me a copy of product details.</strong></label>
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align: center;"><a class="already" href="#myModal"
+                            onclick="sided()" data-toggle="modal"><button class="btn btn-sm" type="button"
+                                style="color: white; background: #01011e;padding: 6px 20px; margin-right: 4%;">Preview
+                                Product</button></a><button class="btn btn-sm" type="submit"
+                            style="color: white; background: #05640d;padding: 6px 30px; margin-left: 4%;">Save
+                            Product</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+        <div class="modal-dialog" style="max-width: 98%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="text-align: center;font-family: 'Crimson Text', serif;">Preview Product</h5><button
+                        type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="product-info">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4" style="padding: 0rem 3rem !important;">
+                                <div id="carouselExampleControls" class="carousel slide text-center"
+                                    data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div id="selectedFiles">
+                                        </div>
+                                    </div><img src="" alt="" style="size: coevr;">
+
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <div class="info">
+                                    <strong><span class="text-capitalize" id="mtitle"
+                                            style="font-size: 30px; padding: 10px; color: black;font-family: 'Source Serif Pro', serif;"></span></strong>
+                                    <div class="rating" style="color: #999;"> <i class="fa fa-star"
+                                            style="color: #FC0;"></i> <i class="fa fa-star" style="color: #FC0;"></i> <i
+                                            class="fa fa-star" style="color: #FC0;"></i> <i class="fa fa-star-o"></i> <i
+                                            class="fa fa-star-o"></i> </div>
+                                    <div class="price" style="padding: 10px; font-size: 20px; color: black;">
+                                        <strong>Rs. <span id="mselling"></span></strong>
+                                    </div>
+                                    <div class="price" style="padding: 10px; font-size: 20px;">
+                                        <strong><strike>Rs. <span id="mmarked"></span></strike></strong>
+                                    </div>
+                                    <button class="btn" type="button"
+                                        style="color:white; background-color: #091030; margin: 0px 10px;"><i
+                                            class="icon-basket"></i>Add to Wishlist</button><button class="btn"
+                                        type="button"
+                                        style="color:white; background-color: #091030; margin: 0px 10px;"><i
+                                            class="icon-basket"></i>Add to Cart</button>
+                                    <div class="summary" style="padding: 20px;">
+                                        <p id="mdetail" style="color: black;"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div style="padding: 4%;">
+                            <strong>About The Brand : </strong>
+                            <p id="sabout"></p>
+                            <ul class="nav nav-tabs" role="tablist" id="myTab" style="margin-top: 20px;">
+                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
+                                        data-toggle="tab" id="specifications-tabs"
+                                        href="#specifications">Specifications</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane active fade show specifications" role="tabpanel"
+                                    id="specifications">
+                                    <div class="table-responsive table-bordered">
+                                        <table class="table table-bordered mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Product Seller</td>
+                                                    <td>{{data.name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Material</td>
+                                                    <td id="mmat"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Product Dimensions</td>
+                                                    <td><span id="pd1"></span> x <span id="pd2"></span> x <span
+                                                            id="pd3"></span> (cm)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Packed Box Dimensions</td>
+                                                    <td><span id="pbd1"></span> x <span id="pbd2"></span> x <span
+                                                            id="pbd3"></span> (cm)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Weight</td>
+                                                    <td><span id="wgt"></span> (gm)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Product Warranty</td>
+                                                    <td><span id="pwar"></span> years</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Product Guarantee</td>
+                                                    <td><span id="pguar"></span> years</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Pickup Location</td>
+                                                    <td id="ploc"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="stat">Country Of Origin</td>
+                                                    <td id="cofo"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+
+    <script>
+        var l = window.location.pathname.split('/')[1];
+        document.getElementById('lastword').innerHTML = l;
+    </script>
+
+    <script>
+        var selDiv = "";
+        document.addEventListener("DOMContentLoaded", init, false);
+
+        function init() {
+            document.querySelector('#form-files').addEventListener('change', handleFileSelect, false);
+            selDiv = document.querySelector("#selectedFiles");
+        }
+
+        function handleFileSelect(e) {
+            var files = e.target.files,
+                filesLength = files.length;
+            for (var i = 0; i < filesLength; i++) {
+                var f = files[i]
+                var fileReader = new FileReader();
+                fileReader.onload = (function (e) {
+                    var file = e.target;
+                    $("<div class=\"carousel-item\"><img src=\"" + e.target.result + "\" class=\"d-block w-100\"></div>").insertAfter("#selectedFiles");
+                    $(".remove").click(function () {
+                        $(this).parent(".pip").remove();
+                    });
+                });
+                fileReader.readAsDataURL(f);
+            }
+        }
+    </script>
+    <script>
+        s = -1;
+        function sided() {
+            var element = document.getElementsByClassName("carousel-item")[0];
+            element.classList.add("active");
+            document.getElementById("mtitle").innerHTML = document.getElementById("titl").value;
+            document.getElementById("mselling").innerHTML = document.getElementById("sal").value;
+            document.getElementById("mmarked").innerHTML = document.getElementById("mark").value;
+            document.getElementById("mdetail").innerHTML = document.getElementById("desc").value;
+            document.getElementById("mmat").innerHTML = document.getElementById("mat").value;
+            document.getElementById("pd1").innerHTML = document.getElementById("pl").value;
+            document.getElementById("pd2").innerHTML = document.getElementById("pw").value;
+            document.getElementById("pd3").innerHTML = document.getElementById("ph").value;
+            document.getElementById("pbd1").innerHTML = document.getElementById("bl").value;
+            document.getElementById("pbd2").innerHTML = document.getElementById("bw").value;
+            document.getElementById("pbd3").innerHTML = document.getElementById("bh").value;
+            document.getElementById("wgt").innerHTML = document.getElementById("wt").value;
+            document.getElementById("pwar").innerHTML = document.getElementById("warr").value;
+            document.getElementById("pguar").innerHTML = document.getElementById("guar").value;
+            document.getElementById("ploc").innerHTML = document.getElementById("pul").value;
+            document.getElementById("cofo").innerHTML = document.getElementById("co").value;
+            document.getElementById("sabout").innerHTML = document.getElementById("about").value;
+        }
+        function calc() {
+            var am = parseFloat(calcul());
+            document.getElementById("sal").value = ((parseFloat(document.getElementById("sel").value) + am) / 0.911).toFixed(2);
+            document.getElementById("gateway").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.03).toFixed(2);
+            document.getElementById("com").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.05).toFixed(2);
+            document.getElementById("gst").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.009).toFixed(2);
+        }
+        function calcu() {
+            var am = parseFloat(calcul());
+            document.getElementById("sel").value = ((parseFloat(document.getElementById("sal").value) * 0.911) - am).toFixed(2);
+            document.getElementById("gateway").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.03).toFixed(2);
+            document.getElementById("com").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.05).toFixed(2);
+            document.getElementById("gst").innerHTML = (parseFloat(document.getElementById("sal").value) * 0.009).toFixed(2);
+        }
+        function calcul() {
+            var ship = parseFloat(document.getElementById("wt").value);
+            var bl = parseFloat(document.getElementById("bl").value);
+            var bw = parseFloat(document.getElementById("bw").value);
+            var bh = parseFloat(document.getElementById("bh").value);
+            var vwt = bl * bw * bh / 4000;
+            if (vwt >= ship) {
+                ship = vwt;
+            }
+            if (ship > 12000) {
+                var am = Math.ceil((ship - 12000) / 1000) * 37.5;
+                am = am + 575;
+            }
+            else {
+                if (ship <= 500) { var am = 50; }
+                else if (ship <= 1000) { var am = 82.5; }
+                else if (ship <= 1500) { var am = 120; }
+                else if (ship <= 2000) { var am = 157.5; }
+                else if (ship <= 2500) { var am = 195; }
+                else if (ship <= 3000) { var am = 232.5; }
+                else if (ship <= 4000) { var am = 270; }
+                else if (ship <= 5000) { var am = 307.5; }
+                else if (ship <= 6000) { var am = 345; }
+                else if (ship <= 7000) { var am = 382.5; }
+                else if (ship <= 8000) { var am = 420; }
+                else if (ship <= 9000) { var am = 457.5; }
+                else if (ship <= 10000) { var am = 495; }
+                else if (ship <= 11000) { var am = 532.5; }
+                else { var am = 575; }
+            }
+            var value = s < 0 ? 0 : s;
+            document.getElementById("shipping").innerHTML = am - (value * am);
+            return (am - (value * am));
+        }
+        function myFunct(ele) {
+            if (ele.checked) {
+                document.getElementById("inv").style.display = "block";
+                document.getElementById("tex").style.display = "none";
+            }
+            else {
+                document.getElementById("tex").style.display = "block";
+                document.getElementById("inv").style.display = "none";
+            }
+        }
+        function sasa() {
+            s = s * (-1);
+            var am = parseFloat(calcul());
+            document.getElementById("sel").value = ((parseFloat(document.getElementById("sal").value) * 0.911) - am).toFixed(2);
+        }
+    </script>
+    <script type="text/javascript">
+
+        function stopRKey(evt) {
+          var evt = (evt) ? evt : ((event) ? event : null);
+          var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+          if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+        }
+        
+        document.onkeypress = stopRKey;
+        
+        </script>
+    <script src="/static/staticfiles/js/jquery.min.js"></script>
+    <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/staticfiles/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="/static/staticfiles/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+    <script src="/static/staticfiles/js/Bootstrap-Tags-Input-1.js"></script>
+    <script src="/static/staticfiles/js/Bootstrap-Tags-Input.js"></script>
+
+    <script>
+        var lookup = {
+            'SNT': ['Other', 'Basins', 'Bath Accessories', 'Bath tubs', 'Cisterns', 'Faucets', 'Jacuzzi', 'Kitchen Sink Accessories', 'Shower', 'Shower Enclosures', 'Sinks', 'Toilet', 'Toilet Seats', 'Urinals'],
+            'CST': ['Other', 'Bricks & Blocks', 'Cement', 'Cement tiles', 'Ceramic tiles', 'Construction chemicals', 'Decorative paint coating', 'Doors', 'Electric Panels', 'Elevator', 'Fans', 'Glass hardware', 'Glass tiles', 'Granite tiles', 'Granites', 'Laminates', 'Limestone tiles', 'Marble tiles', 'Marbles', 'Metal tiles', 'Mosaic tiles', 'Pipes & Fittings', 'Pipes and fittings', 'Plywood', 'Porcelain tiles', 'Quarry tiles', 'Resin tiles', 'Sand & Aggregates', 'Switch gear', 'Switches & Sockets', 'Texture and wall care finishes', 'Tmt steel bars', 'Travertine tiles', 'Wall care putty', 'Windows', 'Wires & Cables'],
+            'FRT': ['Other', 'Arm Chair', 'Bar Cabinets', 'Bar Stools', 'Bar Tables', 'Bar Trolleys', 'Bar Units', 'Barrel Chair', 'Bean Bags', 'Bedside Table', 'Benches', 'Book Shelves', 'Cabinet', 'Cafe Chair', 'Cantilever Chair', 'Chaise Loungers', 'Chest Of Drawers', 'Coffee Table', 'Console Tables', 'Dining Tables', 'Dressing Table', 'End Table', 'Folding Bed', 'Folding Chair', 'Foot Stools', 'Futons', 'Hammocks', 'Hutch Cabinet', 'Lounge Chairs', 'Mattress', 'Modular Kitchen', 'Modular Wardrobe', 'Nest Of Tables', 'Office Cabinet', 'Office Chair', 'Ottomans', 'Patio Chair', 'Patio Table', 'Plastic Cabinet', 'Plastic Chair', 'Portable Tables', 'Poster Bed', 'Pouffes', 'Recamier', 'Recliners', 'Rocking Chair', 'Seating Stools', 'Settees', 'Sideboard', 'Slipper Chairs', 'Sofa', 'Study Table', 'Swings', 'Trundle Bed', 'Trunks', 'Upholstered Bed', 'Wine Racks', 'Wing Chair'],
+            'HDC': ['Other', 'Artificial Flowers', 'Artificial Grass', 'Ashtray', 'Bath Set', 'Beverage Tub', 'Bird Feeder', 'Bird House', 'Bookends', 'Bottle Holder', 'Candle Holders', 'Candles', 'Clocks', 'Coaster', 'Decorative Boxes', 'Decorative Objects', 'Decorative Pebbles', 'Decorative Plate', 'Decorative Storage', 'Divider & Screens', 'Dustbin', 'Figurines', 'Fragrance Set', 'Hanger', 'Ice Bucket', 'Idols', 'Incense Holders', 'Jars', 'Jharokha', 'Key Holder', 'Kitchenware & Accessories', 'Laundry Basket', 'Magazine Holder', 'Mirrors', 'Oil Diffuser', 'Paintings', 'Photo Frame', 'Planters', 'Posters', 'Religious Decor', 'Showpieces', 'Soap Dispenser', 'Terrarium', 'Vases', 'Wall Art', 'Wall Bottle Opener', 'Wall Cabinet', 'Wall Decal', 'Wall Hangings', 'Wall Mounted Planters', 'Wall Mural', 'Wall Organiser', 'Wall Paper', 'Wall Shelf', 'Wind Chimes', 'Wine Bottle Case', 'Wine Glass Holder'],
+            'HFR': ['Other', 'Bath Mat', 'Bath Robes', 'Bath Towel', 'Bed Cover', 'Bed Sheet', 'Bedding Set', 'Blanket', 'Carpet', 'Chair Pads', 'Comforter & Quilt', 'Curtain Accessories', 'Curtains & Drapes', 'Cushion', 'Cushion cover', 'Cushion Fillers', 'Dhurries', 'Dohar', 'Door Mat', 'Duvet', 'Duvet Cover', 'Face Towel', 'Hand Towel', 'Kitchen Linen', 'Mattress Protector', 'Pillow Cover', 'Pillow Protector', 'Pillows', 'Placemat', 'Rugs', 'Runners', 'Shower Curtain', 'Sofa Cover & Throws', 'Table Cloth', 'Table Runner'],
+            'HIP': ['Other', 'Adhesive', 'Bath Towel Bar/ Rack', 'Bath Wall Shelf', 'Batteries', 'Bleach', 'Braces', 'Brackets', 'Brooms', 'Cleaners', 'Cleaning brushes', 'Disinfecting Wipes', 'Door Handle', 'Door Latch', 'Door Lock', 'Door Stopper', 'Doorbell', 'Drain Strainers', 'Drawer Slides', 'Dust Pans', 'Dusters', 'Exhaust Fan', 'Extension Cords', 'Fasteners', 'Furniture Caps', 'Furniture Legs', 'Furniture Pad', 'Garbage bags', 'Hand Dryer', 'Hangers', 'Hinges', 'Hooks', 'Janitorial Cart', 'Knob', 'Mop Buckets', 'Mops', 'Nails', 'Outdoor Ashtrays', 'Padlocks', 'Paper Towel Holder', 'Paper Towels', 'Polishes', 'Pulls', 'Room Fresheners', 'Rubber Gloves', 'Screws', 'Security Camera', 'Smart Plugs', 'Smoke/Fire Detector', 'Soap Dispenser', 'Spray Bottles', 'Squeegees', 'Stain Removers', 'Tape', 'Toilet Paper', 'Toilet Seat Covers', 'Tool Box', 'Towel Rings', 'Trash Can', 'Tumbler Holder', 'Vacuum cleaners', 'Velcro Covers', 'Wall Hooks'],
+            'LHT': ['Other', 'Battens', 'Bollard Outdoor Lights', 'Bulbs', 'Ceiling Lights', 'Chandelier', 'Decorative Night Lights', 'Down Lights', 'Emergency Lights', 'Flood Lights', 'Floor Lamps', 'Ground Burial Outdoor lights', 'Lanterns ', 'Outdoor Gate Top', 'Outdoor Pole Lights', 'Outdoor Projector Lights', 'Outdoor Wall Lights', 'Panel Lights', 'Pit Lights', 'Smart Lights', 'Solar Lights', 'Spot Lights', 'Street Lights', 'String Lights', 'Strip Lights', 'Table Lamps', 'Torches', 'Tube Lights', 'Wall Lights'],
+        };
+
+        // When an option is changed, search the above for matching choices
+        $('#options').on('change', function () {
+            // Set selected option as variable
+            var selectValue = $(this).val();
+
+            // Empty the target field
+            $('#choices').empty();
+
+            // For each chocie in the selected option
+            for (i = 0; i < lookup[selectValue].length; i++) {
+                // Output choice in the target field
+                $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+            }
+        });
+    </script>
+    </body>
+
+</html>

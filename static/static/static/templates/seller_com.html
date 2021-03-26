@@ -1,0 +1,736 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seventh Square - Seller Dashboard</title>
+    <link rel="stylesheet" href="/static/staticfiles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&amp;subset=latin-ext">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/typicons.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Accordion.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Animated-Info-Panel.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Bootstrap-Tags-Input.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/login-form.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Multi-step-form.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/Table-With-Search.css">
+    <link rel="stylesheet" href="/static/staticfiles/css/untitled.css">
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+    <style>
+        .sidebar {
+            width: 40rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .list-group-item {
+                color: white;
+            }
+
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: none;
+                overflow: hidden;
+            }
+
+            .foter-1 {
+                display: block !important;
+            }
+
+            .foter-2 {
+                display: none !important;
+            }
+
+            .imgage-1 {
+                padding-right: 5rem !important;
+                padding-left: 5rem !important;
+            }
+
+            .canv {
+                padding: 0% 5% !important;
+            }
+        }
+
+        .nav-link.active {
+            background: #01011e !important;
+            color: white !important;
+        }
+
+        .accordion {
+            color: #6e707e;
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+
+        .list-group-item.active {
+            color: #6e707e;
+            font-size: bold;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .backdrop {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            display: block;
+            z-index: 10;
+            visibility: hidden;
+        }
+
+        .backdrop-transition {
+            transition-duration: .2s;
+            transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+            transition-property: visibility;
+        }
+
+        .backdrop-dark {
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        footer a:hover {
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav
+        class="navbar navbar-dark d-sm-block d-md-none align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 toggled">
+        <div class="container-fluid d-flex flex-column p-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                <div class="list-group " style="margin-top: 70px;"><a href="/"><button
+                            class="list-group-item list-group-item-action"
+                            style="border-style: none;padding: 10px 10px 2px 0px;font-size: 14px; background: transparent;"><i
+                                class="fa fa-home"
+                                style="margin-left: 5px;margin-right: 5px;"></i><span>Home</span></button></a>
+                    <button class="list-group-item list-group-item-action border-white accordion"
+                        style="color: white; background: transparent;border-style: none; padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                            class="material-icons"
+                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Orders</span></button>
+                    <div class="panel">
+                        <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                style="color: white; background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                    class="material-icons"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Current
+                                    Orders</span></button></a>
+                        <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                style=" color: white; background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                    class="material-icons"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Past
+                                    Orders</span></button></a>
+                    </div>
+                    <button class="list-group-item list-group-item-action border-white accordion"
+                        style="color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                            class="icon ion-cube"
+                            style="margin-left: 5px;margin-right: 5px;"></i><span>Products</span></button>
+                    <div class="panel">
+                        <a href="/newproduct/"><button class="list-group-item list-group-item-action border-white"
+                                style=" background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                    class="icon ion-cube" style="margin-left: 5px;margin-right: 5px;"></i><span>Add
+                                    new
+                                    Product</span></button></a>
+                        <a href="/viewproducts/"><button class="list-group-item list-group-item-action border-white"
+                                style=" background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                    class="icon ion-cube" style="margin-left: 5px;margin-right: 5px;"></i><span>Active
+                                    Products</span></button></a>
+                    </div>
+                    <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-cash-register"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Payment
+                                History</span></button></a>
+                    <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-file-signature"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Reports &amp;
+                                Performance</span></button></a>
+                    <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="material-icons"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 17px;">rate_review</i><span>Customer
+                                Reviews</span></button></a>
+                    <a href="/contact/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="material-icons"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">contact_mail</i><span>Contact
+                                Us</span></button></a>
+                    <h6 style="font-weight: 900; padding-top: 20px;">LEGAL</h6>
+                    <hr style="margin: 0px">
+
+                    <a href="/commercial-terms/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-book-reader"
+                                style="margin-left: 5px;margin-right: 5px;"></i><span>Commercial
+                                Terms</span></button></a>
+                    <a href="/docverify/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="icon ion-document-text"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Document
+                                Verification&nbsp;</span></button></a>
+                    <a href="/faq/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-question-circle"
+                                style="margin-left: 5px;margin-right: 5px;"></i><span>General
+                                FAQ's</span></button></a>
+                    <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-vote-yea"
+                                style="margin-left: 5px;margin-right: 5px;"></i><span>Policies</span></button></a>
+                    <a href="/marketplace/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 3px 10px 2px 0px;font-size: 14px;"><i
+                                class="icon ion-document-text"
+                                style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Seller
+                                Agreement</span></button></a>
+
+                    <a href="/guidelines/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-book-reader" style="margin-left: 5px;margin-right: 5px;"></i><span>Seller
+                                Guidelines</span></button></a>
+
+                    <a href="/terms/"><button class="list-group-item list-group-item-action border-white"
+                            style="  color: white; background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                class="fas fa-business-time"
+                                style=" margin-left: 5px; margin-right: 5px;"></i><span>Terms Of
+                                use</span></button></a>
+            </ul>
+            <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle"
+                    type="button"></button></div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light navbar-expand fixed-top shadow topbar" style="background: #01010e;">
+        <div class="container-fluid">
+            <button class="btn btn-link d-md-none rounded-circle mr-2" id="sidebarToggleTop" type="button"><i
+                    class="fas fa-bars" style="color: #858796;"></i></button>
+            <a href="/"><img src="/static/staticfiles/img/white%20png%20(1).png" style="width: 90px;"></a>
+            <form class="form-inline d-none d-sm-inline-block mr-auto navbar-search" style="margin-left: 100px;">
+                <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                        placeholder="Search" style="border-radius: 0px;">
+                    <div class="input-group-append"><button class="btn btn-light py-0" style="border-radius: 0px;"
+                            type="button"><i class="fas fa-search" style="color: #858796;"></i></button></div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav d-none d-lg-flex flex-nowrap ml-auto">
+                <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+                        aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto navbar-search w-100">
+                            <div class="input-group"><input class="bg-light form-control small" type="text"
+                                    placeholder="Search" style="border-radius: 0px;">
+                                <div class="input-group-append"><button class="btn btn-primary py-0"
+                                        style="border-radius: 0px;" type="button"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/corporate/">Corporate
+                        Enquiry</a></li>
+                <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link" href="/partner/">Partner With Us</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav flex-nowrap ml-auto">
+                <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+                        aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto navbar-search w-100">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                                    placeholder="Search">
+                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i
+                                            class="fas fa-search"></i></button></div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                            aria-expanded="false" style="font-size: 25px;"><span
+                                class="badge badge-danger badge-counter">{{notif.coun}}</span><i
+                                class="fas fa-bell fa-fw"></i></a>
+                        <div style="border-radius: 0px;"
+                            class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+                            <h6 class="dropdown-header" style="background-color: #01011e; border: 0px;">
+                                notifications</h6>
+                            <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s1}};"
+                                href="{{notif.l1}}">
+                                <div class="mr-3">
+                                    <div class="icon-circle" style="background-color: #01011e;"><i
+                                            class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div><span class="small text-gray-500"></span>
+                                    <p>{{notif.n1}}</p>
+                                </div>
+                            </a>
+                            <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s2}};"
+                                href="{{notif.l2}}">
+                                <div class="mr-3">
+                                    <div class="icon-circle" style="background-color: #01011e;"><i
+                                            class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div><span class="small text-gray-500"></span>
+                                    <p>{{notif.n2}}</p>
+                                </div>
+                            </a>
+                            <a class="d-flex align-items-center dropdown-item" style="font-weight: {{notif.s3}};"
+                                href="{{notif.l3}}">
+                                <div class="mr-3">
+                                    <div class="icon-circle" style="background-color: #01011e;"><i
+                                            class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div><span class="small text-gray-500"></span>
+                                    <p>{{notif.n3}}</p>
+                                </div>
+                            </a><a class="text-center dropdown-item small text-gray-500" href="/notify_read/">Mark
+                                All Read</a>
+                        </div>
+                    </div>
+                </li>
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow">
+                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                            aria-expanded="false"><span class="d-none d-lg-inline mr-2 text-gray-300 small"
+                                style="font-size: 16px;"><strong>{{ nam }}</strong></span><img
+                                class="border rounded-circle img-profile" src="/static/staticfiles/img/human.jpg"></a>
+                        <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item"
+                                href="/accountinfo/"><i
+                                    class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout/"><i
+                                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="alert alert-{{col}} text-center" style="padding:0px; margin:0px; font-weight: 700;">
+        {{msg}}</div>
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper" style="background: white;">
+            <div id="content" style="padding-top: 60px;">
+                <div class="container-fluid" style="padding: 0px;">
+
+                    <div class="row">
+                        <div class="col d-none d-lg-block" style="max-width: 19%;padding-left: 5px;">
+                            <div class="list-group"
+                                style="margin-left: 25px;margin-top: 10px;border-right: 1px solid rgb(221,221,221);">
+                                <a href="/"><button class="list-group-item list-group-item-action"
+                                        style="border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;background: transparent;"><i
+                                            class="fa fa-home"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Home</span></button></a>
+                                <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Orders</span></button>
+                                <div class="panel">
+                                    <a href="/coming/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="material-icons"
+                                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Current
+                                                Orders</span></button></a>
+                                    <a href="/coming/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="material-icons"
+                                                style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Past
+                                                Orders</span></button></a>
+                                </div>
+                                <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="icon ion-cube"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Products</span></button>
+                                <div class="panel">
+                                    <a href="/newproduct/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="icon ion-cube"
+                                                style="margin-left: 5px;margin-right: 5px;"></i><span>Add new
+                                                Product</span></button></a>
+                                    <a href="/viewproducts/"><button
+                                            class="list-group-item list-group-item-action border-white"
+                                            style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                                class="icon ion-cube"
+                                                style="margin-left: 5px;margin-right: 5px;"></i><span>Active
+                                                Products</span></button></a>
+                                </div>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-cash-register"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Payment
+                                            History</span></button></a>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-file-signature"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Reports
+                                            &amp; Performance</span></button></a>
+                                <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 17px;">rate_review</i><span>Customer
+                                            Reviews</span></button></a>
+                                <a href="/contact/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;">contact_mail</i><span>Contact
+                                            Us</span></button></a>
+                                <h6 style="font-weight: 900; padding-top: 20px;">LEGAL</h6>
+                                <hr style="margin: 0px;width: 80%;">
+                                <a href="/commercial-terms/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-book-reader"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Commercial
+                                            Terms</span></button></a>
+                                <a href="/docverify/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="icon ion-document-text"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Document
+                                            Verification&nbsp;</span></button></a>
+                                <a href="/faq/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-question-circle"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>General
+                                            FAQ's</span></button></a>
+                                <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-vote-yea"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Policies</span></button></a>
+                                <a href="/marketplace/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 3px 10px 2px 0px;font-size: 14px;"><i
+                                            class="icon ion-document-text"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Seller
+                                            Agreement</span></button></a>
+
+                                <a href="/guidelines/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-book-reader"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Seller
+                                            Guidelines</span></button></a>
+
+                                <a href="/terms/"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fas fa-business-time"
+                                            style=" margin-left: 5px; margin-right: 5px;"></i><span>Terms Of
+                                            use</span></button></a>
+
+                                <h6 style="font-weight: 900; padding-top: 20px;">SOCIAL HANDLES</h6>
+                                <hr style="margin: 0px;width: 80%;">
+
+                                <a href="https://www.facebook.com/Seventh-Square-101727191683337/"
+                                    target="_blank"><button class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fab fa-facebook-f"
+                                            style="margin-left: 5px;margin-right: 5px; font-size: 15px;"></i><span>Facebook&nbsp;</span></button></a>
+                                <a href="https://www.instagram.com/seventhsquare/" target="_blank"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="icon ion-social-instagram"
+                                            style="font-size: 20px; margin-left: 5px;margin-right: 5px;"></i><span>Instagram</span></button></a>
+
+                                <a href="https://www.linkedin.com/company/seventh-square" target="_blank"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fab fa-linkedin-in"
+                                            style=" margin-left: 5px;margin-right: 5px;font-size: 15px;"></i><span>LinkedIn</span></button></a>
+
+                                <a href="https://www.instagram.com/seventhsquare/" target="_blank"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                            class="fab fa-pinterest-p"
+                                            style="font-size: 20px; margin-left: 5px;margin-right: 5px;"></i><span>Pinterest</span></button></a>
+
+                                <button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fab fa-twitter"
+                                        style=" margin-left: 5px; margin-right: 5px;"></i><span>Twitter</span></button>
+                            </div>
+                        </div>
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+                </div>
+                <footer class="foter-1 text-center"
+                    style="display: none; margin-top: 30px !important; padding: 30px;background: #1b1b1b;">
+                    <h6 style="padding-top: 5px;"><strong><a href="/partner/"
+                                style="color: white; margin-right: 15px;">Partner With Us</a><a href="/contact/"
+                                style="color: white; margin-left: 15px">Customer Support</a></strong></h6>
+                    <h6 style="margin-top: 15px;"><strong>Categories</strong></h6>
+                    <h6 style="font-size: 13px;color: #999;">Lights | Bath & Kitchen | Furniture | Furnishings |
+                        Home Decor | Hardware | Home Improvement | Building Materials</h6>
+                    <h6 style="margin-top: 15px;"><strong>Policies</strong></h6>
+                    <h6 style="font-size: 13px;color: #999;">Marketplace Agreement | Payment Policy | Privacy
+                        Policy | Shipping & Returns Policy | Terms Of Use</h6>
+                    <div class="row" style="margin: 10px;">
+                        <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/"
+                                target='_blank'><img class="img-fluid"
+                                    src="https://seller.seventhsq.com/static/staticfiles/email/facebook.png" /></a></div>
+                        <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img
+                                    class="img-fluid"
+                                    src="https://seller.seventhsq.com/static/staticfiles/email/instagram.png" /></a></div>
+                        <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img
+                                    class="img-fluid"
+                                    src="https://seller.seventhsq.com/static/staticfiles/email/linkedin.png" /></a></div>
+                        <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img
+                                    class="img-fluid"
+                                    src="https://seller.seventhsq.com/static/staticfiles/email/pinterest.png" /></a></div>
+                        <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid"
+                                    src="https://seller.seventhsq.com/static/staticfiles/email/twitter.png" /></a></div>
+                    </div>
+                </footer>
+                <footer class="foter-2"
+                    style="padding-top: 50px;padding-bottom: 50px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
+                            <h3><a href="/"><img class="img-fluid imgage-1" src="/static/staticfiles/img/white%20png%20(1).png"
+                                        style="padding-left: 30px;padding-right: 30px;"></a></h3>
+                            <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;">
+                                <strong>Registered Office</strong>
+                            </h6>
+                            <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
+                                Area, Jaipur, Rajasthan-302012</p>
+                            <div class="row" style="margin: 10px;">
+                                <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a
+                                        href="https://www.facebook.com/Seventh-Square-101727191683337/"
+                                        target='_blank'><img class="img-fluid"
+                                            src="https://seller.seventhsq.com/static/staticfiles/email/facebook.png" /></a>
+                                </div>
+                                <div class="col" style="padding: 0px 5px;"><a
+                                        href="https://www.instagram.com/seventhsquare/" target='_blank'><img
+                                            class="img-fluid"
+                                            src="https://seller.seventhsq.com/static/staticfiles/email/instagram.png" /></a>
+                                </div>
+                                <div class="col" style="padding: 0px 5px;"><a
+                                        href="https://www.linkedin.com/company/seventh-square" target='_blank'><img
+                                            class="img-fluid"
+                                            src="https://seller.seventhsq.com/static/staticfiles/email/linkedin.png" /></a>
+                                </div>
+                                <div class="col" style="padding: 0px 5px;"><a
+                                        href="https://www.pinterest.com/seventhsq/" target='_blank'><img
+                                            class="img-fluid"
+                                            src="https://seller.seventhsq.com/static/staticfiles/email/pinterest.png" /></a>
+                                </div>
+                                <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/"
+                                        target='_blank'><img class="img-fluid"
+                                            src="https://seller.seventhsq.com/static/staticfiles/email/twitter.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col footer-contacts">
+                            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>KNOW US</strong></h5>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">About
+                                            us</a></li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Reviews<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Reach
+                                            us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col footer-contacts">
+                            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>HELP</strong></h5>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faq/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
+                                            & Returns<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
+                                            Conditions<br></a></li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Write to
+                                            us<br></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col footer-contacts">
+                            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>SERVICES</strong></h5>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
+                                            Order<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                                            Consulting<br></a></li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
+                                            Assistance<br></a></li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Seller
+                                            Registation<br></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col footer-contacts">
+                            <h5 style="margin-bottom: 20px;font-size: 14px;"><strong>PARTNER WITH US</strong>
+                            </h5>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                                            Consultant<br></a>
+                                    </li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                                            Designer<br></a></li>
+                                    <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                                            style="color: #999999;font-weight: normal;font-size: 13px;">Product
+                                            Seller<br></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </footer>
+                <div style="padding: 12px;background: #01011e;color: rgb(255,255,255);">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-xl-8"
+                            style="padding-top: 5px;padding-bottom: 5px;text-align: center;"><span
+                                style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
+                                Internet Pvt. Ltd.</span></div>
+                        <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
+                            style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+                            <div><img src="/static/staticfiles/img/p.jpg" style="margin-top: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <script src="/static/staticfiles/js/jquery.min.js"></script>
+                <script src="/static/staticfiles/bootstrap/js/bootstrap.min.js"></script>
+                <script src="/static/staticfiles/js/chart.min.js"></script>
+                <script src="/static/staticfiles/js/bs-init.js"></script>
+                <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+                <script src="/static/staticfiles/js/Animated-Info-Panel.js"></script>
+                <script src="/static/staticfiles/js/Bootstrap-Tags-Input-1.js"></script>
+                <script src="/static/staticfiles/js/Bootstrap-Tags-Input.js"></script>
+                <script src="/static/staticfiles/js/BS-34-Modal-Popup-Window-With-Image.js"></script>
+                <script src="/static/staticfiles/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
+                <script src="/static/staticfiles/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+                <script src="/static/staticfiles/js/Table-With-Search.js"></script>
+                <script src="/static/staticfiles/js/Multi-step-form.js"></script>
+                <script src="/static/staticfiles/js/theme.js"></script>
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.display === "block") {
+                                panel.style.display = "none";
+                            } else {
+                                panel.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
+                <script>
+                    var lookup = {
+                        'SNT': ['Other', 'Basins', 'Bath Accessories', 'Bath tubs', 'Cisterns', 'Faucets', 'Jacuzzi', 'Kitchen Sink Accessories', 'Shower', 'Shower Enclosures', 'Sinks', 'Toilet', 'Toilet Seats', 'Urinals'],
+                        'CST': ['Other', 'Bricks & Blocks', 'Cement', 'Cement tiles', 'Ceramic tiles', 'Construction chemicals', 'Decorative paint coating', 'Doors', 'Electric Panels', 'Elevator', 'Fans', 'Glass hardware', 'Glass tiles', 'Granite tiles', 'Granites', 'Laminates', 'Limestone tiles', 'Marble tiles', 'Marbles', 'Metal tiles', 'Mosaic tiles', 'Pipes & Fittings', 'Pipes and fittings', 'Plywood', 'Porcelain tiles', 'Quarry tiles', 'Resin tiles', 'Sand & Aggregates', 'Switch gear', 'Switches & Sockets', 'Texture and wall care finishes', 'Tmt steel bars', 'Travertine tiles', 'Wall care putty', 'Windows', 'Wires & Cables'],
+                        'FRT': ['Other', 'Arm Chair', 'Bar Cabinets', 'Bar Stools', 'Bar Tables', 'Bar Trolleys', 'Bar Units', 'Barrel Chair', 'Bean Bags', 'Bedside Table', 'Benches', 'Book Shelves', 'Cabinet', 'Cafe Chair', 'Cantilever Chair', 'Chaise Loungers', 'Chest Of Drawers', 'Coffee Table', 'Console Tables', 'Dining Tables', 'Dressing Table', 'End Table', 'Folding Bed', 'Folding Chair', 'Foot Stools', 'Futons', 'Hammocks', 'Hutch Cabinet', 'Lounge Chairs', 'Mattress', 'Modular Kitchen', 'Modular Wardrobe', 'Nest Of Tables', 'Office Cabinet', 'Office Chair', 'Ottomans', 'Patio Chair', 'Patio Table', 'Plastic Cabinet', 'Plastic Chair', 'Portable Tables', 'Poster Bed', 'Pouffes', 'Recamier', 'Recliners', 'Rocking Chair', 'Seating Stools', 'Settees', 'Sideboard', 'Slipper Chairs', 'Sofa', 'Study Table', 'Swings', 'Trundle Bed', 'Trunks', 'Upholstered Bed', 'Wine Racks', 'Wing Chair'],
+                        'HDC': ['Other', 'Artificial Flowers', 'Artificial Grass', 'Ashtray', 'Bath Set', 'Beverage Tub', 'Bird Feeder', 'Bird House', 'Bookends', 'Bottle Holder', 'Candle Holders', 'Candles', 'Clocks', 'Coaster', 'Decorative Boxes', 'Decorative Objects', 'Decorative Pebbles', 'Decorative Plate', 'Decorative Storage', 'Divider & Screens', 'Dustbin', 'Figurines', 'Fragrance Set', 'Hanger', 'Ice Bucket', 'Idols', 'Incense Holders', 'Jars', 'Jharokha', 'Key Holder', 'Kitchenware & Accessories', 'Laundry Basket', 'Magazine Holder', 'Mirrors', 'Oil Diffuser', 'Paintings', 'Photo Frame', 'Planters', 'Posters', 'Religious Decor', 'Showpieces', 'Soap Dispenser', 'Terrarium', 'Vases', 'Wall Art', 'Wall Bottle Opener', 'Wall Cabinet', 'Wall Decal', 'Wall Hangings', 'Wall Mounted Planters', 'Wall Mural', 'Wall Organiser', 'Wall Paper', 'Wall Shelf', 'Wind Chimes', 'Wine Bottle Case', 'Wine Glass Holder'],
+                        'HFR': ['Other', 'Bath Mat', 'Bath Robes', 'Bath Towel', 'Bed Cover', 'Bed Sheet', 'Bedding Set', 'Blanket', 'Carpet', 'Chair Pads', 'Comforter & Quilt', 'Curtain Accessories', 'Curtains & Drapes', 'Cushion', 'Cushion cover', 'Cushion Fillers', 'Dhurries', 'Dohar', 'Door Mat', 'Duvet', 'Duvet Cover', 'Face Towel', 'Hand Towel', 'Kitchen Linen', 'Mattress Protector', 'Pillow Cover', 'Pillow Protector', 'Pillows', 'Placemat', 'Rugs', 'Runners', 'Shower Curtain', 'Sofa Cover & Throws', 'Table Cloth', 'Table Runner'],
+                        'HIP': ['Other', 'Adhesive', 'Bath Towel Bar/ Rack', 'Bath Wall Shelf', 'Batteries', 'Bleach', 'Braces', 'Brackets', 'Brooms', 'Cleaners', 'Cleaning brushes', 'Disinfecting Wipes', 'Door Handle', 'Door Latch', 'Door Lock', 'Door Stopper', 'Doorbell', 'Drain Strainers', 'Drawer Slides', 'Dust Pans', 'Dusters', 'Exhaust Fan', 'Extension Cords', 'Fasteners', 'Furniture Caps', 'Furniture Legs', 'Furniture Pad', 'Garbage bags', 'Hand Dryer', 'Hangers', 'Hinges', 'Hooks', 'Janitorial Cart', 'Knob', 'Mop Buckets', 'Mop buckets', 'Mops', 'Nails', 'Outdoor Ashtrays', 'Padlocks', 'Paper Towel Holder', 'Paper Towels', 'Polishes', 'Pulls', 'Room Fresheners', 'Rubber Gloves', 'Screws', 'Security Camera', 'Smart Plugs', 'Smoke/Fire Detector', 'Soap Dispenser', 'Spray Bottles', 'Squeegees', 'Stain Removers', 'Tape', 'Toilet Paper', 'Toilet Seat Covers', 'Tool Box', 'Towel Rings', 'Trash Can', 'Tumbler Holder', 'Vacuum cleaners', 'Velcro Covers', 'Wall Hooks'],
+                        'LHT': ['Other', 'Battens', 'Bollard Outdoor Lights', 'Bulbs', 'Ceiling Lights', 'Chandelier', 'Decorative Night Lights', 'Down Lights', 'Emergency Lights', 'Flood Lights', 'Floor Lamps', 'Ground Burial Outdoor lights', 'Lanterns ', 'Outdoor Gate Top', 'Outdoor Pole Lights', 'Outdoor Projector Lights', 'Outdoor Wall Lights', 'Panel Lights', 'Pit Lights', 'Smart Lights', 'Solar Lights', 'Spot Lights', 'Street Lights', 'String Lights', 'Strip Lights', 'Table Lamps', 'Torches', 'Tube Lights', 'Wall Lights'],
+                    };
+
+                    // When an option is changed, search the above for matching choices
+                    $('#options').on('change', function () {
+                        // Set selected option as variable
+                        var selectValue = $(this).val();
+
+                        // Empty the target field
+                        $('#choices').empty();
+
+                        // For each chocie in the selected option
+                        for (i = 0; i < lookup[selectValue].length; i++) {
+                            // Output choice in the target field
+                            $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+                        }
+                    });
+                </script>
+</body>
+
+</html>
